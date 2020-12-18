@@ -1,0 +1,50 @@
+---
+id: highlight_actions
+title: Actions 
+---
+
+import LiveCodeBlock from '../../components/live-editor/theme//LiveCodeBlock.jsx';
+import MaterialTable from '@material-table/core';
+
+You can add buttons to rows or toolbar by using actions prop. Actions prop takes array of actions.
+
+### Usage
+
+```jsx
+<MaterialTable
+  // other props
+  actions={[
+    {
+      icon: 'save',
+      tooltip: 'Save User',
+      onClick: (event, rowData) => {
+        // Do save operation
+      }
+    }
+  ]}
+/>
+```
+
+### Demo
+
+<LiveCodeBlock scope={{ MaterialTable }}>
+{
+`function ActionsDemo() {
+  return (
+    <MaterialTable
+      data={[{ id: 2, name: "Joe" }, { id: 1, name: "Mary" }]}
+      columns={[{ field: "id", title: "Id" }, { field: "name", title: "Name" }]}
+      actions={[
+        {
+          icon: 'save',
+          tooltip: 'Save User',
+          onClick: (event, rowData) => {
+            console.log({ event, rowData });
+          }
+        }
+      ]}
+    />
+  );
+}`
+}
+</LiveCodeBlock>

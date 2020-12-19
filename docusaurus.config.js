@@ -4,8 +4,8 @@ module.exports = {
   url: 'https://material-table-core.com',
   baseUrl: '/',
   favicon: '',
-  organizationName: 'oze4', // Usually your GitHub org/user name.
-  projectName: 'material-table-core-website', // Usually your repo name.
+  organizationName: 'material-table-core', // Usually your GitHub org/user name.
+  projectName: 'website', // Usually your repo name.
   themeConfig: {
     // defaultDarkMode: true,
     announcementBar: {

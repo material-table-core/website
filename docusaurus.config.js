@@ -1,13 +1,16 @@
 module.exports = {
-  title: '@material-table/core',
-  tagline: 'Flexible React Data Table with the help of Material-UI',
+  title: 'material-table-core',
+  tagline: 'Flexible React Data Table for Material-UI',
   url: 'https://material-table-core.com',
   baseUrl: '/',
   favicon: '',
   organizationName: 'material-table-core', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
   themeConfig: {
-    defaultDarkMode: false,
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
     announcementBar: {
       id: 'announcement_bar', // Any value that will identify this message.
       content:
@@ -16,10 +19,11 @@ module.exports = {
       textColor: '#091E42', // Defaults to `#000`.
     },
     navbar: {
-      title: '@material-table/core',
+      //title: 'Home',
+      hideOnScroll: true,
       logo: {
         alt: 'My Site Logo',
-        // src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       links: [
         {
@@ -43,19 +47,6 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
-        /*{
-          title: 'Docs',
-          items: [
-            {
-              label: 'Style Guide',
-              to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },*/
         {
           title: 'Community',
           items: [
@@ -65,21 +56,8 @@ module.exports = {
             },
           ],
         },
-        /*{
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },*/
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      // copyright: `Copyright © ${new Date().getFullYear()} material-table-core and contributors. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -93,12 +71,6 @@ module.exports = {
           editUrl:
             'https://github.com/oze4/material-table-core-website/',
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   editUrl:
-        //     'https://github.com/oze4/material-table-core-website/edit/master/website/blog/',
-        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
         },

@@ -56,6 +56,7 @@ function Home() {
   const {siteConfig = {}} = context;
 
   // Hack to get certain background color only on home page
+  /*
   React.useEffect(() => {
     let html = document.querySelector('html.homepage-background-styles');
     if (!html) {
@@ -65,6 +66,7 @@ function Home() {
 
     return () => html.classList.remove('homepage-background-styles');
   });
+  */
 
   return (
     <Layout

@@ -33,21 +33,7 @@ module.exports = {
           ],
         },
         {
-          href: 'https://oze4.github.io/material-table-core/#/demo',
-          title: 'EXAMPLES',
-          position: 'right',
-          className: 'material-icons code tooltip examples',
-          'aria-label': 'Demo',
-        },
-        {
-          href: 'https://oze4.github.io/material-table-core/#/issue-tracker',
-          title: 'ISSUE TRACKER',
-          position: 'right',
-          className: 'material-icons bug-report tooltip issue-tracker',
-          'aria-label': 'Issue Tracker',
-        },
-        {
-          href: 'https://github.com/oze4/material-table-core',
+          href: 'https://github.com/material-table-core',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',

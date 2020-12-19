@@ -81,28 +81,8 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              target="_blank"
-              to={useBaseUrl('https://oze4.github.io/material-table-core/#/demo/000')}>
-              Examples
-            </Link>
-            <Link
-              style={{ margin: 5 }}
-              className={classnames(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
               to={useBaseUrl('docs/getting-started/about')}>
               Docs
-            </Link>
-            <Link
-              style={{ margin: 5 }}
-              className={classnames(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              target="_blank"
-              to={useBaseUrl('https://oze4.github.io/material-table-core/#/issue-tracker')}>
-              Issue Tracker
             </Link>
           </div>
         </div>

@@ -7,7 +7,7 @@ module.exports = {
   organizationName: 'material-table-core', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
   themeConfig: {
-    // defaultDarkMode: true,
+    defaultDarkMode: false,
     announcementBar: {
       id: 'announcement_bar', // Any value that will identify this message.
       content:

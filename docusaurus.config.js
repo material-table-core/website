@@ -40,11 +40,10 @@ module.exports = {
         }
       ],
     },
-    /*
     footer: {
       style: 'dark',
       links: [
-        {
+        /*{
           title: 'Docs',
           items: [
             {
@@ -56,25 +55,17 @@ module.exports = {
               to: 'docs/doc2/',
             },
           ],
-        },
+        },*/
         {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Gitter',
+              href: 'https://gitter.im/MaterialTableCore/community',
             },
           ],
         },
-        {
+        /*{
           title: 'More',
           items: [
             {
@@ -86,11 +77,10 @@ module.exports = {
               href: 'https://github.com/facebook/docusaurus',
             },
           ],
-        },
+        },*/
       ],
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
-    */
   },
   presets: [
     [

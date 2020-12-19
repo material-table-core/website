@@ -1,6 +1,6 @@
 module.exports = {
   title: '@material-table/core',
-  tagline: 'React data table component that based on Material-UI. This is a maintained fork of mbrn/material-table',
+  tagline: 'Flexible React Data Table with the help of Material-UI',
   url: 'https://material-table-core.com',
   baseUrl: '/',
   favicon: '',

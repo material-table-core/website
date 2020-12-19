@@ -11,7 +11,7 @@ module.exports = {
     announcementBar: {
       id: 'announcement_bar', // Any value that will identify this message.
       content:
-        '🚧 Under construction 🚧 <br /><a target="_blank" rel="noopener noreferrer" href="https://github.com/oze4/material-table-core-website">Please visit here if you would like to contribute!</a>',
+        '🚧 Under construction 🚧 <br /><a target="_blank" rel="noopener noreferrer" href="https://github.com/material-table-core">Please visit here if you would like to contribute!</a>',
       backgroundColor: ' #fff6ce', // '#e8eaf5', // Defaults to `#fff`.
       textColor: '#091E42', // Defaults to `#000`.
     },

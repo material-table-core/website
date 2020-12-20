@@ -5,10 +5,21 @@
  * work well for content-centric websites.
  */
 @import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
-/* @import url('https://fonts.googleapis.com/icon?family=Material+Icons'); */
 
 body {
   font-family: 'Ropa Sans', sans-serif !important;
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #3f51b5;
+  --ifm-color-primary-dark: #3949a3;
+  --ifm-color-primary-darker: #36459a;
+  --ifm-color-primary-darkest: #2c397f;
+  --ifm-color-primary-light: #4c5ec1;
+  --ifm-color-primary-lighter: #5566c4;
+  --ifm-color-primary-lightest: #707ecd;
+  --ifm-color-secondary: #e8eaf5;
 }
 
 /* Thanks docusaurus docs! */

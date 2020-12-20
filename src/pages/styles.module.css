@@ -20,9 +20,19 @@
   .heroBanner {
     padding: 2rem;
   }
+
   .hideMobile {
     display: none;
   }
+}
+
+html[data-theme='dark'] {
+  --ifm-hero-background-color: var(--ifm-color-emphasis-100);
+  --ifm-background-color: var(--ifm-color-emphasis-100);
+}
+
+.tac {
+  text-align: center;
 }
 
 .buttons {

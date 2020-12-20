@@ -1,5 +1,5 @@
 module.exports = {
-  title: "material-table-core",
+  title: "@material-table/core",
   tagline: "Feature rich data table for React via Material-UI",
   url: "https://material-table-core.com",
   baseUrl: "/",

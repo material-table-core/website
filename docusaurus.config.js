@@ -61,18 +61,6 @@ module.exports = {
   },
   presets: [
     [
-      "@docusaurus/plugin-client-redirects",
-      {
-        fromExtensions: ["html"],
-        redirects: [
-          {
-            from: ["/refactor"],
-            to: "/docs/getting-started/about",
-          },
-        ],
-      },
-    ],
-    [
       "@docusaurus/preset-classic",
       {
         docs: {

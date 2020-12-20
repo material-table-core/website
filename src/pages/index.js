@@ -17,10 +17,10 @@ function Home() {
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
-            <Link style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.getStarted)} to={useBaseUrl("docs/getting-started/about")}>
+            <Link style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.getStarted)} to={useBaseUrl("docs/getting-started/installation")}>
               Documentation
             </Link>
-            <Link style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.getStarted)} to="https://github.com/orgs/material-table-core/projects/1">
+            <Link style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.getStarted)} to="https://github.com/material-table-core/refactor-material-table/discussions/4">
               Refactor Roadmap
             </Link>
           </div>

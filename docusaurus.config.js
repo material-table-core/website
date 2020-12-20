@@ -1,58 +1,57 @@
 module.exports = {
-  title: 'material-table-core',
-  tagline: 'Flexible React Data Table for Material-UI',
-  url: 'https://material-table-core.com',
-  baseUrl: '/',
-  favicon: '',
-  organizationName: 'material-table-core', // Usually your GitHub org/user name.
-  projectName: 'website', // Usually your repo name.
+  title: "material-table-core",
+  tagline: "Flexible React Data Table for Material-UI",
+  url: "https://material-table-core.com",
+  baseUrl: "/",
+  favicon: "",
+  organizationName: "material-table-core", // Usually your GitHub org/user name.
+  projectName: "website", // Usually your repo name.
   themeConfig: {
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: "light",
       disableSwitch: true,
     },
     announcementBar: {
-      id: 'announcement_bar', // Any value that will identify this message.
-      content:
-        '🚧 Under construction 🚧 <br /><a target="_blank" rel="noopener noreferrer" href="https://github.com/material-table-core">Please visit here if you would like to contribute!</a>',
-      backgroundColor: ' #fff6ce', // '#e8eaf5', // Defaults to `#fff`.
-      textColor: '#091E42', // Defaults to `#000`.
+      id: "announcement_bar", // Any value that will identify this message.
+      content: '🚧 Under construction 🚧 <br /><a target="_blank" rel="noopener noreferrer" href="https://github.com/material-table-core">Please visit here if you would like to contribute!</a>',
+      backgroundColor: " #fff6ce", // '#e8eaf5', // Defaults to `#fff`.
+      textColor: "#091E42", // Defaults to `#000`.
     },
     navbar: {
       //title: 'Home',
       hideOnScroll: true,
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.png',
+        alt: "My Site Logo",
+        src: "img/logo.png",
       },
       links: [
         {
-          to: 'docs/getting-started/about',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'right',
+          to: "docs/getting-started/about",
+          activeBasePath: "docs",
+          label: "Docs",
+          position: "right",
           items: [
-            { to: 'docs/getting-started/about', label: '@material-table/core@v2.0.x' },
-            { href: 'https://material-table.com', label: 'material-table' }
+            { to: "docs/getting-started/about", label: "@material-table/core@v2.0.x" },
+            { href: "https://material-table.com", label: "material-table" },
           ],
         },
         {
-          href: 'https://github.com/material-table-core',
-          position: 'right',
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
-        }
+          href: "https://github.com/material-table-core",
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
+        },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'Gitter',
-              href: 'https://gitter.im/MaterialTableCore/community',
+              label: "Gitter",
+              href: "https://gitter.im/MaterialTableCore/community",
             },
           ],
         },
@@ -62,20 +61,31 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/plugin-client-redirects",
+      {
+        fromExtensions: ["html"],
+        redirects: [
+          {
+            from: ["/refactor"],
+            to: "/docs/getting-started/about",
+          },
+        ],
+      },
+    ],
+    [
+      "@docusaurus/preset-classic",
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'docs/getting-started/installation',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/oze4/material-table-core-website/',
+          homePageId: "docs/getting-started/installation",
+          sidebarPath: require.resolve("./sidebars.json"),
+          editUrl: "https://github.com/material-table-core/website",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
   ],
-  themes: ['@docusaurus/theme-live-codeblock']
+  themes: ["@docusaurus/theme-live-codeblock"],
 };

@@ -42,9 +42,10 @@ module.exports = {
     },
     announcementBar: {
       id: "announcement_bar", // Any value that will identify this message.
-      content: '🚧 Under construction 🚧 <br /><a target="_blank" rel="noopener noreferrer" href="https://github.com/material-table-core">Please visit here if you would like to contribute!</a>',
+      content: '🚧 Under construction 🚧 <a target="_blank" rel="noopener noreferrer" href="https://github.com/material-table-core">Please visit here if you would like to contribute!</a>',
       backgroundColor: " #fff6ce", // '#e8eaf5', // Defaults to `#fff`.
       textColor: "#091E42", // Defaults to `#000`.
+      isCloseable: false,
     },
     navbar: {
       style: "primary",

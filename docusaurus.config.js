@@ -1,6 +1,6 @@
 module.exports = {
   title: "material-table-core",
-  tagline: "Flexible React Data Table for Material-UI",
+  tagline: "Feature rich data table for React via Material-UI",
   url: "https://material-table-core.com",
   baseUrl: "/",
   favicon: "",

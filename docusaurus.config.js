@@ -65,7 +65,7 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: "docs/getting-started/installation",
+          homePageId: "docs/getting-started/install",
           sidebarPath: require.resolve("./sidebars.json"),
           editUrl: "https://github.com/material-table-core/website",
         },

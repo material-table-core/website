@@ -23,13 +23,17 @@ function Home() {
             <Link style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.getStarted)} to="https://github.com/material-table-core/refactor-material-table/discussions/4">
               Roadmap
             </Link>
-            <Link style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.getStarted)} to="https://github.com/mbrn/material-table">
-              Fork of material-table
+            <Link style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.getStarted, styles.hideMobile)} to="https://github.com/mbrn/material-table">
+              mbrn/material-table
             </Link>
           </div>
         </div>
       </header>
-      <main></main>
+      <main>
+        <div className={classnames(styles.heroBanner)}>
+          <p>Fork of <code>mbrn/material-table</code></p>
+        </div>
+      </main>
     </Layout>
   );
 }

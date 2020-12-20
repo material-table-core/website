@@ -1,6 +1,6 @@
 module.exports = {
   title: "@material-table/core",
-  tagline: "Feature rich data table for React, fork of mbrn/material-table",
+  tagline: "Feature rich data table for React",
   url: "https://material-table-core.com",
   baseUrl: "/",
   favicon: "",

@@ -16,12 +16,12 @@ function Home() {
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className={classnames(styles.tac, "hero__subtitle")}>
-              <h3>
-                A fork of
-                <Link target="_blank" rel="noopener noreferrer" to="https://github.com/mbrn/material-table">
-                  <code>mbrn/material-table</code>
-                </Link>
-              </h3>
+            <h3>
+              A fork of
+              <Link target="_blank" rel="noopener noreferrer" to="https://github.com/mbrn/material-table">
+                <code>mbrn/material-table</code>
+              </Link>
+            </h3>
           </p>
           <div className={styles.buttons}>
             <Link target="_blank" rel="noopener noreferrer" style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to="https://github.com/material-table-core/core#about">

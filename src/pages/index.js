@@ -20,6 +20,9 @@ function Home() {
             <Link style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to={useBaseUrl("docs/getting-started/install")}>
               Docs
             </Link>
+            <Link style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to="https://material-table-core.github.io/examples">
+              Examples
+            </Link>
             <Link style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to="https://github.com/material-table-core/core/discussions">
               More Info
             </Link>

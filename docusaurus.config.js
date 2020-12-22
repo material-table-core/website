@@ -62,7 +62,7 @@ module.exports = {
           label: "Docs",
           position: "right",
           items: [
-            { to: "docs/getting-started/about", label: "@material-table/core@v2.0.x" },
+            { to: "docs/getting-started/install", label: "@material-table/core@v2.0.x" },
             { href: "https://material-table.com", label: "material-table" },
           ],
         },

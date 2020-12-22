@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Getting Started": ["getting-started/about", "getting-started/install", "getting-started/compatible"],
+    "Getting Started": ["getting-started/install"],
     "Features": [
       "highlights/highlight_actions",
       "highlights/highlight_component_overriding",

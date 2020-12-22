@@ -15,30 +15,28 @@ function Home() {
       <header className={classnames("hero hero-primary", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className={classnames(styles.tac, "hero__subtitle")}>
+              <h3>
+                A fork of
+                <Link target="_blank" rel="noopener noreferrer" to="https://github.com/mbrn/material-table">
+                  <code>mbrn/material-table</code>
+                </Link>
+              </h3>
+          </p>
           <div className={styles.buttons}>
+            <Link target="_blank" rel="noopener noreferrer" style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to="https://github.com/material-table-core/core#about">
+              About
+            </Link>
             <Link style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to={useBaseUrl("docs/getting-started/install")}>
               Docs
             </Link>
-            <Link style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to="https://material-table-core.github.io/examples">
+            <Link target="_blank" rel="noopener noreferrer" style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to="https://material-table-core.github.io/examples">
               Examples
-            </Link>
-            <Link style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.btnHover)} to="https://github.com/material-table-core/core/discussions">
-              More Info
-            </Link>
-            <Link style={{ margin: 5 }} className={classnames("button button--outline button--primary button--lg", styles.hideMobile, styles.btnHover)} to="https://github.com/mbrn/material-table">
-              mbrn/material-table
             </Link>
           </div>
         </div>
       </header>
-      <main>
-        <div className={classnames(styles.tac)}>
-          <p>
-            Fork of <code>mbrn/material-table</code>
-          </p>
-        </div>
-      </main>
+      <main>{/* todo */}</main>
     </Layout>
   );
 }

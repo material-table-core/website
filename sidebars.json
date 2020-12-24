@@ -2,21 +2,21 @@
   "docs": {
     "Getting Started": ["getting-started/install"],
     "Features": [
-      "highlights/highlight_actions",
-      "highlights/highlight_component_overriding",
-      "highlights/highlight_custom_column_rendering",
-      "highlights/highlight_detail_panel",
-      "highlights/highlight_editable",
-      "highlights/highlight_export",
-      "highlights/highlight_filtering",
-      "highlights/highlight_grouping",
-      "highlights/highlight_localization",
-      "highlights/highlight_remote_data",
-      "highlights/highlight_search",
-      "highlights/highlight_selection",
-      "highlights/highlight_sorting",
-      "highlights/highlight_styling",
-      "highlights/highlight_tree_data"
+      "features/actions",
+      "features/component_overriding",
+      "features/custom_column_rendering",
+      "features/detail_panel",
+      "features/editable",
+      "features/export",
+      "features/filtering",
+      "features/grouping",
+      "features/localization",
+      "features/remote_data",
+      "features/search",
+      "features/selection",
+      "features/sorting",
+      "features/styling",
+      "features/tree_data"
     ],
     "API": [
       {

@@ -1,5 +1,5 @@
 ---
-id: highlight_styling
+id: styling
 title: Styling 
 ---
 

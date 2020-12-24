@@ -6,35 +6,30 @@ module.exports = {
   favicon: "",
   organizationName: "material-table-core", // Usually your GitHub org/user name.
   projectName: "website", // Usually your repo name.
+  favicon: '/static/img/logo.png',
   themeConfig: {
     colorMode: {
       // "light" | "dark"
       defaultMode: "light",
-
       // Hides the switch in the navbar
       // Useful if you want to support a single color mode
-      disableSwitch: false,
-
+      disableSwitch: true,
       // Should we use the prefers-color-scheme media-query,
       // using user system preferences, instead of the hardcoded defaultMode
       respectPrefersColorScheme: false,
-
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
         darkIcon: "🌙",
-
         // CSS to apply to dark icon,
         // React inline style object
         // see https://reactjs.org/docs/dom-elements.html#style
         darkIconStyle: {
           marginLeft: "2px",
         },
-
         // Unicode icons such as '\u2600' will work
         // Unicode with 5 chars require brackets: '\u{1F602}'
-        lightIcon: "\u{1F602}",
-
+        lightIcon: "💡",
         lightIconStyle: {
           marginLeft: "1px",
         },
@@ -55,7 +50,7 @@ module.exports = {
         alt: "@material-table_logo",
         src: "img/logo.png",
       },
-      links: [
+      items: [
         {
           to: "docs/getting-started/install",
           activeBasePath: "docs",
@@ -67,7 +62,7 @@ module.exports = {
           ],
         },
         {
-          href: "https://github.com/material-table-core",
+          href: "https://github.com/material-table-core/core",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
@@ -86,6 +81,15 @@ module.exports = {
             },
           ],
         },
+        {
+          title: "More",
+          items: [
+            {
+              label: "Github",
+              href: "https://github.com/material-table-core/core",
+            },
+          ],
+        },
       ],
       // copyright: `Copyright © ${new Date().getFullYear()} material-table-core and contributors. Built with Docusaurus.`,
     },
@@ -95,8 +99,6 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: "docs/getting-started/install",
           sidebarPath: require.resolve("./sidebars.json"),
           editUrl: "https://github.com/material-table-core/website",
         },

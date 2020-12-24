@@ -1,5 +1,5 @@
 ---
-id: highlight_custom_column_rendering
+id: custom_column_rendering
 title: Custom column rendering 
 ---
 

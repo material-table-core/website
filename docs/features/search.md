@@ -1,5 +1,5 @@
 ---
-id: highlight_search
+id: search
 title: Search 
 ---
 

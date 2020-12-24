@@ -1,5 +1,5 @@
 ---
-id: highlight_localization
+id: localization
 title: Localization 
 ---
 

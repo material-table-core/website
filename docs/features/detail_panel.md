@@ -1,5 +1,5 @@
 ---
-id: highlight_detail_panel
+id: detail_panel
 title: Detail Panel 
 ---
 

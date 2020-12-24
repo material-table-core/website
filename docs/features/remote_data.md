@@ -1,5 +1,5 @@
 ---
-id: highlight_remote_data
+id: remote_data
 title: Remote Data 
 ---
 

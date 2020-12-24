@@ -1,5 +1,5 @@
 ---
-id: highlight_editable
+id: editable
 title: Editable 
 ---
 

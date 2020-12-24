@@ -1,6 +1,7 @@
 ---
 id: install
 title: Installation
+slug: /
 ---
 
 #### yarn

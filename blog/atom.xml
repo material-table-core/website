@@ -6,5 +6,5 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://material-table-core.com/blog"/>
     <subtitle>@material-table/core Blog</subtitle>
-    <icon>https://material-table-core.com/static/img/logo.png</icon>
+    <icon>https://material-table-core.com/img/logo.png</icon>
 </feed>

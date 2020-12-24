@@ -48,7 +48,7 @@ module.exports = {
       hideOnScroll: false,
       logo: {
         alt: "@material-table_logo",
-        src: "/static/img/logo.png",
+        src: "/img/logo.png",
       },
       items: [
         {

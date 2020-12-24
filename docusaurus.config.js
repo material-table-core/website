@@ -3,9 +3,10 @@ module.exports = {
   tagline: "Feature rich data table for React",
   url: "https://material-table-core.com",
   baseUrl: "/",
+  // onBrokenLinks: "ignore",
   organizationName: "material-table-core", // Usually your GitHub org/user name.
   projectName: "website", // Usually your repo name.
-  favicon: '/static/img/logo.png',
+  favicon: './static/img/logo.png',
   themeConfig: {
     colorMode: {
       // "light" | "dark"
@@ -51,12 +52,12 @@ module.exports = {
       },
       items: [
         {
-          to: "/docs/getting-started/install",
+          to: "/docs",
           activeBasePath: "docs",
           label: "Docs",
           position: "right",
           items: [
-            { to: "/docs/getting-started/install", label: "@material-table/core@v2.0.x" },
+            { to: "/docs", label: "@material-table/core@v2.0.x" },
             { href: "https://material-table.com", label: "material-table" },
           ],
         },

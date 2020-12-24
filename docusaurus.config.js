@@ -6,14 +6,14 @@ module.exports = {
   // onBrokenLinks: "ignore",
   organizationName: "material-table-core", // Usually your GitHub org/user name.
   projectName: "website", // Usually your repo name.
-  favicon: './static/img/logo.png',
+  favicon: '/static/img/logo.png',
   themeConfig: {
     colorMode: {
       // "light" | "dark"
       defaultMode: "light",
       // Hides the switch in the navbar
       // Useful if you want to support a single color mode
-      disableSwitch: true,
+      disableSwitch: false,
       // Should we use the prefers-color-scheme media-query,
       // using user system preferences, instead of the hardcoded defaultMode
       respectPrefersColorScheme: false,

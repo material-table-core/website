@@ -6,7 +6,7 @@ module.exports = {
   // onBrokenLinks: "ignore",
   organizationName: "material-table-core", // Usually your GitHub org/user name.
   projectName: "website", // Usually your repo name.
-  favicon: '/static/img/logo.png',
+  favicon: '/img/logo.png',
   themeConfig: {
     colorMode: {
       // "light" | "dark"

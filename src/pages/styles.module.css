@@ -5,17 +5,32 @@
  * and scoped locally.
  */
 
+ @media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+  .heroTitle {
+    font-size: 2rem;
+  }
+  .heroSubTitle > * {
+    font-size: 1rem;
+  }
+  .buttons > a {
+    margin: 10px;
+  }
+}
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
 }
 
 .buttons {
@@ -41,12 +56,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
 }
 
 html[data-theme='dark'] {
@@ -59,6 +68,9 @@ html[data-theme='dark'] {
   align-items: center;
   justify-content: center;
 }
+.buttons > a {
+  margin: 20px;
+}
 
 .features {
   display: flex;
@@ -70,4 +82,14 @@ html[data-theme='dark'] {
 .featureImage {
   height: 200px;
   width: 200px;
+}
+
+:root {
+  --heroBannerCodeColor: black;
+}
+html[data-theme='dark'] {
+  --heroBannerCodeColor: white;
+}
+.inverseColor {
+  color: var(--heroBannerCodeColor);
 }

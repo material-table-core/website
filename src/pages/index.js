@@ -14,27 +14,24 @@ function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description={siteConfig.tagline}>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className={classnames("hero__subtitle")}>
+          <h1 className={classnames("hero__title", styles.heroTitle)}>{siteConfig.title}</h1>
+          <p className={classnames("hero__subtitle", styles.heroSubTitle)}>
             <h3>
               A fork of
               <Link target="_blank" rel="noopener noreferrer" to="https://github.com/mbrn/material-table">
-                <code>mbrn/material-table</code>
+                <code className={classnames(styles.inverseColor)}>mbrn/material-table</code>
               </Link>
             </h3>
           </p>
           <div className={styles.buttons}>
-            <Link target="_blank" rel="noopener noreferrer" style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.btnHover)} to="https://github.com/material-table-core/core#about">
+            <Link target="_blank" rel="noopener noreferrer" className={classnames("button button--outline button--secondary button--lg", styles.btnHover)} to="https://github.com/material-table-core/core#about">
               About
             </Link>
-            <Link style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.btnHover)} to={useBaseUrl("/docs")}>
+            <Link className={classnames("button button--outline button--secondary button--lg", styles.btnHover)} to={useBaseUrl("/docs")}>
               Docs
-            </Link>
-            <Link target="_blank" rel="noopener noreferrer" style={{ margin: 5 }} className={classnames("button button--outline button--secondary button--lg", styles.btnHover)} to="https://material-table-core.github.io/examples">
-              Examples
             </Link>
           </div>
         </div>

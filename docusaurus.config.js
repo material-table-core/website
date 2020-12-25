@@ -10,6 +10,7 @@ module.exports = {
   projectName: "website", // Usually your repo name.
   favicon: '/img/logo.png',
   themeConfig: {
+    hideableSidebar: true,
     colorMode: {
       // "light" | "dark"
       defaultMode: "light",
@@ -46,22 +47,27 @@ module.exports = {
     },
     navbar: {
       style: "primary",
-      title: '@material-table',
+      title: 'Home',
       hideOnScroll: false,
       logo: {
         alt: "@material-table_logo",
         src: "/img/logo.png",
       },
       items: [
-        {
-          to: "/docs",
-          activeBasePath: "docs",
-          label: "Docs",
+        { 
+          href: "/docs", 
+          position: "left",
+          label: "Docs" 
+        },
+        { 
+          href: "/docs/demos", 
+          position: "left",
+          label: "Demos" 
+        },
+        { 
+          href: "https://material-table.com", 
           position: "right",
-          items: [
-            { to: "/docs", label: "@material-table/core@v2.0.x" },
-            { href: "https://material-table.com", label: "material-table" },
-          ],
+          label: "mbrn/material-table" 
         },
         {
           href: "https://github.com/material-table-core/core",

@@ -12,42 +12,6 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Demos",
-      items: [
-        "demos/about",
-        {
-          type: "category",
-          label: "Actions",
-          items: ["demos/actions/basic"],
-        },
-        {
-          type: "category",
-          label: "Component Overriding",
-          items: ["demos/component-overriding/toolbar"],
-        },
-        {
-          type: "category",
-          label: "Features",
-          items: [
-            "demos/features/custom_column_rendering",
-            "demos/features/detail_panel",
-            "demos/features/editable",
-            "demos/features/export",
-            "demos/features/filtering",
-            "demos/features/grouping",
-            "demos/features/localization",
-            "demos/features/remote_data",
-            "demos/features/search",
-            "demos/features/selection",
-            "demos/features/sorting",
-            "demos/features/styling",
-            "demos/features/tree_data",
-          ],
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "API",
       items: [
         {

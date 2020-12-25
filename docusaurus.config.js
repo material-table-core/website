@@ -1,5 +1,3 @@
-const APP_SIDEBAR = require.resolve("./sidebars.js");
-
 module.exports = {
   title: "@material-table/core",
   tagline: "Feature rich data table for React",
@@ -8,9 +6,39 @@ module.exports = {
   // onBrokenLinks: "ignore",
   organizationName: "material-table-core", // Usually your GitHub org/user name.
   projectName: "website", // Usually your repo name.
-  favicon: '/img/logo.png',
+  favicon: "/img/logo.png",
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: 'demos',
+        path: "./demos", // Path to data on filesystem, relative to site dir.
+        routeBasePath: "demos", // URL Route.
+        include: ['**/*.md', '**/*.mdx'],
+        sidebarPath: require.resolve("./sidebar.demos.js")
+      },
+    ],
+  ],
+  presets: [
+    [
+      "@docusaurus/preset-classic",
+      {
+        docs: {
+          sidebarPath: require.resolve("./sidebar.docs.js"),
+          editUrl: "https://github.com/material-table-core/website",
+        },
+        theme: {
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      },
+    ],
+  ],
+  themes: ["@docusaurus/theme-live-codeblock"],
   themeConfig: {
     hideableSidebar: true,
+    prism: {
+      theme: require("prism-react-renderer/themes/github"),
+    },
     colorMode: {
       // "light" | "dark"
       defaultMode: "light",
@@ -47,30 +75,30 @@ module.exports = {
     },
     navbar: {
       style: "primary",
-      title: 'Home',
-      hideOnScroll: false,
+      title: "Home",
+      hideOnScroll: true,
       logo: {
         alt: "@material-table_logo",
         src: "/img/logo.png",
       },
       items: [
-        { 
-          href: "/docs", 
+        {
+          to: "/docs",
           position: "left",
-          label: "Docs" 
-        },
-        { 
-          href: "/docs/demos", 
-          position: "left",
-          label: "Demos" 
-        },
-        { 
-          href: "https://material-table.com", 
-          position: "right",
-          label: "mbrn/material-table" 
+          label: "Docs",
         },
         {
-          href: "https://github.com/material-table-core/core",
+          to: "/demos",
+          position: "left",
+          label: "Demos",
+        },
+        {
+          to: "https://material-table.com",
+          position: "right",
+          label: "mbrn/material-table",
+        },
+        {
+          to: "https://github.com/material-table-core/core",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
@@ -102,19 +130,4 @@ module.exports = {
       // copyright: `Copyright © ${new Date().getFullYear()} material-table-core and contributors. Built with Docusaurus.`,
     },
   },
-  presets: [
-    [
-      "@docusaurus/preset-classic",
-      {
-        docs: {
-          sidebarPath: APP_SIDEBAR,
-          editUrl: "https://github.com/material-table-core/website",
-        },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
-      },
-    ],
-  ],
-  themes: ["@docusaurus/theme-live-codeblock"],
 };

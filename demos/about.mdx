@@ -1,8 +1,8 @@
 ---
 id: about
 title: About
-slug: /demos
 hide_title: true
+slug: /
 ---
 
 # About Demos
@@ -10,12 +10,12 @@ hide_title: true
 import MaterialTable from "@material-table/core";
 
 :::info
-
 *In the name of brevity we use **global vars** in all (most) of our* ***demos***
-
 :::
 
-## `DEMO_DATA`
+## Global Variables
+
+### `DEMO_DATA`
 
 ```javascript
 const DEMO_DATA = [
@@ -24,7 +24,7 @@ const DEMO_DATA = [
 ];
 ```
 
-## `DEMO_COLS`
+### `DEMO_COLS`
 
 ```javascript
 const DEMO_COLS = [
@@ -33,7 +33,7 @@ const DEMO_COLS = [
 ];
 ```
 
-## `TABLE_ICONS`
+### `TABLE_ICONS`
 
 ```jsx title="/src/theme/ReactLiveScope/tableIcons.js"
 import React, { forwardRef } from "react";

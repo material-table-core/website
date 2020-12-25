@@ -27,11 +27,11 @@ function Home() {
             </h3>
           </p>
           <div className={styles.buttons}>
-            <Link target="_blank" rel="noopener noreferrer" className={classnames("button button--outline button--secondary button--lg", styles.btnHover)} to="https://github.com/material-table-core/core#about">
-              About
-            </Link>
             <Link className={classnames("button button--outline button--secondary button--lg", styles.btnHover)} to={useBaseUrl("/docs")}>
               Docs
+            </Link>
+            <Link className={classnames("button button--outline button--secondary button--lg", styles.btnHover)} to={useBaseUrl("/demos")}>
+              Demos
             </Link>
           </div>
         </div>

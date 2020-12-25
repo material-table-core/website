@@ -13,9 +13,26 @@ import SaveIcon from '@material-ui/icons/Save';
 
 const RAND_COLOR = () => '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
 
-// Add react-live imports you need here
+const DEMO_DATA = [
+  { id: 2, name: "Joe" },
+  { id: 1, name: "Mary" }
+];
+
+const DEMO_COLS = [
+  { field: "id", title: "Id" },
+  { field: "name", title: "Name" }
+];
+
+/**
+ * Add react-live imports you need here
+ */
 const ReactLiveScope = {
+  // Global/env vars
   RAND_COLOR,
+  DEMO_DATA,
+  DEMO_COLS,
+
+  // React
   React,
   ...React,
 

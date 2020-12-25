@@ -1,3 +1,5 @@
+const APP_SIDEBAR = require.resolve("./sidebars.js");
+
 module.exports = {
   title: "@material-table/core",
   tagline: "Feature rich data table for React",
@@ -99,7 +101,7 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.json"),
+          sidebarPath: APP_SIDEBAR,
           editUrl: "https://github.com/material-table-core/website",
         },
         theme: {

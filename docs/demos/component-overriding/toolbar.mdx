@@ -1,0 +1,60 @@
+---
+id: toolbar
+title: Override Toolbar
+---
+
+import MaterialTable, { MTableToolbar } from '@material-table/core';
+import { InfoBannerAboutGlobalVarsInDemos } from '../components.mdx';
+
+## Usage
+
+```jsx {6}
+import MaterialTable, { MTableToolbar } from '@material-table/core';
+
+<MaterialTable
+    // other props
+    components={{
+        Toolbar: props => (
+            <div style={{ backgroundColor: '#e8eaf5' }}>
+                <MTableToolbar {...props} />
+            </div>
+        )
+    }}
+/>
+```
+
+## Live Demo
+
+In this demo we override the `MTableToolbar` component by injecting the background color into it's props.
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function ComponentOverriding() {
+  const [bgColor, setBgColor] = useState(RAND_COLOR);
+
+  return (
+    <div>
+      <Button onClick={() => setBgColor(RAND_COLOR)}>
+        Change Background Color
+      </Button>
+
+      <MaterialTable 
+        data={DEMO_DATA} 
+        columns={DEMO_COLS} 
+        icons={TABLE_ICONS}
+        components={{
+          Toolbar: props => {
+            return (
+              <div style={{ backgroundColor: bgColor }}>
+                <MTableToolbar {...props} />
+              </div>
+            )
+          }
+        }} />
+
+    </div> 
+  );
+}
+```
+

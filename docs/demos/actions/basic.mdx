@@ -1,13 +1,14 @@
 ---
-id: actions
-title: Actions 
+id: basic
+title: Basic Actions
 ---
 
 import MaterialTable from '@material-table/core';
+import { InfoBannerAboutGlobalVarsInDemos } from '../components.mdx';
 
 You can add buttons to rows or toolbar by using actions prop. Actions prop takes array of actions.
 
-### Usage
+## Usage
 
 ```jsx
 <MaterialTable
@@ -17,39 +18,33 @@ You can add buttons to rows or toolbar by using actions prop. Actions prop takes
       icon: 'save',
       tooltip: 'Save User',
       onClick: (event, rowData) => {
-        // Do save operation
-        console.log({ rowData, event });
-        alert(rowData);
+        alert("Do save operation : " + JSON.stringify(rowData, null, 2));
       }
     }
   ]}
 />
 ```
 
-### Live Code Demo
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
 
 ```jsx live
-function ActionsDemo() {
+function BasicActionsDemo() {
   return (
     <MaterialTable
-      data={[
-        { id: 2, name: "Joe" }, 
-        { id: 1, name: "Mary" }
-      ]} 
-      columns={[
-        { field: "id", title: "Id" }, 
-        { field: "name", title: "Name" }
-      ]} 
+      data={DEMO_DATA} 
+      columns={DEMO_COLS} 
+      icons={TABLE_ICONS} 
       actions={[
         {
           icon: () => <SaveIcon />,
           tooltip: 'Save User',
           onClick: (event, rowData) => {
-            alert(`Saved User : ${rowData.id} ${rowData.name}`)
+            alert("Do save operation : " + JSON.stringify(rowData, null, 2));
           }
         }
       ]}
-      icons={TABLE_ICONS} 
     />
   );
 }

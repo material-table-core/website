@@ -9,7 +9,6 @@
   html[data-theme="light"] {
     --ifm-color-emphasis-700: #171717;
   }
-
 }
 
 @media screen and (max-width: 600px) {
@@ -23,10 +22,10 @@
 
 @media screen and (max-width: 450px) {
   h1.heroTitle {
-    font-size: 1.25rem;
+    font-size: 1.60rem;
   }
   .heroSubTitle > h3 {
-    font-size: 0.655rem;
+    font-size: 0.98rem;
   }
 }
 

@@ -3,8 +3,15 @@ id: components
 ---
 
 export const Banner = ({ type, children }) => {
+  let alertType = type;
+  if (type === "tip") {
+    alertType = "success";
+  }
+  if (type === "note") {
+    alertType = "secondary";
+  }
   return (
-    <div class={`admonition admonition-${type} alert alert--${type}`}>
+    <div class={`admonition admonition-${type} alert alert--${alertType}`}>
       <div class="admonition-heading">
         <h5>
           <span class="admonition-icon">
@@ -23,7 +30,7 @@ export const Banner = ({ type, children }) => {
 };
 
 export const InfoBannerAboutGlobalVarsInDemos = () => (
-  <Banner type="info">
+  <Banner type="note">
     See <a href="/demos"><b><i>here</i></b></a> for more on the <code>GLOBAL_VARS</code> we use in our demos
   </Banner>
 );

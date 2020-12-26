@@ -13,7 +13,7 @@ module.exports = {
         {
           type: "category",
           label: "Override Components",
-          items: ["component-overriding/toolbar"],
+          items: ["override/toolbar"],
         },
         {
           type: "category",

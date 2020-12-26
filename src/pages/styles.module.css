@@ -5,24 +5,28 @@
  * and scoped locally.
  */
 
- @media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
+@media screen and (max-width: 996px) {
+  html[data-theme="light"] {
+    --ifm-color-emphasis-700: #171717;
   }
+
 }
 
 @media screen and (max-width: 600px) {
-  .heroBanner {
-    padding: 2rem;
+  h1.heroTitle {
+    font-size: 1.75rem;
   }
-  .heroTitle {
-    font-size: 2rem;
-  }
-  .heroSubTitle > * {
+  .heroSubTitle > h3 {
     font-size: 1rem;
   }
-  .buttons > a {
-    margin: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  h1.heroTitle {
+    font-size: 1.25rem;
+  }
+  .heroSubTitle > h3 {
+    font-size: 0.655rem;
   }
 }
 

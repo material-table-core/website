@@ -3,12 +3,7 @@ module.exports = {
     {
       type: "category",
       label: "Getting Started",
-      items: [
-        "getting-started/install",
-        {
-          /* Docs: ['docs-introduction', 'docs-sidebar', 'markdown-features', 'versioning'],*/
-        },
-      ],
+      items: ["getting-started/install"],
     },
     {
       type: "category",

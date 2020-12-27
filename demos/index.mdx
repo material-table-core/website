@@ -1,23 +1,43 @@
 ---
-id: about
-title: About
+id: demos
+title: Introduction
 hide_title: true
 slug: /
 ---
 
-# About Demos
-
 import MaterialTable from "@material-table/core";
 
-:::info
-*In the name of brevity we use **global vars** in all (most) of our* ***demos***
-:::
+# Demos
 
-## Global Variables
+## Introduction
+
+More info on demos. Each demo should have a live code block for you to tinker with.
+
+## Demo Environment
+
+```jsx
+/**
+ * To keep our demos succinct we take advantage of "global variables".
+ * Global variables will be in all caps snake case.
+ */
+<MaterialTable
+  // highlight-start
+  data={DEMO_DATA} 
+  columns={DEMO_COLS} 
+  icons={TABLE_ICONS}
+  // highlight-end
+  // ...
+/>
+```
+
+## Environmental Variables
+
+The values for our global environmental variables can be found below.
 
 ### `DEMO_DATA`
 
 ```javascript
+// This data is passed into `<MaterialTable data={...} />`
 const DEMO_DATA = [
   { id: 2, name: "Joe" },
   { id: 1, name: "Mary" }
@@ -27,6 +47,7 @@ const DEMO_DATA = [
 ### `DEMO_COLS`
 
 ```javascript
+// This data is passed into `<MaterialTable columns={...} />`
 const DEMO_COLS = [
   { field: "id", title: "Id" },
   { field: "name", title: "Name" }
@@ -36,12 +57,15 @@ const DEMO_COLS = [
 ### `TABLE_ICONS`
 
 ```jsx title="/src/theme/ReactLiveScope/tableIcons.js"
+// After importing this file we pass it (the default export) 
+// into `<MaterialTable icons={...} />`
 import React, { forwardRef } from "react";
 import { 
   AddBox, ArrowUpward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, 
   Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn 
 } from "@material-ui/icons";
 
+// This is the object we import
 export default {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),

@@ -1,0 +1,93 @@
+---
+id: render-image
+title: Render Image
+hide_title: true
+---
+
+# Custom Column Rendering
+
+import MaterialTable from '@material-table/core';
+import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
+
+## Usage
+
+```jsx
+import MaterialTable from '@material-table/core';
+
+<MaterialTable
+    // ...
+    columns={[
+      {
+        field: 'url',
+        title: 'Avatar',
+        render: rowData => {
+          return <img src={rowData.url} style={{width: 50, borderRadius: '50%'}}/>
+        }
+      }
+    ]}
+/>
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function RenderImage() {
+  return (
+    <MaterialTable
+      icons={TABLE_ICONS}
+      data={[
+        { 
+          name: 'Mehmet', 
+          surname: 'Baran', 
+          birthYear: 1987, 
+          birthCity: 63, 
+          imageUrl: 'https://avatars0.githubusercontent.com/u/7895451?s=460&v=4' 
+        },
+        { 
+          name: 'Zerya Betül', 
+          surname: 'Baran', 
+          birthYear: 2017, 
+          birthCity: 34, 
+          imageUrl: 'https://avatars0.githubusercontent.com/u/7895451?s=460&v=4' 
+        },
+      ]} 
+      columns={[
+        { 
+          title: 'Avatar', 
+          field: 'imageUrl', 
+          /**
+           * Custom column rendering 
+           */
+          render: rowData => {
+            const styles = { width: 40, borderRadius: '50%' };
+            return <img src={rowData.imageUrl} style={styles}/> 
+          }
+        },
+        { 
+          title: 'Name', 
+          field: 'name' 
+        },
+        { 
+          title: 'Surname', 
+          field: 'surname' 
+        },
+        { 
+          title: 'Birth Year', 
+          field: 'birthYear', 
+          type: 'numeric' 
+        },
+        {
+          title: 'Birth Place',
+          field: 'birthCity',
+          lookup: { 
+            34: 'İstanbul', 
+            63: 'Şanlıurfa' 
+          },
+        },
+      ]}       
+    />
+  )
+}
+```

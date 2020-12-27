@@ -1,40 +1,80 @@
 module.exports = {
-  demos: [
+  sidebar: [
+    "demos",
     {
       type: "category",
-      label: "Demos",
-      items: [
-        "about",
-        {
-          type: "category",
-          label: "Actions",
-          items: ["actions/basic"],
-        },
-        {
-          type: "category",
-          label: "Override Components",
-          items: ["override/toolbar"],
-        },
-        {
-          type: "category",
-          label: "Features",
-          items: [
-            "features/custom_column_rendering",
-            "features/detail_panel",
-            "features/editable",
-            "features/export",
-            "features/filtering",
-            "features/grouping",
-            "features/localization",
-            "features/remote_data",
-            "features/search",
-            "features/selection",
-            "features/sorting",
-            "features/styling",
-            "features/tree_data",
-          ],
-        },
-      ],
+      label: "Actions",
+      items: ["actions/basic"],
     },
-  ],
-}
+    {
+      type: "category",
+      label: "Override Components",
+      items: ["override/toolbar"],
+    },
+    {
+      type: 'category',
+      label: 'Columns',
+      items: ['columns/render-image']
+    },
+    {
+      type: 'category',
+      label: 'Details Panel',
+      items: ['details-panel/basic']
+    },
+    {
+      type: 'category',
+      label: 'Edit',
+      items: ['edit/basic']
+    },
+    {
+      type: 'category',
+      label: 'Export',
+      items: ['export/basic']
+    },
+    {
+      type: 'category',
+      label: 'Filter',
+      items: ['filter/basic']
+    },
+    {
+      type: 'category',
+      label: 'Group',
+      items: ['group/basic']
+    },
+    {
+      type: 'category',
+      label: 'Localization',
+      items: ['localization/basic']
+    },
+    {
+      type: 'category',
+      label: 'Remote Data',
+      items: ['remote-data/basic']
+    },
+    {
+      type: 'category',
+      label: 'Search',
+      items: ['search/basic']
+    },
+    {
+      type: 'category',
+      label: 'Selection',
+      items: ['selection/basic']
+    },
+    {
+      type: 'category',
+      label: 'Sort',
+      items: ['sort/basic']
+    },
+    {
+      type: 'category',
+      label: 'Style',
+      items: ['style/basic']
+    },
+    {
+      type: 'category',
+      label: 'Tree Data',
+      items: ['tree-data/basic']
+    }
+  ]
+};

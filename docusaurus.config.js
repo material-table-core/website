@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   title: "@material-table/core",
   tagline: "Feature rich data table for React",
@@ -12,10 +14,10 @@ module.exports = {
       "@docusaurus/plugin-content-docs",
       {
         id: 'demos',
-        path: "./demos", // Path to data on filesystem, relative to site dir.
-        routeBasePath: "demos", // URL Route.
+        path: path.resolve(__dirname, "./demos"), // Path to data on filesystem, relative to site dir.
+        routeBasePath: "/demos", // URL Route.
         include: ['**/*.md', '**/*.mdx'],
-        sidebarPath: require.resolve("./sidebar.demos.js")
+        sidebarPath: path.resolve(__dirname, "./sidebar.demos.js") // require.resolve("./sidebar.demos.js")
       },
     ],
   ],

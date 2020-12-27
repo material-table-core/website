@@ -1,10 +1,27 @@
+/**
+ * This file is for global variables in live code demos.
+ * 
+ * Export your variable from here and import it into 
+ */
 import React, { forwardRef } from "react";
 import { 
   AddBox, ArrowUpward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, 
   Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn 
 } from "@material-ui/icons";
 
-export default {
+const RAND_COLOR = () => '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+
+const DEMO_DATA = [
+  { id: 2, name: "Joe" },
+  { id: 1, name: "Mary" }
+];
+
+const DEMO_COLS = [
+  { field: "id", title: "Id" },
+  { field: "name", title: "Name" }
+];
+
+const TABLE_ICONS = {
   // tableIcons
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -24,3 +41,10 @@ export default {
   ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
 };
+
+export default {
+  RAND_COLOR,
+  DEMO_DATA,
+  DEMO_COLS,
+  TABLE_ICONS
+}

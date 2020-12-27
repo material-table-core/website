@@ -4,15 +4,15 @@ title: Toolbar
 ---
 
 import MaterialTable, { MTableToolbar } from '@material-table/core';
-import { InfoBannerAboutGlobalVarsInDemos } from '../components.mdx';
+import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
 
 ## Usage
 
-```jsx {6}
+```jsx
 import MaterialTable, { MTableToolbar } from '@material-table/core';
 
 <MaterialTable
-    // other props
+    // ...
     components={{
         Toolbar: props => (
             <div style={{ backgroundColor: '#e8eaf5' }}>
@@ -30,12 +30,12 @@ In this demo we override the `MTableToolbar` component by injecting the backgrou
 <InfoBannerAboutGlobalVarsInDemos />
 
 ```jsx live
-function ComponentOverriding() {
+function OverrideToolbar() {
   const [bgColor, setBgColor] = useState(RAND_COLOR);
 
   return (
     <div>
-      <Button onClick={() => setBgColor(RAND_COLOR)} variant="contained" color="primary" style={{marginBottom:'10px'}}>
+      <Button onClick={() => setBgColor(RAND_COLOR)} variant="contained" color="primary">
         Change Background Color
       </Button>
 
@@ -52,7 +52,6 @@ function ComponentOverriding() {
             )
           }
         }} />
-
     </div> 
   );
 }

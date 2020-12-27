@@ -15,9 +15,6 @@
   --ifm-color-primary-lighter: #5566c4;
   --ifm-color-primary-lightest: #6776ca;
   --ifm-code-font-size: 90%;
-  /* 
-  --ifm-heading-color: var(--ifm-font-color-base);
-  */
 }
 
 code {
@@ -49,3 +46,18 @@ div[class^="playgroundPreview_"] {
 .navbar {
   z-index: 20;
 }
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(223, 223, 223);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+/* If you have a different syntax highlighting theme for dark mode. */
+/* Color which works with dark mode syntax highlighting theme */
+/*
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(168, 167, 167, 0.205); 
+}
+*/

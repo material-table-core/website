@@ -6,42 +6,24 @@
  */
 
 import React from 'react';
-import TABLE_ICONS from './tableIcons.js';
 import MaterialTable, { MTableToolbar } from '@material-table/core';
 import { Button } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
-
-const RAND_COLOR = () => '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
-
-const DEMO_DATA = [
-  { id: 2, name: "Joe" },
-  { id: 1, name: "Mary" }
-];
-
-const DEMO_COLS = [
-  { field: "id", title: "Id" },
-  { field: "name", title: "Name" }
-];
+import GLOBAL_VARIABLES from '../../../demo.global-variables.js'; // at the root of this project
 
 /**
  * Add react-live imports you need here
  */
 const ReactLiveScope = {
   // Global/env vars
-  RAND_COLOR,
-  DEMO_DATA,
-  DEMO_COLS,
-
+  ...GLOBAL_VARIABLES,
   // React
   React,
   ...React,
-
   // Material UI imports
   Button,
   SaveIcon,
-
   // Material Table imports
-  TABLE_ICONS,
   MaterialTable,
   MTableToolbar
 };

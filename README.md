@@ -1,5 +1,9 @@
 # material-table-core
 
+## [How to add your own demo to this website](/.github/contributing)
+
+---
+
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 ## Installation

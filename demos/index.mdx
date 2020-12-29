@@ -13,13 +13,62 @@ import MaterialTable from "@material-table/core";
 
 More info on demos. Each demo should have a live code block for you to tinker with.
 
+## How To Add Demo
+
+### General Info
+
+- Your demo should be placed in a folder under `~/demos`. 
+  - For example, `~/demos/override/row`
+- You have the ability to use React inside of markdown
+  - Make sure your file ends in `.mdx`
+  - Refer to an existing demo file for a better understanding
+- Each `.mdx` or `.md` file has to have a header
+  - See [here](https://github.com/material-table-core/website/blob/master/.github/contributing/example-header.md) for an example
+  - The `id` is required and needs to be unique ***per folder***
+  - See [here](https://v2.docusaurus.io/docs/markdown-features/#markdown-headers) for more on markdown headers
+  - **Highly recommend reading [more on markdown features here](https://v2.docusaurus.io/docs/markdown-features/)**
+
+### Sidebar
+
+- To show your demo in the sidebar you need to edit `~/sidebar.demos.js`
+  - If I wanted to add a demo to the URL `/demo/override/row` I would
+    - [Create](#rowmdx) a file at `~/demos/override/row.md` *could also use `.mdx` extension*
+    - Update [sidebar.demos.js](#sidebardemosjs)
+    - ***The `id`** needs to be the same as the ending of the path you put into `~/sidebar.demos.js`
+
+#### row.mdx
+
+```
+---
+id: row
+// ...
+---
+```
+
+#### sidebar.demos.js
+
+```diff
+module.exports = {
+  sidebar: [
+  // ...
+    {
+      type: "category",
+      label: "Override Components",
+      items: [
+        "override/toolbar"
++       "override/row"
+      ],
+    },
+  // ...
+  ]
+}
+```
+
 ## Demo Environment
 
+In order to keep our demos succinct, we take advantage of "global variables". Global variables will be in all caps snake case.
+
 ```jsx
-/**
- * To keep our demos succinct we take advantage of "global variables".
- * Global variables will be in all caps snake case.
- */
 <MaterialTable
   // highlight-start
   data={DEMO_DATA} 
@@ -36,8 +85,9 @@ The values for our global environmental variables can be found below.
 
 ### `DEMO_DATA`
 
+This data is passed into `<MaterialTable data={...} />`
+
 ```javascript
-// This data is passed into `<MaterialTable data={...} />`
 const DEMO_DATA = [
   { id: 2, name: "Joe" },
   { id: 1, name: "Mary" }
@@ -46,8 +96,9 @@ const DEMO_DATA = [
 
 ### `DEMO_COLS`
 
+This data is passed into `<MaterialTable columns={...} />`
+
 ```javascript
-// This data is passed into `<MaterialTable columns={...} />`
 const DEMO_COLS = [
   { field: "id", title: "Id" },
   { field: "name", title: "Name" }
@@ -56,17 +107,10 @@ const DEMO_COLS = [
 
 ### `TABLE_ICONS`
 
-```jsx title="/src/theme/ReactLiveScope/tableIcons.js"
-// After importing this file we pass it (the default export) 
-// into `<MaterialTable icons={...} />`
-import React, { forwardRef } from "react";
-import { 
-  AddBox, ArrowUpward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, 
-  Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn 
-} from "@material-ui/icons";
+This data is passed into `<MaterialTable icons={...} />`
 
-// This is the object we import
-export default {
+```jsx
+const TABLE_ICONS = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),

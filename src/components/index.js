@@ -30,7 +30,7 @@ export const Banner = ({ type, children }) => {
 
 export const InfoBannerAboutGlobalVarsInDemos = () => (
   <Banner type="note">
-    See <a href="/demos"><b><i>here</i></b></a> for more on the <code>GLOBAL_VARS</code> we use in our demos
+    See <a href="/demos/#demo-environment"><b><i>here</i></b></a> for more on the <code>GLOBAL_VARS</code> we use in our demos
   </Banner>
 );
 

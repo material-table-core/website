@@ -14,8 +14,8 @@
 
 - To show your demo in the sidebar you need to edit `~/sidebar.demos.js`
   - If I wanted to add a demo to the URL `/demo/override/row` I would
-    - [Create](#row.mdx) a file at `~/demos/override/row.md` *could also use `.mdx` extension*
-    - Update [sidebar.demos.js](#sidebar.demos.js)
+    - [Create](#rowmdx) a file at `~/demos/override/row.md` *could also use `.mdx` extension*
+    - Update [sidebar.demos.js](#sidebardemosjs)
     - ***The `id`** needs to be the same as the ending of the path you put into `~/sidebar.demos.js`
 
 ## row.mdx

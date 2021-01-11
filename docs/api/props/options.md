@@ -14,7 +14,9 @@ title: options
 In order to make things easier on you, we have provided the following default export utility funcitons.
 
 ```javascript
+// ...
 import { ExportCsv, ExportPdf } from '@material-table/core/exporters';
+
 <MaterialTable 
   // ...
   options={{

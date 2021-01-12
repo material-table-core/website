@@ -114,8 +114,8 @@ module.exports = {
           title: "Community",
           items: [
             {
-              label: "Gitter",
-              href: "https://gitter.im/MaterialTableCore/community",
+              label: "Discord",
+              href: "https://discord.com/channels/796859493412765697/",
             },
           ],
         },

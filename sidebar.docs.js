@@ -8,6 +8,7 @@ module.exports = {
     {
       type: "category",
       label: "API",
+      collapsed: false,
       items: [
         {
           Props: [

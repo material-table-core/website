@@ -3,7 +3,8 @@ id: mt_prop_options
 title: options
 ---
 
- - #### `exportMenu`
+### `exportMenu`
+
    - Array of objects
    - Objects have the following shape: 
    
@@ -32,11 +33,26 @@ import { ExportCsv, ExportPdf } from '@material-table/core/exporters';
 />
 ```
 
-- ### `exportButton`
-  - *DEPRECATED*
+### `exportButton`
 
-- ### `exportCsv`
-  - *DEPRECATED*
+:::caution This property has been deprecated
 
-- ### `exportPdf`
-  - *DEPRECATED*
+:::
+
+### `exportCsv`
+
+:::caution This property has been deprecated
+
+:::
+
+### `exportPdf`
+
+:::caution This property has been deprecated
+
+:::
+
+### `exportDelimiter`
+
+:::caution This property has been deprecated
+
+:::

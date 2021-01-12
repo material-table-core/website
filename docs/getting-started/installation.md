@@ -4,23 +4,29 @@ title: Installation
 slug: /
 ---
 
-#### yarn
+## Install 
+
+### yarn
 
 ```javascript
 yarn add @material-ui/core
 yarn add @material-table/core
 ```
 
-#### npm
+### npm
 
 ```javascript
 npm install @material-ui/core
 npm install @material-table/core
 ```
 
-## Your First Table
+## Hello, World
 
-```typescript
+This basic examples should help get you started.
+
+### TypeScript
+
+```typescript title="myFirstTable.ts"
 import React from "react";
 import MaterialTable, { Column } from "@material-table/core";
 
@@ -47,3 +53,7 @@ const data: Array<IPerson> = [
 
 export const App = () => <MaterialTable columns={columns} data={data} />;
 ```
+
+### JavaScript
+
+`//todo`

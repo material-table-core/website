@@ -3,11 +3,6 @@ module.exports = {
     "demos",
     {
       type: "category",
-      label: "Hello, World!",
-      items: ["getting-started/js", "getting-started/ts"]
-    },
-    {
-      type: "category",
       label: "Actions",
       items: ["actions/basic"],
     },

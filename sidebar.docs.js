@@ -3,7 +3,7 @@ module.exports = {
     {
       type: "category",
       label: "Getting Started",
-      items: ["getting-started/install"],
+      items: ["getting-started/install", "getting-started/breakingchanges"],
     },
     {
       type: "category",
@@ -31,7 +31,7 @@ module.exports = {
             "api/props/mt_prop_onSelectionChange",
             "api/props/mt_prop_onTreeExpandChange",
             "api/props/mt_prop_onSearchChange",
-            "api/props/mt_prop_options",
+            "api/props/options",
             "api/props/mt_prop_parentChildData",
             "api/props/mt_prop_style",
             "api/props/mt_prop_tableRef",

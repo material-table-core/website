@@ -1,5 +1,5 @@
 ---
-id: mt_prop_options
+id: options
 title: options
 ---
 

@@ -16,9 +16,15 @@
   --ifm-color-primary-lightest: #6776ca;
   --ifm-code-font-size: 90%;
 
-  /** Every other line in MaterialTable is shaded, when in
-      dark mode, that line becomes illegible */
+  /**
+  Every other line in MaterialTable is shaded, when in
+  dark mode, that line becomes illegible due to the docusaurus
+  theme we are using */
   --ifm-table-stripe-background: var(--ifm-table-background);
+  /** 
+  Otherwise the border of each row in MaterialTable will have
+  an ugly border (added by this docusaurus theme) */
+  --ifm-table-border-color: var(--ifm-table-stripe-background);
 }
 
 code {

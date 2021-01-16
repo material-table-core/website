@@ -9,7 +9,7 @@ import React from 'react';
 import MaterialTable, { MTableToolbar } from '@material-table/core';
 import { Button } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
-import GLOBAL_VARIABLES from '../../../demo.global-variables.js'; // at the root of this project
+import GLOBAL_VARIABLES from '../../../demos/demo.global-variables'; // at the root of this project
 
 /**
  * Add react-live imports you need here

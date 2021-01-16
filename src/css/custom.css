@@ -15,6 +15,10 @@
   --ifm-color-primary-lighter: #5566c4;
   --ifm-color-primary-lightest: #6776ca;
   --ifm-code-font-size: 90%;
+
+  /** Every other line in MaterialTable is shaded, when in
+      dark mode, that line becomes illegible */
+  --ifm-table-stripe-background: var(--ifm-table-background);
 }
 
 code {

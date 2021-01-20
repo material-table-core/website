@@ -14,7 +14,10 @@ module.exports = {
     {
       type: 'category',
       label: 'Columns',
-      items: ['columns/render-image']
+      items: [
+        'columns/render-image',
+        'columns/hide'
+      ]
     },
     {
       type: 'category',

@@ -4,6 +4,8 @@ title: Breaking Changes
 slug: /breaking-changes
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 A list of breaking changes since forking from `mbrn/material-table` (fork was created around `mbrn/material-table v1.60.0`)
 
 ## Exporting
@@ -11,3 +13,34 @@ A list of breaking changes since forking from `mbrn/material-table` (fork was cr
 Due to `jspdf` absolutely [bloating our bundle](https://github.com/material-table-core/core/issues/45), we had to make breaking changes to the way exporting data is handled.
 
 See [here](/docs/api/props/options#exportmenu) for more.
+
+## Columns Button 
+
+Is the action which shows a menu that allows a user to hide/show columns.
+
+<div style={{ textAlign: 'center' }}>
+  <div>
+  <img
+    alt="Columns_Button"
+    src={useBaseUrl('img/breaking-changes/columns-btn-before.png')}
+    style={{ width: '25rem', border: '1px solid black' }}
+  />;
+  </div>
+  <div>
+  <img
+    alt="Columns_Button_Menu"
+    src={useBaseUrl('img/breaking-changes/columns-btn-after.png')}
+    style={{ height: '15rem', width: '7.5rem', border: '1px solid black' }}
+  />;
+  </div>
+</div>
+
+### Column Hidden Defaults
+
+All columns used to be hidden from the Columns Button Menu by default, this has since changed.
+
+In order to achieve the same behavior as before this breaking change, you have two options:
+
+  - Set the [`hiddenByColumnsButton`](http://localhost:3000/docs/api/props/columns#hiddenbycolumnsbutton) prop to `false` for each [column](http://localhost:3000/docs/api/props/columns)
+  - Override the [`MTableToolbar`](/docs/api/components/mtabletoolbar) component and set the [`columnsHiddenInColumnsButton`](/docs/api/components/mtabletoolbar/#columnshiddenincolumnsbutton) to `true` (while spreading the rest of the props)
+    - No longer have to set `hiddenByColumnsButton` for each column

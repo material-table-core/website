@@ -18,7 +18,7 @@ module.exports = {
         {
           Props: [
             "api/props/mt_prop_actions",
-            "api/props/mt_prop_columns",
+            "api/props/columns",
             "api/props/mt_prop_components",
             "api/props/mt_prop_data",
             "api/props/mt_prop_detailPanel",

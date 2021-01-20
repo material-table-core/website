@@ -1,5 +1,5 @@
 ---
-id: mt_prop_columns
+id: columns
 title: columns
 ---
 

@@ -56,7 +56,7 @@ module.exports = {
             "api/components/component_m_table_header",
             "api/components/component_m_table_pagination",
             "api/components/component_m_table_stepped-pagination",
-            "api/components/component_m_table_toolbar",
+            "api/components/mtabletoolbar",
           ],
         },
       ],

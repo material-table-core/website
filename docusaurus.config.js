@@ -27,7 +27,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebar.docs.js"),
-          editUrl: "https://github.com/material-table-core/website",
+          editUrl: "https://github.com/material-table-core/website/tree/master",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

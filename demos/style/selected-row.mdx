@@ -1,0 +1,86 @@
+---
+id: selected-row
+title: Selected Row
+hide_title: true
+---
+
+# Styling Selected Row
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+## Props
+
+| Field              | Type                 | Description                          |
+| ------------------ | -------------------- | ------------------------------------ |
+| `options.rowStyle` | style object or func | style to apply in all rows cells     |
+| `onRowClick`       | func                 | to handle row click (event, rowData) |
+
+## Usage
+
+```jsx
+import MaterialTable from "@material-table/core";
+
+<MaterialTable
+  // ...
+  onRowClick={(evt, selectedRow) => setSelectedRow(selectedRow.tableData.id)}
+  options={{
+    rowStyle: (rowData) => ({
+      backgroundColor:
+        selectedRow === rowData.tableData.id ? "#6ABAC9" : "#FFF",
+    }),
+  }}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function RenderImage() {
+  const [selectedRow, setSelectedRow] = React.useState(null);
+
+  return (
+    <MaterialTable
+      icons={TABLE_ICONS}
+      data={[
+        {
+          name: "Mehmet",
+          surname: "Baran",
+          birthYear: 1987,
+          birthCity: 63,
+        },
+        {
+          name: "Zerya Betül",
+          surname: "Baran",
+          birthYear: 2017,
+          birthCity: 34,
+        },
+      ]}
+      columns={[
+        {
+          title: "Name",
+          field: "name",
+        },
+        { title: "Surname", field: "surname" },
+        { title: "Birth Year", field: "birthYear", type: "numeric" },
+        {
+          title: "Birth Place",
+          field: "birthCity",
+          lookup: { 34: "İstanbul", 63: "Şanlıurfa" },
+        },
+      ]}
+      onRowClick={(evt, selectedRow) =>
+        setSelectedRow(selectedRow.tableData.id)
+      }
+      options={{
+        rowStyle: (rowData) => ({
+          backgroundColor:
+            selectedRow === rowData.tableData.id ? "#6ABAC9" : "#FFF",
+        }),
+      }}
+    />
+  );
+}
+```

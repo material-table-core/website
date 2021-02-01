@@ -73,7 +73,7 @@ module.exports = {
     {
       type: "category",
       label: "Style",
-      items: ["style/basic", "style/header-cell", "style/rows", "style/selected-row"],
+      items: ["style/header-cell", "style/rows", "style/selected-row"],
     },
     {
       type: "category",

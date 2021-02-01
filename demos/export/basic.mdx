@@ -3,4 +3,30 @@ id: basic
 title: Basic Export
 ---
 
-More on Export goes here
+## Usage 
+
+::: info
+You may use default export methods via the package `@material-table/exporters`. You will need to install this package if you would like to use the default export methods.
+:::
+
+```javascript
+// ...
+import { ExportCsv, ExportPdf } from '@material-table/exporters';
+
+<MaterialTable 
+  // ...
+  options={{
+    // ...
+    exportMenu: [{
+      label: 'Export PDF',
+      //// You can do whatever you wish in this function. We provide the
+      //// raw table columns and table data for you to modify, if needed.
+      // exportFunc: (cols, datas) => console.log({ cols, datas })
+      exportFunc: (cols, datas) => ExportPdf(cols, datas, 'myPdfFileName')
+    }, {
+      label: 'Export CSV',
+      exportFunc: (cols, datas) => ExportCsv(cols, datas, 'myCsvFileName')
+    }]
+  }}
+/>
+```

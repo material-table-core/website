@@ -1,17 +1,20 @@
 ---
-id: basic
-title: Basic Filtering
+id: custom-filter
+title: Custom Column Filter
 hide_title: true
 ---
 
-# Basic Filter
+# Custom Column Filter
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 
 ## Props
 
-| Field               | Type    | Description                                                  |
-| ------------------- | ------- | ------------------------------------------------------------ |
-| `options.filtering` | boolean | display filter row on table                                  |
-| `column.filtering`  | boolean | set as `false` to hide default filter to display on a column |
+| Field                     | Type          | Description                    |
+| ------------------------- | ------------- | ------------------------------ |
+| `options.filtering`       | boolean       | display filter row on table    |
+| `columns.filterComponent` | React.Element | custom component for filtering |
 
 ## Usage
 
@@ -23,30 +26,6 @@ import MaterialTable from "@material-table/core";
   options={{
     filtering: true,
   }}
-  columns={[
-    {
-      title: "Name",
-      field: "name",
-      filtering: false,
-    },
-    {
-      title: "Surname",
-      field: "surname",
-    },
-    {
-      title: "Birth Year",
-      field: "birthYear",
-      type: "numeric",
-    },
-    {
-      title: "Birth Place",
-      field: "birthCity",
-      lookup: {
-        34: "İstanbul",
-        63: "Şanlıurfa",
-      },
-    },
-  ]}
 />;
 ```
 
@@ -55,7 +34,7 @@ import MaterialTable from "@material-table/core";
 <InfoBannerAboutGlobalVarsInDemos />
 
 ```jsx live
-function BasicFilter() {
+function CustomFilter() {
   return (
     <MaterialTable
       icons={TABLE_ICONS}
@@ -77,10 +56,7 @@ function BasicFilter() {
         {
           title: "Name",
           field: "name",
-          /**
-           * Hide filter on specific column
-           */
-          filtering: false,
+          filterComponent: () => <input placeholder="custom" />,
         },
         {
           title: "Surname",

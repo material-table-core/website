@@ -34,7 +34,11 @@ module.exports = {
     {
       type: "category",
       label: "Filter",
-      items: ["filter/basic"],
+      items: [
+        "filter/basic",
+        "filter/custom-filter",
+        "filter/custom-filter-row",
+      ],
     },
     {
       type: "category",
@@ -69,7 +73,7 @@ module.exports = {
     {
       type: "category",
       label: "Style",
-      items: ["style/header-cell", "style/rows", "style/selected-row"],
+      items: ["style/basic", "style/header-cell", "style/rows", "style/selected-row"],
     },
     {
       type: "category",

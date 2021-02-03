@@ -14,7 +14,7 @@ title: options
 
 In order to make things easier on you, we have provided the following default export utility functions.
 
-::: info
+:::info
 You will need to install `@material-table/exporters` to use the "built-in", default export methods
 :::
 

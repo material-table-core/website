@@ -1,6 +1,111 @@
 ---
 id: basic
-title: Basic Sorting 
+title: Basic Sorting
+hide_title: true
 ---
 
-More on Sorting goes here
+# Basic Filter
+
+## Props
+
+| Field                    | Type    | default | Description                                                             |
+| ------------------------ | ------- | ------- | ----------------------------------------------------------------------- |
+| `options.sorting`        | boolean | false   | Activate sorting functionality, display arrow icon when hovering header |
+| `options.thirdSortClick` | boolean | true    | Allow unsorted state on third header click                              |
+| `column.sorting`         | boolean | true    | Set as `false` to remove sorting option in a column                     |
+
+## Usage
+
+```jsx
+import MaterialTable from "@material-table/core";
+
+<MaterialTable
+  // ...
+  options={{
+    sorting: true,
+    thirdSortClick: false,
+  }}
+  columns={[
+    {
+      title: "Name",
+      field: "name",
+      sorting: false,
+    },
+    {
+      title: "Surname",
+      field: "surname",
+    },
+    {
+      title: "Birth Year",
+      field: "birthYear",
+    },
+    {
+      title: "Birth Place",
+      field: "birthCity",
+      lookup: {
+        34: "İstanbul",
+        63: "Şanlıurfa",
+      },
+    },
+  ]}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function BasicSorting() {
+  return (
+    <MaterialTable
+      icons={TABLE_ICONS}
+      data={[
+        {
+          name: "Mehmet",
+          surname: "Baran",
+          birthYear: 1987,
+          birthCity: 63,
+        },
+        {
+          name: "Zerya Betül",
+          surname: "Baran",
+          birthYear: 2017,
+          birthCity: 34,
+        },
+      ]}
+      columns={[
+        {
+          title: "Name",
+          field: "name",
+          /**
+           * remove sorting on specific column
+           */
+          sorting: false,
+        },
+        {
+          title: "Surname",
+          field: "surname",
+        },
+        {
+          title: "Birth Year",
+          field: "birthYear",
+          type: "numeric",
+        },
+        {
+          title: "Birth Place",
+          field: "birthCity",
+          lookup: {
+            34: "İstanbul",
+            63: "Şanlıurfa",
+          },
+        },
+      ]}
+      options={{
+        sorting: true,
+        thirdSortClick: false,
+      }}
+    />
+  );
+}
+```

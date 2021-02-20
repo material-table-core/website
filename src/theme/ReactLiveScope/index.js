@@ -7,6 +7,7 @@
 
 import React from 'react';
 import MaterialTable, { MTableToolbar } from '@material-table/core';
+import { ExportPdf, ExportCsv } from '@material-table/exporters';
 import { Button } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
 import GLOBAL_VARIABLES from '../../../demos/demo.global-variables'; // at the root of this project
@@ -24,6 +25,8 @@ const ReactLiveScope = {
   Button,
   SaveIcon,
   // Material Table imports
+  ExportPdf,
+  ExportCsv,
   MaterialTable,
   MTableToolbar
 };

@@ -1482,6 +1482,15 @@
     react-beautiful-dnd "^13.0.0"
     react-double-scrollbar "0.0.15"
 
+"@material-table/exporters@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@material-table/exporters/-/exporters-1.0.4.tgz#73029d2edf44d4023b6f2b89acb6bd861486e1ee"
+  integrity sha512-iiHn1aQALXFPnWVITGhkmUPrwqpT4fJla2O2ZN/ZnPQF4Sp0yoxjhz0khQT1xn1VyO39KJwKGZNB62iFPxRYTw==
+  dependencies:
+    filefy "^0.1.10"
+    jspdf "^2.2.0"
+    jspdf-autotable "^3.5.13"
+
 "@material-ui/core@^4.11.2":
   version "4.11.2"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.11.2.tgz#f8276dfa40d88304e6ceb98962af73803d27d42d"

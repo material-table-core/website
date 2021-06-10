@@ -49,4 +49,21 @@ In order to achieve the same behavior as before this breaking change, you have t
   - Override the [`MTableToolbar`](/docs/api/components/mtabletoolbar) component and set the [`columnsHiddenInColumnsButton`](/docs/api/components/mtabletoolbar/#columnshiddenincolumnsbutton) to `true` (while spreading the rest of the props)
     - No longer have to set `hiddenByColumnsButton` for each column
 
+### Functions in the `options`/`columns` props
+
+Due to the removal of the mutation of the column and data props, if columns or options changed by a deep comparison, the data gets rested to reflect the new state, e.g. new pageSize or current page.
+
+Since functions can only be compared by object reference, the reference of the optional rowStyle or cellStyle function must be stable between renders. This also applies to the column array.
+
+```
+options={{cellStyle: () => ({color: 'red'})}} // This will result in a reset of the table state between renders.
+```
+
+Use React.useCallback or declare these functions outside of the component function to create a stable object reference.
+
+```
+const cellStyle = React.useCallback(() => ({color: 'red'}), [])
+options={{cellStyle: cellStyle}} // useCallback will create a stable reference
+```
+
 ***See [here](/demos/columns/hide) for more info + Live Demos (editable playground)***

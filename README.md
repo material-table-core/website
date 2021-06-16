@@ -1,8 +1,15 @@
 # material-table-core
 
-# Note 
+# Contributing 
 
 ### this package uses `yarn` not `npm`!
+
+### In order to publish you will need:
+
+- Permissions to the GitHub repo (uses GH pages to serve website from X branch)
+- To run the following command: `yarn deploy <your_username>`
+  - This kicks off `node ./deploy.js <your_username>`
+  - Ultimtely, setting the `GIT_USER` env var before running `docusaurus deploy`
 
 ## [How to add your own demo to this website](https://material-table-core.com/demos#how-to-add-demo)
 

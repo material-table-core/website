@@ -1373,7 +1373,7 @@
     "@docusaurus/plugin-content-pages" "2.0.0-alpha.70"
     "@docusaurus/types" "2.0.0-alpha.70"
 
-"@docusaurus/theme-live-codeblock@^2.0.0-alpha.70":
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.70":
   version "2.0.0-alpha.70"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.70.tgz#a27b5f61f7ba37a6f2a00929c7e0e0f95f9f3635"
   integrity sha512-9fFC6MeazqmfzbnKgUFDiKmF1Zs5rG4CXCsxDcNbu/XZMd2xMrI5UlQfo+yfNAKX2aWvjaqThLfxRkJzI2guIA==

@@ -30,7 +30,7 @@ async function executeAsync(exe, args, options) {
   return new Promise((resolve, reject) => {
     const child = spawn(exe, args, {
       ...options,
-      env: { ...process.env, ...options.env || {} },
+      env: { ...process.env, /* ...options.env */ },
     });
 
     child.stdout.setEncoding("utf8");

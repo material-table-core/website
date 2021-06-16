@@ -20,6 +20,8 @@ if (!process.env.GIT_USER) {
 
 const { exec } = require("child_process");
 
+log("\nPLEASE BE PATIENT THIS MAY TAKE 5 MINUTES\n");
+
 // GIT_USER env var should be set here already
 exec(`docusaurus deploy`, (error, stdout, stderr) => {
     if (error) {

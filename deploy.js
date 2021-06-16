@@ -24,13 +24,19 @@ process.env.GIT_USER = process.argv[2];
 const child = spawn("docusaurus deploy");
 
 child.stdout.setEncoding("utf8");
-child.stdout.on("data", (data) => log(data));
+child.stdout.on("data", (data) => {
+  log(data)
+});
 
 child.stderr.setEncoding("utf8");
-child.stderr.on("data", (data) => log(data));
+child.stderr.on("data", (data) => {
+  log(data)
+});
 
-child.on("error", (error) => reject(error));
+child.on("error", (error) => {
+  log("Error", { error });
+});
+
 child.on("close", (exitCode) => {
   log("Exit code:", exitCode);
-  resolve(exitCode);
 });

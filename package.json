@@ -7,7 +7,7 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy:test": "node deploy.js",
+    "deploy": "node deploy.js",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear"
   },

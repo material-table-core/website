@@ -1,17 +1,27 @@
 ---
-id: using-v5
-title: Using Material-ui v5
+id: material-ui-v5
+title: With @material-ui v5
 hide_title: true
-slug: /mui
+slug: /material-ui-v5
 ---
 
-# Material-ui V5
+# Using with @material-ui v5
 
-### Reasoning
+:::warning
+The version is still a work in progress and not fully tested!
+:::
+
+## Breaking Changes 
+
+[See here for more](/docs/breaking-changes#material-ui-v5)
+
+## Reasoning
 
 With `material-ui` v5 becoming stable with a beta on July 1st and being promoted as the version to use, we starting to support both version v4 and v5.
 
 If you migrated to version 5 of `material-ui`, simply install our prerelease version to access the new version that supports v5.
+
+## Installation 
 
 ### Yarn
 
@@ -20,11 +30,3 @@ If you migrated to version 5 of `material-ui`, simply install our prerelease ver
 ### NPM
 
 `npm install @material-table/core@next`
-
-### Breaking changes for v5
-
-- `padding` now accepts 'normal' or 'dense'
-- `onChangeRowsPerPage` => `onRowsPerPageChange`
-- `onChangePage` => `onPageChange`
-
-The version is still a work in progress and not fully tested.

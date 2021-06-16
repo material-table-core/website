@@ -5,17 +5,18 @@ module.exports = {
       label: "Getting Started",
       items: [
         "getting-started/install",
+        "getting-started/material-ui-v5",
         "getting-started/breaking-changes",
         "getting-started/compatability",
         "getting-started/about",
       ],
     },
-    {
+    /*{
       type: "category",
       label: "Material-ui v5",
       collapsed: false,
       items: ["mui-v5/using-v5"],
-    },
+    },*/
     {
       type: "category",
       label: "API",

@@ -8,6 +8,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A list of breaking changes since forking from `mbrn/material-table` (fork was created around `mbrn/material-table v1.60.0`)
 
+## Material-UI v5
+
+- `padding` now accepts 'normal' or 'dense'
+- `onChangeRowsPerPage` => `onRowsPerPageChange`
+- `onChangePage` => `onPageChange`
+
 ## Exporting
 
 Due to `jspdf` absolutely [bloating our bundle](https://github.com/material-table-core/core/issues/45), we had to make breaking changes to the way exporting data is handled.

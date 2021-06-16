@@ -8,19 +8,43 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A list of breaking changes since forking from `mbrn/material-table` (fork was created around `mbrn/material-table v1.60.0`)
 
-## Material-UI v5
+## v3.x.x
 
-- `padding` now accepts 'normal' or 'dense'
-- `onChangeRowsPerPage` => `onRowsPerPageChange`
-- `onChangePage` => `onPageChange`
+:::info
+**Version 3.0.0 is where we started supporting Material-UI v5. If you are using anything above v3.0.0 you should be good to use Material-UI v5**
+:::
 
-## Exporting
+:::info
+**Version 3.x.x inherits all breaking changes from v2.x.x**
+:::
+
+:::warning
+**Most support for v2.x.x has been dropped, we are actively deploying to v3.x.x**
+:::
+
+The following breaking changes are specific to `@material-ui` v5
+
+### `padding` 
+
+`padding` now accepts 'normal' or 'dense'
+
+### `onChangeRowsPerPage`
+
+`onChangeRowsPerPage` has been renamed to `onRowsPerPageChange`
+
+### `onChangePage`
+
+`onChangePage` has been renamed to `onPageChange`
+
+## v2.x.x
+
+### Exporting
 
 Due to `jspdf` absolutely [bloating our bundle](https://github.com/material-table-core/core/issues/45), we had to make breaking changes to the way exporting data is handled.
 
 See [here](/docs/api/props/options#exportmenu) for more.
 
-## Columns Button
+### Columns Button
 
 :::note
 This is also referred to as the `exportMenu`

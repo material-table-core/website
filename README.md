@@ -1,5 +1,9 @@
 # material-table-core
 
+# Note 
+
+### this package uses `yarn` not `npm`!
+
 ## [How to add your own demo to this website](https://material-table-core.com/demos#how-to-add-demo)
 
 ---

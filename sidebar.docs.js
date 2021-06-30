@@ -66,6 +66,7 @@ module.exports = {
             "api/components/mtabletoolbar",
           ],
         },
+        "api/mt_new_props",
       ],
     },
   ],

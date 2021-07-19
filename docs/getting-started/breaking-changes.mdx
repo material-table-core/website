@@ -4,14 +4,16 @@ title: Breaking Changes
 slug: /breaking-changes
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 A list of breaking changes since forking from `mbrn/material-table` (fork was created around `mbrn/material-table v1.60.0`)
 
 ## v3.x.x
 
 :::info
-**Version 3.0.0 is where we started supporting Material-UI v5. If you are using anything above v3.0.0 you should be good to use Material-UI v5**
+**Version 3.0.0 is where we started supporting Material-UI v4.12. If you are using anything above v3.0.0 you should be good to use Material-UI v4.12**
+
+**If you use Material-UI v5, try out the next branch**
 :::
 
 :::info
@@ -19,12 +21,12 @@ A list of breaking changes since forking from `mbrn/material-table` (fork was cr
 :::
 
 :::warning
-**Most support for v2.x.x has been dropped, we are actively deploying to v3.x.x**
+**Most support for v2.x.x has been dropped, we are actively deploying to v3.x.x and will working on moving to v5 permanently**
 :::
 
 The following breaking changes are specific to `@material-ui` v5
 
-### `padding` 
+### `padding`
 
 `padding` now accepts 'normal' or 'dense'
 
@@ -35,6 +37,28 @@ The following breaking changes are specific to `@material-ui` v5
 ### `onChangePage`
 
 `onChangePage` has been renamed to `onPageChange`
+
+### `Detail Panel`
+
+The detail panel is now a full react component and allows hooks and animations. To access the passed data passed as props,
+deconstruct them instead of accessing directly as previously:
+
+` detailPanel={({ rowData }) => {...}`
+
+```
+detailPanel={[
+        {
+          tooltip: 'Show Name',
+          render: ({ rowData }) => {...}
+        }
+```
+
+### `Id`
+
+To persist edit/sort/detail penal state between renders, a new unique key was added to the rows/data props: Id.
+If an unique id is added to each row, the state can be persisted between renders similar to the key prop of reacts rendering of arrays.
+It is not required and the index will be used as a fallback. Nevertheless, a console warning will be displayed.
+For more details, see this [PR](https://github.com/material-table-core/core/pull/259) or this [issue](https://github.com/material-table-core/core/issues/59).
 
 ## v2.x.x
 
@@ -52,20 +76,22 @@ This is also referred to as the `exportMenu`
 
 Is the action which shows a menu that allows a user to hide/show columns.
 
-<div style={{ textAlign: 'center' }}>
+<div style={{ textAlign: "center" }}>
   <div>
-  <img
-    alt="Columns_Button"
-    src={useBaseUrl('img/breaking-changes/columns-btn-before.png')}
-    style={{ width: '25rem', border: '1px solid black' }}
-  />;
+    <img
+      alt="Columns_Button"
+      src={useBaseUrl("img/breaking-changes/columns-btn-before.png")}
+      style={{ width: "25rem", border: "1px solid black" }}
+    />
+    ;
   </div>
   <div>
-  <img
-    alt="Columns_Button_Menu"
-    src={useBaseUrl('img/breaking-changes/columns-btn-after.png')}
-    style={{ height: '15rem', width: '7.5rem', border: '1px solid black' }}
-  />;
+    <img
+      alt="Columns_Button_Menu"
+      src={useBaseUrl("img/breaking-changes/columns-btn-after.png")}
+      style={{ height: "15rem", width: "7.5rem", border: "1px solid black" }}
+    />
+    ;
   </div>
 </div>
 
@@ -75,10 +101,9 @@ All columns used to be hidden from the Columns Button Menu by default, this has 
 
 In order to achieve the same behavior as before this breaking change, you have two options:
 
-  - Set the [`hiddenByColumnsButton`](http://localhost:3000/docs/api/props/columns#hiddenbycolumnsbutton) prop to `false` for each [column](http://localhost:3000/docs/api/props/columns)
-  - Override the [`MTableToolbar`](/docs/api/components/mtabletoolbar) component and set the [`columnsHiddenInColumnsButton`](/docs/api/components/mtabletoolbar/#columnshiddenincolumnsbutton) to `true` (while spreading the rest of the props)
-    - No longer have to set `hiddenByColumnsButton` for each column
-
+- Set the [`hiddenByColumnsButton`](http://localhost:3000/docs/api/props/columns#hiddenbycolumnsbutton) prop to `false` for each [column](http://localhost:3000/docs/api/props/columns)
+- Override the [`MTableToolbar`](/docs/api/components/mtabletoolbar) component and set the [`columnsHiddenInColumnsButton`](/docs/api/components/mtabletoolbar/#columnshiddenincolumnsbutton) to `true` (while spreading the rest of the props)
+  - No longer have to set `hiddenByColumnsButton` for each column
 
 ### Data and column object reference
 
@@ -122,4 +147,4 @@ const cellStyle = React.useCallback(() => ({color: 'red'}), [])
 options={{cellStyle: cellStyle}} // useCallback will create a stable reference
 ```
 
-***See [here](/demos/columns/hide) for more info + Live Demos (editable playground)***
+**_See [here](/demos/columns/hide) for more info + Live Demos (editable playground)_**

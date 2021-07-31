@@ -1463,10 +1463,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@material-table/core@^3.2.1":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@material-table/core/-/core-3.2.2.tgz#7f8b834b8139022d267db1ad6c3620cceb538269"
-  integrity sha512-Ndzpq86X+5vTmDszlBL00OhKf2/JBjmHDjXRrjkBsJ6Zv93ISaPpAA42yPJHA7ttZkocLp48w/lej/YrbvFQ7A==
+"@material-table/core@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@material-table/core/-/core-4.0.0.tgz#4dd54f52e6579d5a8f63526459e4edfdc4af6774"
+  integrity sha512-KjH3pgJP5kihJN/SKAnjNiJH6lvaHLvDgFQGAUzi1wgGugR28ZTVV0QrOli1af7TW9+m+jUuCfE+EmH5Kg6upA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@date-io/date-fns" "^1.3.13"

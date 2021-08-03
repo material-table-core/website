@@ -116,11 +116,23 @@ const TREE_COLUMNS = [
   },
 ]
 
+const EDITABLE_DATA = [
+  { id: "uuid-1", firstName: "Tod", lastName: "Miles" },
+  { id: "uuid-2", firstName: "Jess", lastName: "Smith" }
+]
+
+const EDITABLE_COLUMNS = [
+  { title: "First Name", field: "firstName" },
+  { title: "Last Name", field: "lastName" }
+]
+
 export default {
   RAND_COLOR,
   DEMO_DATA,
   DEMO_COLS,
   TABLE_ICONS,
   TREE_DATA,
-  TREE_COLUMNS
+  TREE_COLUMNS,
+  EDITABLE_DATA,
+  EDITABLE_COLUMNS
 }

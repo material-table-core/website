@@ -1,6 +1,171 @@
 ---
 id: basic
-title: Basic 
+title: Basic Edit
 ---
 
-More on Editable goes here
+import MaterialTable from '@material-table/core';
+import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
+
+## Usage
+
+```jsx
+import MaterialTable from '@material-table/core';
+
+const [data, setData] = React.useState(EDITABLE_DATA);
+
+// Note: You may have different ways to handle build edit, this is just an example, and depending on the data property
+function getNewDataBulkEdit(changes, copyData) {
+  const keys = Object.keys(changes); //// key matches the column data id
+  for (let i = 0; i < keys.length; i++) {
+    if ( changes[keys[i]] && changes[keys[i]].newData ) {
+      // Find the data item with the same key in copyData[]
+      let targetData = copyData.find(el => el.id === keys[i]);
+      if (targetData) {
+        let newTargetDataIndex = copyData.indexOf(targetData);
+        copyData[newTargetDataIndex] = changes[keys[i]].newData;
+      }
+    }
+  }
+  return copyData;
+}
+
+<MaterialTable
+  icons={tableIcons}
+  columns={columns} 
+  data={data}
+  // Reference: https://material-table.com/#/docs/features/editable
+  editable={{
+    onBulkUpdate: changes => 
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let copyData = [...data];
+            setData(getNewDataBulkEdit(changes, copyData));
+            resolve();
+        }, 1000);
+    }),
+    onRowAddCancelled: rowData => console.log('Row adding cancelled'),
+    onRowUpdateCancelled: rowData => console.log('Row editing cancelled'),
+    onRowAdd: newData =>
+    // Note: You may have different ways to handle add row data, this is just an example, and depending on the data property
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          newData.id = "uuid-" + Math.random()*10000000;
+          setData([...data, newData]);
+
+          resolve();
+        }, 1000);
+      }),
+    onRowUpdate: (newData, oldData) =>
+    // Note: You may have different ways to handle update row data, this is just an example, and depending on the data property
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const dataUpdate = [...data];
+          // In dataUpdate, find target
+          const target = dataUpdate.find(el => el.id === oldData.tableData.id);
+          const index = dataUpdate.indexOf(target);
+          dataUpdate[index] = newData;
+          setData([...dataUpdate]);
+        
+          resolve();
+        }, 1000);
+      }),
+    onRowDelete: oldData =>
+    // Note: You may have different ways to handle delete row data, this is just an example, and depending on the data property
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const dataDelete = [...data];
+          const target = dataDelete.find(el => el.id === oldData.tableData.id);
+          const index = dataDelete.indexOf(target);
+          dataDelete.splice(index, 1);
+          setData([...dataDelete]);
+
+          resolve();
+        }, 1000);
+      })
+  }}
+/>
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+
+function BasicEditPanelDemo() {
+
+  const [data, setData] = useState(EDITABLE_DATA);
+
+  function getNewDataBulkEdit(changes, copyData) {
+    const keys = Object.keys(changes); //// key matches the column data id
+
+    for (let i = 0; i < keys.length; i++) {
+
+      if ( changes[keys[i]] && changes[keys[i]].newData ) {
+        // Find the data item with the same key in copyData[]
+        let targetData = copyData.find(el => el.id === keys[i]);
+
+        if (targetData) {
+          let newTargetDataIndex = copyData.indexOf(targetData);
+          copyData[newTargetDataIndex] = changes[keys[i]].newData;
+        }
+
+      }
+    }
+
+    return copyData;
+  }
+
+  return (
+    <MaterialTable
+      data={data} 
+      columns={EDITABLE_COLUMNS} 
+      icons={TABLE_ICONS}
+      editable={{
+        onBulkUpdate: changes => 
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+              let copyData = [...data];
+              setData(getNewDataBulkEdit(changes, copyData));
+              resolve();
+          }, 500);
+        }),
+        onRowAddCancelled: rowData => console.log('Row adding cancelled'),
+        onRowUpdateCancelled: rowData => console.log('Row editing cancelled'),
+        onRowAdd: newData =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+                newData.id = "uuid-" + Math.random() * 10000000000;
+                setData([...data, newData]);
+                resolve();
+            }, 500);
+          }),
+        onRowUpdate: (newData, oldData) =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const dataUpdate = [...data];
+                // In dataUpdate, find target
+                const target = dataUpdate.find(el => el.id === oldData.tableData.id);
+                const index = dataUpdate.indexOf(target);
+                dataUpdate[index] = newData;
+                setData([...dataUpdate]);
+                resolve();
+            }, 500);
+          }),
+        onRowDelete: oldData =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const dataDelete = [...data];
+                const target = dataDelete.find(el => el.id === oldData.tableData.id);
+                const index = dataDelete.indexOf(target);
+                dataDelete.splice(index, 1);
+                setData([...dataDelete]);
+                resolve();
+            }, 500);
+          })
+      }}
+    />
+  );
+}
+```
+

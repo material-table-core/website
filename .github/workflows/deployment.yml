@@ -33,7 +33,7 @@ jobs:
       - name: Release to GitHub Pages
         env:
           USE_SSH: true
-          GIT_USER: git
+          GIT_USER: material-table-core-worker
         run: |
           git config --global user.email "material.table.core@gmail.com"
           git config --global user.name "material-table-core-worker"

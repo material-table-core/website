@@ -7,7 +7,8 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "node deploy.js material-table-core-worker",
+    "deploy:script": "node deploy.js material-table-core-worker",
+    "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear"
   },

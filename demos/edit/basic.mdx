@@ -35,28 +35,30 @@ function getNewDataBulkEdit(changes, copyData) {
   data={data}
   // Reference: https://material-table.com/#/docs/features/editable
   editable={{
-    onBulkUpdate: (changes) =>
-      new Promise((resolve, reject) => {
+    onBulkUpdate: (changes) => {
+      return new Promise((resolve, reject) => {
         setTimeout(() => {
           let copyData = [...data];
           setData(getNewDataBulkEdit(changes, copyData));
           resolve();
         }, 1000);
-      }),
+      });
+    },
     onRowAddCancelled: (rowData) => console.log("Row adding cancelled"),
     onRowUpdateCancelled: (rowData) => console.log("Row editing cancelled"),
-    onRowAdd: (newData) =>
+    onRowAdd: (newData) => {
       // Note: You may have different ways to handle add row data, this is just an example, and depending on the data property
-      new Promise((resolve, reject) => {
+      return new Promise((resolve, reject) => {
         setTimeout(() => {
           newData.id = "uuid-" + Math.random() * 10000000;
           setData([...data, newData]);
           resolve();
         }, 1000);
-      }),
-    onRowUpdate: (newData, oldData) =>
+      });
+    },
+    onRowUpdate: (newData, oldData) => {
       // Note: You may have different ways to handle update row data, this is just an example, and depending on the data property
-      new Promise((resolve, reject) => {
+      return new Promise((resolve, reject) => {
         setTimeout(() => {
           const dataCopy = [...data];
           // In dataUpdate, find target
@@ -64,17 +66,19 @@ function getNewDataBulkEdit(changes, copyData) {
           setData(dataCopy);
           resolve();
         }, 1000);
-      }),
-    onRowDelete: (oldData) =>
+      });
+    },
+    onRowDelete: (oldData) => {
       // Note: You may have different ways to handle delete row data, this is just an example, and depending on the data property
-      new Promise((resolve, reject) => {
+      return new Promise((resolve, reject) => {
         setTimeout(() => {
           const dataCopy = [...data];
           dataCopy.splice(oldData.tableData.id, 1);
           setData(dataDelete);
           resolve();
         }, 1000);
-      }),
+      });
+    }
   }}
 />;
 ```
@@ -115,41 +119,40 @@ function BasicEditPanelDemo() {
               let copyData = [...data];
               setData(getNewDataBulkEdit(changes, copyData));
               resolve();
-            }, 500);
+            }, 1000);
           }),
         onRowAddCancelled: (rowData) => console.log("Row adding cancelled"),
         onRowUpdateCancelled: (rowData) => console.log("Row editing cancelled"),
-        onRowAdd: (newData) =>
-          new Promise((resolve, reject) => {
+        onRowAdd: (newData) => {
+          return new Promise((resolve, reject) => {
             setTimeout(() => {
-              newData.id = "uuid-" + Math.random() * 10000000000;
+              newData.id = "uuid-" + Math.random() * 10000000;
               setData([...data, newData]);
               resolve();
-            }, 500);
-          }),
-        onRowUpdate: (newData, oldData) =>
-          new Promise((resolve, reject) => {
+            }, 1000);
+          });
+        },
+        onRowUpdate: (newData, oldData) => {
+          return new Promise((resolve, reject) => {
             setTimeout(() => {
-              const dataUpdate = [...data];
+              const dataCopy = [...data];
               // In dataUpdate, find target
-              const target = dataUpdate.find((el) => el.id === oldData.tableData.id);
-              const index = dataUpdate.indexOf(target);
-              dataUpdate[index] = newData;
-              setData([...dataUpdate]);
+              dataCopy[oldData.tableData.id] = newData;
+              setData(dataCopy);
               resolve();
-            }, 500);
-          }),
-        onRowDelete: (oldData) =>
-          new Promise((resolve, reject) => {
+            }, 1000);
+          });
+        },
+        onRowDelete: (oldData) => {
+          return new Promise((resolve, reject) => {
             setTimeout(() => {
-              const dataDelete = [...data];
-              const target = dataDelete.find((el) => el.id === oldData.tableData.id);
-              const index = dataDelete.indexOf(target);
-              dataDelete.splice(index, 1);
-              setData([...dataDelete]);
+              const dataCopy = [...data];
+              dataCopy.splice(oldData.tableData.id, 1);
+              setData(dataDelete);
               resolve();
-            }, 500);
-          }),
+            }, 1000);
+          });
+        }
       }}
     />
   );

@@ -72,9 +72,11 @@ function getNewDataBulkEdit(changes, copyData) {
       // Note: You may have different ways to handle delete row data, this is just an example, and depending on the data property
       return new Promise((resolve, reject) => {
         setTimeout(() => {
-          const dataCopy = [...data];
-          dataCopy.splice(oldData.tableData.id, 1);
-          setData(dataCopy);
+          const dataDelete = [...data];
+          const target = dataDelete.find((el) => el.id === oldData.tableData.id);
+          const index = dataDelete.indexOf(target);
+          dataDelete.splice(index, 1);
+          setData([...dataDelete]);
           resolve();
         }, 1000);
       });
@@ -114,14 +116,15 @@ function BasicEditPanelDemo() {
       columns={EDITABLE_COLUMNS}
       icons={TABLE_ICONS}
       editable={{
-        onBulkUpdate: (changes) =>
-          new Promise((resolve, reject) => {
+        onBulkUpdate: (changes) => {
+          return new Promise((resolve, reject) => {
             setTimeout(() => {
               let copyData = [...data];
               setData(getNewDataBulkEdit(changes, copyData));
               resolve();
             }, 1000);
-          }),
+          })
+        },
         onRowAddCancelled: (rowData) => console.log("Row adding cancelled"),
         onRowUpdateCancelled: (rowData) => console.log("Row editing cancelled"),
         onRowAdd: (newData) => {
@@ -136,10 +139,12 @@ function BasicEditPanelDemo() {
         onRowUpdate: (newData, oldData) => {
           return new Promise((resolve, reject) => {
             setTimeout(() => {
-              const dataCopy = [...data];
+              const dataUpdate = [...data];
               // In dataUpdate, find target
-              dataCopy[oldData.tableData.id] = newData;
-              setData(dataCopy);
+              const target = dataUpdate.find((el) => el.id === oldData.tableData.id);
+              const index = dataUpdate.indexOf(target);
+              dataUpdate[index] = newData;
+              setData([...dataUpdate]);
               resolve();
             }, 1000);
           });
@@ -147,9 +152,11 @@ function BasicEditPanelDemo() {
         onRowDelete: (oldData) => {
           return new Promise((resolve, reject) => {
             setTimeout(() => {
-              const dataCopy = [...data];
-              dataCopy.splice(oldData.tableData.id, 1);
-              setData(dataCopy);
+              const dataDelete = [...data];
+              const target = dataDelete.find((el) => el.id === oldData.tableData.id);
+              const index = dataDelete.indexOf(target);
+              dataDelete.splice(index, 1);
+              setData([...dataDelete]);
               resolve();
             }, 1000);
           });

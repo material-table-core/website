@@ -74,7 +74,7 @@ function getNewDataBulkEdit(changes, copyData) {
         setTimeout(() => {
           const dataCopy = [...data];
           dataCopy.splice(oldData.tableData.id, 1);
-          setData(dataDelete);
+          setData(dataCopy);
           resolve();
         }, 1000);
       });
@@ -148,7 +148,7 @@ function BasicEditPanelDemo() {
             setTimeout(() => {
               const dataCopy = [...data];
               dataCopy.splice(oldData.tableData.id, 1);
-              setData(dataDelete);
+              setData(dataCopy);
               resolve();
             }, 1000);
           });

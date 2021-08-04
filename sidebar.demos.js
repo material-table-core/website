@@ -24,7 +24,7 @@ module.exports = {
     {
       type: "category",
       label: "Edit",
-      items: ["edit/basic"],
+      items: ["edit/editable"], 
     },
     {
       type: "category",

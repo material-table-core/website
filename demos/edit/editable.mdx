@@ -1,87 +1,55 @@
 ---
-id: basic
-title: Basic Edit
+id: editable
+title: Editable
 ---
 
 import MaterialTable from "@material-table/core";
 import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+:::info More info
+`mbrn/material-table` **reference** : https://material-table.com/#/docs/features/editable
+:::
 
 ## Usage
 
 ```jsx
 import MaterialTable from "@material-table/core";
 
-const [data, setData] = React.useState(EDITABLE_DATA);
-
-// Note: You may have different ways to handle build edit, this is just an example, and depending on the data property
-function getNewDataBulkEdit(changes, copyData) {
-  const keys = Object.keys(changes); //// key matches the column data id
-  for (let i = 0; i < keys.length; i++) {
-    if (changes[keys[i]] && changes[keys[i]].newData) {
-      // Find the data item with the same key in copyData[]
-      let targetData = copyData.find((el) => el.id === keys[i]);
-      if (targetData) {
-        let newTargetDataIndex = copyData.indexOf(targetData);
-        copyData[newTargetDataIndex] = changes[keys[i]].newData;
-      }
-    }
-  }
-  return copyData;
-}
-
 <MaterialTable
-  icons={tableIcons}
-  columns={columns}
-  data={data}
-  // Reference: https://material-table.com/#/docs/features/editable
+  // ...
   editable={{
     onBulkUpdate: (changes) => {
       return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          let copyData = [...data];
-          setData(getNewDataBulkEdit(changes, copyData));
-          resolve();
-        }, 1000);
+        // Must return a Promise
       });
     },
-    onRowAddCancelled: (rowData) => console.log("Row adding cancelled"),
-    onRowUpdateCancelled: (rowData) => console.log("Row editing cancelled"),
-    onRowAdd: (newData) => {
-      // Note: You may have different ways to handle add row data, this is just an example, and depending on the data property
+    onRowAddCancelled: (rowData) => {
       return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          newData.id = "uuid-" + Math.random() * 10000000;
-          setData([...data, newData]);
-          resolve();
-        }, 1000);
+        // Must return a Promise
+      }); 
+    },
+    onRowUpdateCancelled: (rowData) => {
+      return new Promise((resolve, reject) => {
+        // Must return a Promise
+      });
+    },
+    onRowAdd: (newData) => {
+      return new Promise((resolve, reject) => {
+        // Must return a Promise
       });
     },
     onRowUpdate: (newData, oldData) => {
-      // Note: You may have different ways to handle update row data, this is just an example, and depending on the data property
       return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          const dataCopy = [...data];
-          // In dataUpdate, find target
-          dataCopy[oldData.tableData.id] = newData;
-          setData(dataCopy);
-          resolve();
-        }, 1000);
+        // Must return a Promise
       });
     },
     onRowDelete: (oldData) => {
-      // Note: You may have different ways to handle delete row data, this is just an example, and depending on the data property
       return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          const dataDelete = [...data];
-          const target = dataDelete.find((el) => el.id === oldData.tableData.id);
-          const index = dataDelete.indexOf(target);
-          dataDelete.splice(index, 1);
-          setData([...dataDelete]);
-          resolve();
-        }, 1000);
+        // Must return a Promise
       });
     },
   }}
+  // ...
 />;
 ```
 

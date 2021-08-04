@@ -8,7 +8,7 @@ on:
 
 jobs:
   tests:
-    if: startsWith(github.event.head_commit.message, 'deploy ')
+    if: startsWith(github.event.head_commit.message, 'deploy:')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -20,7 +20,7 @@ jobs:
           yarn install
           yarn build
   deployment:
-    if: startsWith(github.event.head_commit.message, 'deploy ')
+    if: startsWith(github.event.head_commit.message, 'deploy:')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1 

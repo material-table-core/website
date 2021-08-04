@@ -1,6 +1,6 @@
 # material-table-core
 
-<a href="https://github.com/material-table-core/website/actions?query=workflow%3Adocusaurus">
+<a href="https://github.com/material-table-core/website/actions?query=workflow%3Adeployment">
         <img 
           title="deployment" 
           src="https://github.com/material-table-core/website/actions/workflows/deployment.yml/badge.svg?branch=master"

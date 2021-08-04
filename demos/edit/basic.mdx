@@ -78,7 +78,7 @@ function getNewDataBulkEdit(changes, copyData) {
           resolve();
         }, 1000);
       });
-    }
+    },
   }}
 />;
 ```
@@ -88,24 +88,26 @@ function getNewDataBulkEdit(changes, copyData) {
 <InfoBannerAboutGlobalVarsInDemos />
 
 ```jsx live
-function BasicEditPanelDemo() {
-  const [data, setData] = useState(EDITABLE_DATA);
-
-  function getNewDataBulkEdit(changes, copyData) {
-    const keys = Object.keys(changes); //// key matches the column data id
-
-    for (let i = 0; i < keys.length; i++) {
-      if (changes[keys[i]] && changes[keys[i]].newData) {
-        // Find the data item with the same key in copyData[]
-        let targetData = copyData.find((el) => el.id === keys[i]);
-        if (targetData) {
-          let newTargetDataIndex = copyData.indexOf(targetData);
-          copyData[newTargetDataIndex] = changes[keys[i]].newData;
-        }
+// Helper function
+function getNewDataBulkEdit(changes, copyData) {
+  // key matches the column data id
+  const keys = Object.keys(changes);
+  for (let i = 0; i < keys.length; i++) {
+    if (changes[keys[i]] && changes[keys[i]].newData) {
+      // Find the data item with the same key in copyData[]
+      let targetData = copyData.find((el) => el.id === keys[i]);
+      if (targetData) {
+        let newTargetDataIndex = copyData.indexOf(targetData);
+        copyData[newTargetDataIndex] = changes[keys[i]].newData;
       }
     }
-    return copyData;
   }
+  return copyData;
+}
+
+// Component
+function BasicEditPanelDemo() {
+  const [data, setData] = useState(EDITABLE_DATA);
 
   return (
     <MaterialTable
@@ -152,7 +154,7 @@ function BasicEditPanelDemo() {
               resolve();
             }, 1000);
           });
-        }
+        },
       }}
     />
   );

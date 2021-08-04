@@ -1,0 +1,56 @@
+---
+id: on-row-click
+title: Select On Row Click
+---
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+## Usage
+
+```jsx
+import MaterialTable from "@material-table/core";
+
+<MaterialTable
+  // ...
+  components={{
+    Row: (props) => {
+      return <MTableBodyRow {...props} onRowClick={onRowClicked} onRowSelected={onRowSelectionChanged} />;
+    },
+  }}
+  options={{
+    selection: true,
+  }}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function SelectionOnRowClick() {
+  const [data, setData] = useState(SELECTION_DATA);
+
+  return (
+    <MaterialTable
+      data={data}
+      columns={SELECTION_COLS}
+      icons={TABLE_ICONS}
+      options={{
+        selection: true,
+      }}
+      onRowClick={(event, rowData) => {
+        // Copy row data and set checked state
+        const rowDataCopy = { ...rowData };
+        rowDataCopy.tableData.checked = !rowDataCopy.tableData.checked;
+        // Copy data so we can modify it
+        const dataCopy = [...data];
+        // Find the row we clicked and update it with `checked` prop
+        dataCopy[rowDataCopy.tableData.id] = rowDataCopy;
+        setData(dataCopy);
+      }}
+    />
+  );
+}
+```

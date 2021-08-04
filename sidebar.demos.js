@@ -24,7 +24,7 @@ module.exports = {
     {
       type: "category",
       label: "Edit",
-      items: ["edit/editable"], 
+      items: ["edit/editable"],
     },
     {
       type: "category",
@@ -34,11 +34,7 @@ module.exports = {
     {
       type: "category",
       label: "Filter",
-      items: [
-        "filter/basic",
-        "filter/custom-filter",
-        "filter/custom-filter-row",
-      ],
+      items: ["filter/basic", "filter/custom-filter", "filter/custom-filter-row"],
     },
     {
       type: "category",
@@ -63,7 +59,7 @@ module.exports = {
     {
       type: "category",
       label: "Selection",
-      items: ["selection/basic"],
+      items: ["selection/basic", "selection/on-row-click", "selection/persist-events"],
     },
     {
       type: "category",

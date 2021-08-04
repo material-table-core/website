@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import MaterialTable, { MTableToolbar } from '@material-table/core';
+import MaterialTable, { MTableToolbar, MTableBodyRow } from '@material-table/core';
 import { ExportPdf, ExportCsv } from '@material-table/exporters';
 import { Button } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
@@ -28,7 +28,8 @@ const ReactLiveScope = {
   ExportPdf,
   ExportCsv,
   MaterialTable,
-  MTableToolbar
+  MTableToolbar,
+  MTableBodyRow
 };
 
 export default ReactLiveScope;

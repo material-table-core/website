@@ -1,0 +1,66 @@
+---
+id: persist-events
+title: Persist Row Click Events
+---
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+## Usage
+
+:::info
+You can persist `onRowClick`, or `onRowDoubleClick` events, if you need access to things like `event.target`
+:::
+
+:::caution
+You must be on version >=4.1.0 to use the `persistEvents` prop!
+:::
+
+```jsx
+import MaterialTable, { MTableBodyRow } from '@material-table/core';
+
+<MaterialTable
+  // ...
+  options={{
+    selection: true,
+  }}
+  components={{
+    Row: (props) => {
+      return (
+        <MTableBodyRow 
+          {...props} 
+          persistEvents 
+          onRowClick={handleClick} 
+          /* onRowDoubleClick={...} */ 
+        />;
+      );
+    },
+  }}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function PersistEventsOnRowClick() {
+  const handleClick = (event, rowData) => {
+    alert(`event.target.tagName = '${event.target.tagName}'`);
+  } 
+
+  return (
+    <MaterialTable
+      title={"Click a Row"}
+      data={SELECTION_DATA}
+      columns={SELECTION_COLS}
+      icons={TABLE_ICONS}
+      components={{
+        Row: (props) => {
+          return <MTableBodyRow {...props} persistEvents onRowClick={handleClick} />;
+        },
+      }}
+    />
+  );
+}
+```

@@ -21,6 +21,16 @@ const DEMO_COLS = [
   { field: "name", title: "Name" }
 ];
 
+const SELECTION_DATA = [
+  { age: 22, name: "Joe" },
+  { age: 67, name: "Mary" }
+];
+
+const SELECTION_COLS = [
+  { field: "age", title: "Age" },
+  { field: "name", title: "Name" }
+];
+
 const TABLE_ICONS = {
   // tableIcons
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -134,5 +144,7 @@ export default {
   TREE_DATA,
   TREE_COLUMNS,
   EDITABLE_DATA,
-  EDITABLE_COLUMNS
+  EDITABLE_COLUMNS,
+  SELECTION_DATA,
+  SELECTION_COLS
 }

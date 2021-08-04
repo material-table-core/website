@@ -1,4 +1,4 @@
-# material-table-core
+# Docs & Demos
 
 <a href="https://github.com/material-table-core/website/actions?query=workflow%3Adeployment">
         <img 

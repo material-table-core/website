@@ -11,7 +11,7 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 
 ## Contributing 
 
-### this package uses `yarn` not `npm`!
+### this package uses `yarn` not `npm`! 
 
 ## [How to add your own demo to this website](https://material-table-core.com/demos#how-to-add-demo)
 

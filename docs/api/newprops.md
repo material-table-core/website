@@ -9,4 +9,4 @@ title: New Props
 | `options.showDetailPanelIcon` | `boolean`                                                            | The option to hide the detail panel icon                                                                                  |
 | `renderSummaryRow`            | `({columns, column, index, data, currentData }) => { value, style }` | Renders a summary row. The callback will be called for every column to show multiple summaries at the bottom of the table |
 | `actions.handlers`            | `(event, rowData) => void`                                           | A Adds all possible div handlers like onMouseEnter with the current row                                                   |
-| `onDoubleRowClick`            | `(event, rowData) => void`                                           | The double click event on a row                                                                                           |
+| `onRowDoubleClick`            | `(event, rowData) => void`                                           | The double click event on a row                                                                                           |

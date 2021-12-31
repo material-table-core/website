@@ -29,12 +29,24 @@ module.exports = {
     {
       type: "category",
       label: "Export",
-      items: ["export/basic"],
+      items: [
+        "export/basic",
+        "export/custom",
+        {
+          type: "link",
+          label: "Exporter Package",
+          href: "https://github.com/material-table-core/exporters",
+        },
+      ],
     },
     {
       type: "category",
       label: "Filter",
-      items: ["filter/basic", "filter/custom-filter", "filter/custom-filter-row"],
+      items: [
+        "filter/basic",
+        "filter/custom-filter",
+        "filter/custom-filter-row",
+      ],
     },
     {
       type: "category",
@@ -59,7 +71,11 @@ module.exports = {
     {
       type: "category",
       label: "Selection",
-      items: ["selection/basic", "selection/on-row-click", "selection/persist-events"],
+      items: [
+        "selection/basic",
+        "selection/on-row-click",
+        "selection/persist-events",
+      ],
     },
     {
       type: "category",

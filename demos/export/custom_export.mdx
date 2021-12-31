@@ -1,0 +1,43 @@
+---
+id: custom
+title: Custom Row Export
+---
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+## Usage
+
+:::info
+This section explains how to use the CSV exporter package `@material-table/exporters` in combination with the `exportTransformer` to manipulate column values.
+:::
+
+```javascript
+// ...
+import { ExportCsv } from "@material-table/exporters";
+
+<MaterialTable
+  // ...
+  data={[{ name: "Dominik" }]}
+  columns={[
+    {
+      field: "name",
+      title: "Name Uppercase",
+      exportTransformer: (row) => row.name.toUpperCase(),
+    },
+  ]}
+  options={{
+    // ...
+    exportMenu: [
+      {
+        label: "Export CSV with uppercase names",
+        exportFunc: (cols, datas) => ExportCsv(cols, datas, "myCsvFileName"),
+      },
+    ],
+  }}
+/>;
+```
+
+This will result in a csv file, that exports the data with all names being uppercase.
+
+THis can be used to either transform existing data, merge data points or even generate data for the column from outside sources.

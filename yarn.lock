@@ -1463,13 +1463,14 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@material-table/core@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@material-table/core/-/core-4.2.1.tgz#1bdff97e7d17bfa27297b09891467d9e6bf4de0a"
-  integrity sha512-2rFDKjuxAOj0YwIbSpmd7Zw/OPwuMn3/QFCN2u5hEMusLy+m3/7Zig0o4aQm+v8aFSIgroSpFfKYgg4kIvzqbg==
+"@material-table/core@^4.3.15":
+  version "4.3.15"
+  resolved "https://registry.yarnpkg.com/@material-table/core/-/core-4.3.15.tgz#b087edbc8aed1b183e19e1946f9455eba9ff8f25"
+  integrity sha512-M4Qsz0APnfLhwvrNQkSMNHUfIQAs4oIsHg9p0lWT8JmINsHtsr2czrQhUhsx9ZPOKael7RyG284WWlmTNEG9Dg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@date-io/date-fns" "^1.3.13"
+    "@material-ui/icons" "^4.11.2"
     "@material-ui/pickers" "^3.2.10"
     "@material-ui/styles" "^4.11.4"
     classnames "^2.2.6"

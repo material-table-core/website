@@ -1,0 +1,74 @@
+---
+id: basic
+title: Cell Validation
+---
+
+import MaterialTable from "@material-table/core";
+
+material-table-core supports cell validation during edit.
+
+| Field           | Type |                                           |
+| --------------- | ---- | ----------------------------------------- |
+| column.validate | func | The function to validate the current cell |
+
+### Following returns are supported:
+
+| Return value |                        Type                         |                                                                                                                                               |
+| :----------: | :-------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+|   boolean    |                 rowData => boolean                  | Return a Boolean to block save and show a red bar below that field (true for valid input)                                                     |
+|    string    |                  rowData => string                  | Return a string to block save, to show a red bar below that field and show an appropriate error message                                       |
+|    object    | rowData => { isValid: boolean; helperText: string } | Return an object to optional block save and show a red bar below that field. A helper text will also be displayed, in red if isValid is false |
+
+:::info
+If a string is return from validate (even ""), it will be interpreted as an error and will block the submit
+:::
+
+### Examples
+
+```jsx live
+function ValidationTable() {
+  const data = [{ name: "Engel", surname: "Dominik", age: 27 }];
+  const columns = [
+    {
+      title: "Name",
+      field: "name",
+      validate: (row) => (row.name || "").length !== 0,
+    },
+    {
+      title: "Surname",
+      field: "surname",
+      validate: (row) =>
+        (row.surname || "").length < 3
+          ? "Surname must have at least 3 chars"
+          : true,
+    },
+    {
+      title: "Age",
+      field: "age",
+      type: "numeric",
+      validate: (row) => ({
+        isValid: row.age > 15,
+        helperText: "Age must be above 15",
+      }),
+    },
+  ];
+  return (
+    <MaterialTable
+      data={data}
+      columns={columns}
+      editable={{
+        onRowAdd: (newData) => {
+          return new Promise((resolve, reject) => {
+            // Must return a Promise
+          });
+        },
+        onRowUpdate: (newData, oldData) => {
+          return new Promise((resolve, reject) => {
+            // Must return a Promise
+          });
+        },
+      }}
+    />
+  );
+}
+```

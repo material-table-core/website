@@ -92,5 +92,10 @@ module.exports = {
       label: "Tree Data",
       items: ["tree-data/basic"],
     },
+    {
+      type: "category",
+      label: "Validation",
+      items: ["validation/basic"],
+    },
   ],
 };

@@ -97,5 +97,10 @@ module.exports = {
       label: "Validation",
       items: ["validation/basic"],
     },
+    {
+      type: "category",
+      label: "Summary Row",
+      items: ["Summaryrow/basic"],
+    },
   ],
 };

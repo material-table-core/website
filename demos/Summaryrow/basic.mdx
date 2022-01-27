@@ -1,0 +1,69 @@
+---
+id: basic
+title: Summary Row
+---
+
+import MaterialTable from "@material-table/core";
+
+material-table-core supports a summary row.
+
+| Field            | Type |                                        |
+| ---------------- | ---- | -------------------------------------- |
+| renderSummaryRow | func | The function to create the summary row |
+
+### The function will be called with following parameters for each column:
+
+|  parameter  |   Type    |                                          |
+| :---------: | :-------: | ---------------------------------------- |
+|   columns   |  Colum[]  | All columns of the table                 |
+|   column    |  Column   | The column to render the cell of         |
+|    index    |  number   | The index of the current column          |
+|    data     | RowData[] | All data of the table                    |
+| currentData | RowData[] | The data currently displayed on the page |
+
+### The function can return a value and optional styles for cell that should display a value in the summary row:
+
+| Field | Type                |                                                         |
+| ----- | ------------------- | ------------------------------------------------------- |
+| value | any                 | The value to print in the given cell of the summary row |
+| style | React.CSSProperties | Optional css properties to style the cells              |
+
+### Examples
+
+```jsx live
+function SummaryTable() {
+  const data = [
+    { name: "Engel", surname: "Dominik", age: 27 },
+    { name: "Seb", surname: "Teko", age: 24 },
+  ];
+  const columns = [
+    {
+      title: "Name",
+      field: "name",
+    },
+    {
+      title: "Surname",
+      field: "surname",
+    },
+    {
+      title: "Age",
+      field: "age",
+      type: "numeric",
+    },
+  ];
+  return (
+    <MaterialTable
+      data={data}
+      columns={columns}
+      renderSummaryRow={({ column, data }) =>
+        column.field === "age"
+          ? {
+              value: data.reduce((agg, row) => agg + row.age, 0),
+              style: { background: "red" },
+            }
+          : undefined
+      }
+    />
+  );
+}
+```

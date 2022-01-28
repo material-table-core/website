@@ -16,6 +16,15 @@ import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 | `options.filtering`       | boolean       | display filter row on table    |
 | `columns.filterComponent` | React.Element | custom component for filtering |
 
+## FilterComponent
+
+The filterComponent passes these props to hook it to the table internal filtering:
+
+| Field             | Type                                    | Description                      |
+| ----------------- | --------------------------------------- | -------------------------------- |
+| `columnDef`       | Column                                  | the current column of the filter |
+| `onFilterChanged` | (columnId: string, value: any) => void; | the callback for the onChange    |
+
 ## Usage
 
 ```jsx
@@ -56,7 +65,15 @@ function CustomFilter() {
         {
           title: "Name",
           field: "name",
-          filterComponent: () => <input placeholder="custom" />,
+          filterComponent: ({ columnDef, onFilterChanged }) => (
+            <input
+              placeholder="custom"
+              onChange={(e) => {
+                // Calling the onFilterChanged with the current tableId and the new value
+                onFilterChanged(columnDef.tableData.id, e.target.value);
+              }}
+            />
+          ),
         },
         {
           title: "Surname",

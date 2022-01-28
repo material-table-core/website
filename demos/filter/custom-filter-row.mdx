@@ -83,7 +83,7 @@ function CustomFilter() {
       }}
       components={{
         FilterRow: (rowProps) => {
-          const { columns } = rowProps;
+          const { columns, onFilterChanged } = rowProps;
 
           return (
             <>
@@ -95,9 +95,10 @@ function CustomFilter() {
                         <input
                           placeholder="custom filter"
                           id={col.field}
-                          onChange={(e) =>
-                            console.log(e.target.id, e.target.value)
-                          }
+                          onChange={(e) => {
+                            console.log(e.target.id, e.target.value);
+                            onFilterChanged(col.tableData.id, e.target.value);
+                          }}
                         />
                       </td>
                     );

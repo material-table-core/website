@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 450px) {
   h1.heroTitle {
-    font-size: 1.60rem;
+    font-size: 1.6rem;
   }
   .heroSubTitle > h3 {
     font-size: 0.98rem;
@@ -61,7 +61,7 @@
   overflow: hidden;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-hero-background-color: var(--ifm-color-emphasis-100);
   --ifm-background-color: var(--ifm-color-emphasis-100);
 }
@@ -80,6 +80,7 @@ html[data-theme='dark'] {
   align-items: center;
   padding: 2rem 0;
   width: 100%;
+  flex-direction: column;
 }
 
 .featureImage {
@@ -90,7 +91,7 @@ html[data-theme='dark'] {
 :root {
   --heroBannerCodeColor: black;
 }
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --heroBannerCodeColor: white;
 }
 .inverseColor {

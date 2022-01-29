@@ -87,10 +87,10 @@ export default function Home() {
             <Link to={useBaseUrl("/demos/group/basic")}>Grouping</Link>
           </li>
           <li>
-            <Link to={useBaseUrl("/demos/actions/basic")}>Actions</Link>
+            <Link to={useBaseUrl("/demos/selection/basic")}>Selection</Link>
           </li>
           <li>
-            <Link to={useBaseUrl("/demos/actions/basic")}>Actions</Link>
+            <Link to={useBaseUrl("/demos/Summaryrow/basic")}>Summary Row</Link>
           </li>
         </ul>
       </main>

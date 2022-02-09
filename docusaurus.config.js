@@ -94,11 +94,13 @@ module.exports = {
           position: "left",
           label: "Demos",
         },
+        /*
         {
           to: "https://material-table.com",
           position: "right",
           label: "mbrn/material-table",
         },
+        */ 
         {
           to: "https://github.com/material-table-core/core",
           position: "right",

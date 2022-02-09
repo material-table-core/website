@@ -1,4 +1,4 @@
 ---
 id: mt_prop_onChangePage
-title: onChangePage
+title: onPageChange
 ---

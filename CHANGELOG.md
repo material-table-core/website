@@ -1,3 +1,9 @@
+#### 0.0.2 (2022-02-09)
+
+##### Documentation Changes
+
+*  update to v4 naming of props (e39767b4)
+
 #### 0.0.1 (2022-02-09)
 
 ##### Chores

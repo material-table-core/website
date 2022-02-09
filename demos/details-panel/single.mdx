@@ -1,0 +1,66 @@
+---
+id: single
+title: Single Details Panel
+---
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+The default setting for detail panels is that multiple can be open.
+
+By setting the option `detailPanelType` to `single`, only one panel will be open at any given time.
+
+## Usage
+
+```jsx
+import MaterialTable from "@material-table/core";
+
+<MaterialTable
+  // ... other props
+  options={{ detailPanelType: "single" }}
+  detailPanel={({ rowData }) => {
+    return (
+      <div
+        style={{
+          fontSize: 20,
+          textAlign: "center",
+          height: 100,
+        }}
+      >
+        This is a detailed panel for {rowData.name}
+      </div>
+    );
+  }}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function BasicDetailsPanelDemo() {
+  return (
+    <MaterialTable
+      data={DEMO_DATA}
+      columns={DEMO_COLS}
+      title="Single Detail Panel"
+      icons={TABLE_ICONS}
+      options={{ detailPanelType: "single" }}
+      detailPanel={({ rowData }) => {
+        return (
+          <div
+            style={{
+              fontSize: 20,
+              textAlign: "center",
+              height: 100,
+            }}
+          >
+            This is a detailed panel for {rowData.name}.
+          </div>
+        );
+      }}
+    />
+  );
+}
+```

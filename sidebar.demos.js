@@ -19,7 +19,7 @@ module.exports = {
     {
       type: "category",
       label: "Details Panel",
-      items: ["details-panel/basic"],
+      items: ["details-panel/basic", "details-panel/single"],
     },
     {
       type: "category",

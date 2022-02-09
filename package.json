@@ -10,7 +10,11 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "update:material:table:core": "yarn add @material-table/core"
+    "update:material:table:core": "yarn add @material-table/core",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major -m 'deploy: v%s' && npm run git:push:tags",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor -m 'deploy: v%s' && npm run git:push:tags",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch -m 'deploy: v%s' && npm run git:push:tags",
+    "git:push:tags": "git push origin && git push origin --tags"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.70",
@@ -24,7 +28,8 @@
     "clsx": "^1.1.1",
     "cross-env": "^7.0.3",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "generate-changelog": "^1.8.0"
   },
   "browserslist": {
     "production": [

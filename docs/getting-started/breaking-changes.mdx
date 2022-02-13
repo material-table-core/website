@@ -55,10 +55,12 @@ detailPanel={[
 
 ### `Id`
 
-To persist edit/sort/detail penal state between renders, a new unique key was added to the rows/data props: Id.
+To persist edit/sort/detail penal state between renders, a new unique key was added to the rows/data props: `id`.
 If an unique id is added to each row, the state can be persisted between renders similar to the key prop of reacts rendering of arrays.
 It is not required and the index will be used as a fallback. Nevertheless, a console warning will be displayed.
 For more details, see this [PR](https://github.com/material-table-core/core/pull/259) or this [issue](https://github.com/material-table-core/core/issues/59).
+
+The default key `id` can be overridden with the option `idSynonym` in case the data provided has a different property for the id. More in the [types](https://github.com/material-table-core/core/blob/master/types/index.d.ts#L335).
 
 ## v2.x.x
 

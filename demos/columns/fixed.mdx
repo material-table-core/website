@@ -1,0 +1,80 @@
+---
+id: fixed
+title: Fixed Columns
+---
+
+import MaterialTable from '@material-table/core';
+import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
+
+Material Table supports fixed columns, both from the left and the right end.
+
+### Usage
+
+```jsx
+import MaterialTable from '@material-table/core';
+
+<MaterialTable
+  options={{
+    fixedColumns: { left: number, right: number },
+  }}
+/>;
+```
+
+- For keeping left columns fixed in the table
+
+  - `fixedColumns: { left: number }` (value should be a non-zero integer)
+
+- For keeping right columns fixed in the table
+  - `fixedColumns: { right: number }` (value should be a non-zero integer)
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function LeftFixedColumn() {
+  const [data, setData] = useState(EDITABLE_DATA);
+  const columns = [
+    { field: 'id', title: 'Id', editable: 'never', width: 100 },
+    { field: 'firstName', title: 'First Name', width: 200 },
+    { field: 'lastName', title: 'Last Name', width: 200 },
+    { field: 'lastName', title: 'Last Name', width: 200 },
+    { field: 'lastName', title: 'Last Name', width: 200 },
+    { field: 'lastName', title: 'Last Name', width: 200 },
+  ];
+  return (
+    <MaterialTable
+      data={data}
+      columns={columns}
+      icons={TABLE_ICONS}
+      options={{
+        fixedColumns: { left: 1 },
+      }}
+    />
+  );
+}
+```
+
+```jsx live
+function RightFixedColumn() {
+  const [data, setData] = useState(EDITABLE_DATA);
+  const columns = [
+    { field: 'id', title: 'Id', editable: 'never', width: 100 },
+    { field: 'firstName', title: 'First Name', width: 200 },
+    { field: 'lastName', title: 'Last Name', width: 200 },
+    { field: 'lastName', title: 'Last Name', width: 200 },
+    { field: 'lastName', title: 'Last Name', width: 200 },
+    { field: 'lastName', title: 'Last Name', width: 200 },
+  ];
+  return (
+    <MaterialTable
+      data={data}
+      columns={columns}
+      icons={TABLE_ICONS}
+      options={{
+        fixedColumns: { right: 1 },
+      }}
+    />
+  );
+}
+```

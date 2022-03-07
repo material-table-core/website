@@ -1,0 +1,112 @@
+---
+id: basic
+title: Basic Pagination Demo
+hide_title: true
+---
+
+# Pagination
+
+The table has built in pagination. This is enabled by default. Several props are available to adjust the pagination.
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+## Props
+
+| Field                         | Type                                                                                       | Description                                                                           |
+| ----------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| `options.paging`              | boolean                                                                                    | Toggle pagination                                                                     |
+| `options.emptyRowsWhenPaging` | boolean                                                                                    | If a page does not contain enough data to fill all rows, should the rows be displayed |
+| `options.paginationType`      | 'normal' /'stepped'                                                                        | Toggle between the default mui pagination or a stepped pagination                     |
+| `options.paginationPosition`  | 'bottom' /'top' / 'both'                                                                   | Adjusts the pagination position in relation to the body                               |
+| `options.numberOfPagesAround` | 1 - 10                                                                                     | In combination with the stepped pagination adjusts the pages around current page      |
+| `localization`                | [The texts](https://github.com/material-table-core/core/blob/master/types/index.d.ts#L439) | The text displayed on hover over the pagination elements                              |
+
+## Usage
+
+```jsx
+import MaterialTable from "@material-table/core";
+
+<MaterialTable
+  // ...
+  options={{ paginationType: "stepped", paginationPosition: "top" }}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function PaginationDemo() {
+  const [paging, setPage] = React.useState(true);
+  const [emptyRowsWhenPaging, setEmptyRowsWhenPaging] = React.useState(true);
+  const [paginationType, setPaginationType] = React.useState("normal");
+  const [paginationPosition, setPaginationPosition] = React.useState("bottom");
+  const [numberOfPagesAround, setNumberOfPagesAround] = React.useState(1);
+  return (
+    <>
+      <label>
+        <input
+          type="checkbox"
+          checked={paging}
+          onChange={() => {
+            setPage((prev) => !prev);
+          }}
+        />
+        <span>Paging</span>
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          checked={emptyRowsWhenPaging}
+          onChange={() => {
+            setEmptyRowsWhenPaging((prev) => !prev);
+          }}
+        />
+        <span>Empty Rows When Paging</span>
+      </label>
+      <button
+        onClick={() => {
+          setPaginationPosition((prev) =>
+            prev === "bottom" ? "top" : prev === "top" ? "both" : "bottom"
+          );
+        }}
+      >
+        Pagination Position: {paginationPosition}
+      </button>
+      <button
+        onClick={() => {
+          setPaginationType((prev) =>
+            prev === "normal" ? "stepped" : "normal"
+          );
+        }}
+      >
+        Pagination Type: {paginationType}
+      </button>
+      {paginationType === "stepped" ? (
+        <button
+          onClick={() => {
+            setNumberOfPagesAround((prev) => Math.max((prev + 1) % 11, 1));
+          }}
+        >
+          Number Of Pages Around: {numberOfPagesAround}
+        </button>
+      ) : null}
+      <MaterialTable
+        data={Array(50)
+          .fill()
+          .map((_, i) => ({ id: i, name: `name ${i + 1}` }))}
+        columns={DEMO_COLS}
+        options={{
+          paging,
+          emptyRowsWhenPaging,
+          paginationType,
+          numberOfPagesAround,
+          paginationPosition,
+        }}
+      />
+    </>
+  );
+}
+```

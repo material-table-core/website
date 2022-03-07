@@ -102,5 +102,10 @@ module.exports = {
       label: "Summary Row",
       items: ["Summaryrow/basic"],
     },
+    {
+      type: "category",
+      label: "Pagination",
+      items: ["pagination/basic"],
+    },
   ],
 };

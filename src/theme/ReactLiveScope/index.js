@@ -5,12 +5,21 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
-import MaterialTable, { MTableToolbar, MTableBodyRow } from '@material-table/core';
-import { ExportPdf, ExportCsv } from '@material-table/exporters';
-import { Button } from '@material-ui/core';
-import SaveIcon from '@material-ui/icons/Save';
-import GLOBAL_VARIABLES from '../../../demos/demo.global-variables'; // at the root of this project
+import React from "react";
+import MaterialTable, {
+  MTableToolbar,
+  MTableBodyRow,
+} from "@material-table/core";
+import { ExportPdf, ExportCsv } from "@material-table/exporters";
+import {
+  Button,
+  FormGroup,
+  Switch,
+  FormControlLabel,
+  TextField,
+} from "@mui/material";
+import SaveIcon from "@mui/icons-material/Save";
+import GLOBAL_VARIABLES from "../../../demos/demo.global-variables"; // at the root of this project
 
 /**
  * Add react-live imports you need here
@@ -21,15 +30,19 @@ const ReactLiveScope = {
   // React
   React,
   ...React,
-  // Material UI imports
+  // Mui imports
   Button,
+  FormGroup,
+  TextField,
+  FormControlLabel,
+  Switch,
   SaveIcon,
   // Material Table imports
   ExportPdf,
   ExportCsv,
   MaterialTable,
   MTableToolbar,
-  MTableBodyRow
+  MTableBodyRow,
 };
 
 export default ReactLiveScope;

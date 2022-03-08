@@ -39,60 +39,94 @@ import MaterialTable from "@material-table/core";
 
 ```jsx live
 function PaginationDemo() {
-  const [paging, setPage] = React.useState(true);
-  const [emptyRowsWhenPaging, setEmptyRowsWhenPaging] = React.useState(true);
-  const [paginationType, setPaginationType] = React.useState("normal");
-  const [paginationPosition, setPaginationPosition] = React.useState("bottom");
-  const [numberOfPagesAround, setNumberOfPagesAround] = React.useState(1);
+  const [
+    {
+      paging,
+      emptyRowsWhenPaging,
+      paginationType,
+      numberOfPagesAround,
+      paginationPosition,
+    },
+    setOptions,
+  ] = React.useState({
+    paging: true,
+    emptyRowsWhenPaging: true,
+    paginationType: "normal",
+    paginationPosition: "bottom",
+    numberOfPagesAround: 1,
+  });
   return (
     <>
-      <label>
-        <input
-          type="checkbox"
-          checked={paging}
-          onChange={() => {
-            setPage((prev) => !prev);
-          }}
+      <FormGroup>
+        <FormControlLabel
+          control={
+            <Switch
+              checked={paging}
+              onChange={(e) => {
+                setOptions((prev) => ({ ...prev, paging: e.target.checked }));
+              }}
+            />
+          }
+          label="Paging"
         />
-        <span>Paging</span>
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          checked={emptyRowsWhenPaging}
-          onChange={() => {
-            setEmptyRowsWhenPaging((prev) => !prev);
-          }}
+        <FormControlLabel
+          control={
+            <Switch
+              checked={emptyRowsWhenPaging}
+              onChange={(e) => {
+                setOptions((prev) => ({
+                  ...prev,
+                  emptyRowsWhenPaging: e.target.checked,
+                }));
+              }}
+            />
+          }
+          label="Empty Rows When Paging"
         />
-        <span>Empty Rows When Paging</span>
-      </label>
-      <button
-        onClick={() => {
-          setPaginationPosition((prev) =>
-            prev === "bottom" ? "top" : prev === "top" ? "both" : "bottom"
-          );
-        }}
-      >
-        Pagination Position: {paginationPosition}
-      </button>
-      <button
-        onClick={() => {
-          setPaginationType((prev) =>
-            prev === "normal" ? "stepped" : "normal"
-          );
-        }}
-      >
-        Pagination Type: {paginationType}
-      </button>
-      {paginationType === "stepped" ? (
-        <button
+        <Button
+          variant="contained"
+          sx={{ mb: 1 }}
           onClick={() => {
-            setNumberOfPagesAround((prev) => Math.max((prev + 1) % 11, 1));
+            setOptions(({ paginationPosition: prevPos, ...prev }) => ({
+              ...prev,
+              paginationPosition:
+                prevPos === "bottom"
+                  ? "top"
+                  : prevPos === "top"
+                  ? "both"
+                  : "bottom",
+            }));
           }}
         >
-          Number Of Pages Around: {numberOfPagesAround}
-        </button>
-      ) : null}
+          Pagination Position: {paginationPosition}
+        </Button>
+        <Button
+          variant="contained"
+          sx={{ mb: 1 }}
+          onClick={() => {
+            setOptions(({ paginationType: prevType, ...prev }) => ({
+              ...prev,
+              paginationType: prevType === "normal" ? "stepped" : "normal",
+            }));
+          }}
+        >
+          Pagination Type: {paginationType}
+        </Button>
+        {paginationType === "stepped" ? (
+          <Button
+            variant="contained"
+            sx={{ mb: 1 }}
+            onClick={() => {
+              setOptions(({ numberOfPagesAround: prevPages, ...prev }) => ({
+                ...prev,
+                numberOfPagesAround: Math.max((prevPages + 1) % 11, 1),
+              }));
+            }}
+          >
+            Number Of Pages Around: {numberOfPagesAround}
+          </Button>
+        ) : null}
+      </FormGroup>
       <MaterialTable
         data={Array(50)
           .fill()

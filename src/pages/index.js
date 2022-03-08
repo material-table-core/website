@@ -6,6 +6,13 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
+import MaterialTable from "@material-table/core";
+
+const data = Array.from({ length: 100 }, (_, i) => ({
+  id: i,
+  name: `Name ${i + 1}`,
+  surname: `Surname ${i + 1}`,
+}));
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -93,6 +100,19 @@ export default function Home() {
             <Link to={useBaseUrl("/demos/Summaryrow/basic")}>Summary Row</Link>
           </li>
         </ul>
+        <MaterialTable
+          data={data}
+          columns={[
+            { title: "id", field: "id" },
+            { title: "Surname", field: "surname" },
+            { title: "Name", field: "name" },
+          ]}
+          options={{
+            numberOfPagesAround: 5,
+            paginationType: "stepped",
+          }}
+          title="Material Table Core"
+        />
       </main>
     </Layout>
   );

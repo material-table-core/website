@@ -1,3 +1,13 @@
+#### 0.1.1 (2022-03-27)
+
+##### Bug Fixes
+
+*  amend detail panel typo (c3ccbd01)
+
+##### Other Changes
+
+*  add fixed columns demo (d7b6f3b9)
+
 ### 0.1.0 (2022-03-07)
 
 #### 0.0.4 (2022-02-26)

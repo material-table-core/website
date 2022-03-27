@@ -1874,14 +1874,13 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@material-table/core@^4.3.27":
-  version "4.3.27"
-  resolved "https://registry.yarnpkg.com/@material-table/core/-/core-4.3.27.tgz#a744095ab9855cc823133b63dddcb68ef0b043a4"
-  integrity sha512-/o73iGBY+ajHJQjL6iOwiXE+3CP+Qsi0P/bpeIdN3YB6xts8ywzPmecBU5u+GkR81qpPhaGLbOR1eKoFX5xM9Q==
+"@material-table/core@^4.3.35":
+  version "4.3.38"
+  resolved "https://registry.yarnpkg.com/@material-table/core/-/core-4.3.38.tgz#0d89bebeb78fbac7d8fa04b1b072afeba258a2c9"
+  integrity sha512-6yjl8I5YU6DOiwY35qUwZrcjxgOO5xGd0JFduEOioaSbFdsow8kvTARhd2Kpl6I94k+TGczXDtHhErVvETTImg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@date-io/date-fns" "^1.3.13"
-    "@material-table/exporters" "^1.0.9"
     "@material-ui/icons" "^4.11.2"
     "@material-ui/pickers" "^3.2.10"
     "@material-ui/styles" "^4.11.4"
@@ -1894,10 +1893,10 @@
     react-double-scrollbar "0.0.15"
     uuid "^3.4.0"
 
-"@material-table/exporters@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@material-table/exporters/-/exporters-1.0.9.tgz#6189538a9dd35af609ba2f4ed61eadca8b83af57"
-  integrity sha512-jECU3dSzuKGsCGolZ6qbLil7Gm0G14lf7IP9XgMf1jQxysyuYTiU1GrQfVuNaVAUabvnZH6Th3AHn7X/I4r38Q==
+"@material-table/exporters@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@material-table/exporters/-/exporters-1.0.12.tgz#224b5aeb3c6ccba5059c6172923f3e121199fdad"
+  integrity sha512-ygqSAT1gZUM4fiQXOS4g/3WfYSrRb7keCM+AsImGO7pkZo0147/L9H3033xNEO7B5DqLXB9yn70Sal4ysFFb3Q==
   dependencies:
     filefy "^0.1.10"
     jest-environment-jsdom "^27.4.4"

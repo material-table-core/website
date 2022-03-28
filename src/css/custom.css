@@ -49,11 +49,6 @@ html[data-theme='dark'] .header-github-link:before {
     no-repeat;
 }
 
-/* for contrast on selected navbar item #20 */
-html[data-theme='dark'] .navbar__link--active, .navbar__link:hover, .navbar__title:hover {
-  color: black;
-}
-
 div[class^="playgroundPreview_"] {
   background-color: lightgray;;
 }

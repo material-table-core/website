@@ -76,7 +76,7 @@ module.exports = {
       isCloseable: false,
     },
     navbar: {
-      style: "primary",
+      // style: "primary",
       title: "Home",
       hideOnScroll: true,
       logo: {

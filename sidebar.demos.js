@@ -75,6 +75,7 @@ module.exports = {
         "selection/basic",
         "selection/on-row-click",
         "selection/persist-events",
+        "selection/outside-of-table",
       ],
     },
     {

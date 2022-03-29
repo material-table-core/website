@@ -1874,7 +1874,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@material-table/core@^4.3.35":
+"@material-table/core@^4.3.38":
   version "4.3.38"
   resolved "https://registry.yarnpkg.com/@material-table/core/-/core-4.3.38.tgz#0d89bebeb78fbac7d8fa04b1b072afeba258a2c9"
   integrity sha512-6yjl8I5YU6DOiwY35qUwZrcjxgOO5xGd0JFduEOioaSbFdsow8kvTARhd2Kpl6I94k+TGczXDtHhErVvETTImg==

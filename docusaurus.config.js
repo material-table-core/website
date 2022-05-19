@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path");
 
 module.exports = {
   title: "@material-table/core",
@@ -13,11 +13,11 @@ module.exports = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: 'demos',
+        id: "demos",
         path: path.resolve(__dirname, "./demos"), // Path to data on filesystem, relative to site dir.
         routeBasePath: "/demos", // URL Route.
-        include: ['**/*.md', '**/*.mdx'],
-        sidebarPath: path.resolve(__dirname, "./sidebar.demos.js") // require.resolve("./sidebar.demos.js")
+        include: ["**/*.md", "**/*.mdx"],
+        sidebarPath: path.resolve(__dirname, "./sidebar.demos.js"), // require.resolve("./sidebar.demos.js")
       },
     ],
   ],
@@ -37,6 +37,10 @@ module.exports = {
   ],
   themes: ["@docusaurus/theme-live-codeblock"],
   themeConfig: {
+    metadata: [
+      // for SEO
+      { name: "keywords", content: "material-table, material-table-core, react-material-table, react-table, material-ui-table" },
+    ],
     hideableSidebar: true,
     prism: {
       theme: require("prism-react-renderer/themes/github"),
@@ -76,7 +80,7 @@ module.exports = {
       isCloseable: false,
     },
     navbar: {
-      style: "primary",
+      // style: "primary",
       title: "Home",
       hideOnScroll: true,
       logo: {
@@ -100,7 +104,7 @@ module.exports = {
           position: "right",
           label: "mbrn/material-table",
         },
-        */ 
+        */
         {
           to: "https://github.com/material-table-core/core",
           position: "right",

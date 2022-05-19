@@ -1,6 +1,6 @@
 {
   "name": "@material-table/website",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -25,8 +25,8 @@
     "@material-table/core": "^0.2.34",
     "@material-table/exporters": "^1.0.12",
     "@mdx-js/react": "^1.6.22",
-    "@mui/icons-material": "^5.5.0",
-    "@mui/material": "^5.5.0",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.8.0",
     "clsx": "^1.1.1",
     "cross-env": "^7.0.3",
     "generate-changelog": "^1.8.0",

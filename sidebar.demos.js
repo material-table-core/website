@@ -14,7 +14,7 @@ module.exports = {
     {
       type: "category",
       label: "Columns",
-      items: ["columns/render-image", "columns/hide"],
+      items: ["columns/render-image", "columns/hide", "columns/fixed"],
     },
     {
       type: "category",
@@ -75,6 +75,7 @@ module.exports = {
         "selection/basic",
         "selection/on-row-click",
         "selection/persist-events",
+        "selection/outside-of-table",
       ],
     },
     {

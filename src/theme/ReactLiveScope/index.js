@@ -17,6 +17,7 @@ import {
   Switch,
   FormControlLabel,
   TextField,
+  MenuItem
 } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";
 import GLOBAL_VARIABLES from "../../../demos/demo.global-variables"; // at the root of this project
@@ -34,6 +35,7 @@ const ReactLiveScope = {
   Button,
   FormGroup,
   TextField,
+  MenuItem,
   FormControlLabel,
   Switch,
   SaveIcon,

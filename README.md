@@ -19,8 +19,9 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 
 ## Publishing
 
-- If your commit message starts with `deploy: ` ...
-  - we will publish a new version of the website based upon that commit
+- yarn release:major // for major release
+- yarn release:minor // for minor release
+- yarn release:patch // for patch release
 
 ## Installation
 

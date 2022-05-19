@@ -1,0 +1,70 @@
+---
+id: outside-of-table
+title: Modify Row Selection State Outside of Table
+---
+
+import MaterialTable from "@material-table/core";
+
+## Notes
+
+Each row has internal state under a property called `row.tableData`.
+
+You can handle a row's checked state via `row.tableData.checked = bool`
+
+See the live demo below for more.
+
+## Live Demo
+
+```jsx live
+function SelectOutsideOfTable() {
+  const [data, setData] = useState([
+    {
+      fruit: "Apple",
+      id: 0,
+    },
+    {
+      fruit: "Orange",
+      id: 1,
+    },
+  ]);
+
+  const toggleRowChecked = (row) => {
+    return (row.tableData && row.tableData.checked ? !row.tableData.checked : true);
+  }
+
+  const toggleSelectAll = () => {
+    const newData = data.map((row) => ({
+      ...row,
+      tableData: {
+        checked: toggleRowChecked(row),
+      },
+    }));
+    setData(newData);
+  };
+
+  const columns = [
+    {
+      title: "Fruit",
+      field: "fruit",
+    },
+    {
+      title: "ID",
+      field: "id",
+    },
+  ];
+
+  return (
+    <div>
+      <button onClick={toggleSelectAll}>Toggle Selection</button>
+      <MaterialTable
+        title="Select All External"
+        columns={columns}
+        data={data}
+        options={{
+          selection: true,
+        }}
+      />
+    </div>
+  );
+}
+```

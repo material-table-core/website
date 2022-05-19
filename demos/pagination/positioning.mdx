@@ -34,11 +34,19 @@ import MaterialTable from "@material-table/core";
 
 ```jsx live
 function PaginationDemo() {
-  const [{ paginationAlignment }, setOptions] = React.useState({
-    paginationAlignment: "flex-end",
-  });
+  const [paginationAlignment, setOptions] = React.useState("flex-end");
   return (
     <>
+      <TextField
+        select={true}
+        label="Select position"
+        value={paginationAlignment}
+        onChange={(e) => setOptions(e.target.value)}
+      >
+        <MenuItem value={"flex-end"}>flex-end</MenuItem>
+        <MenuItem value={"flex-start"}>flex-start</MenuItem>
+        <MenuItem value={"center"}>center</MenuItem>
+      </TextField>
       <MaterialTable
         data={Array(50)
           .fill()

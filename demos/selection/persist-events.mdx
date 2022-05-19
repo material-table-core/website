@@ -27,11 +27,11 @@ import MaterialTable, { MTableBodyRow } from '@material-table/core';
   components={{
     Row: (props) => {
       return (
-        <MTableBodyRow 
-          {...props} 
-          persistEvents 
-          onRowClick={handleClick} 
-          /* onRowDoubleClick={...} */ 
+        <MTableBodyRow
+          {...props}
+          persistEvents
+          onRowClick={handleClick}
+          /* onRowDoubleClick={...} */
         />;
       );
     },
@@ -47,17 +47,18 @@ import MaterialTable, { MTableBodyRow } from '@material-table/core';
 function PersistEventsOnRowClick() {
   const handleClick = (event, rowData) => {
     alert(`event.target.tagName = '${event.target.tagName}'`);
-  } 
+  };
 
   return (
     <MaterialTable
       title={"Click a Row"}
       data={SELECTION_DATA}
       columns={SELECTION_COLS}
-      icons={TABLE_ICONS}
       components={{
         Row: (props) => {
-          return <MTableBodyRow {...props} persistEvents onRowClick={handleClick} />;
+          return (
+            <MTableBodyRow {...props} persistEvents onRowClick={handleClick} />
+          );
         },
       }}
     />

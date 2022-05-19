@@ -3,10 +3,10 @@ id: basic
 title: Basic Export
 ---
 
-import MaterialTable from '@material-table/core';
-import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 
-## Usage 
+## Usage
 
 :::info
 You may use default export methods via the package `@material-table/exporters`. You will need to install this package if you would like to use the default export methods.
@@ -14,24 +14,27 @@ You may use default export methods via the package `@material-table/exporters`. 
 
 ```javascript
 // ...
-import { ExportCsv, ExportPdf } from '@material-table/exporters';
+import { ExportCsv, ExportPdf } from "@material-table/exporters";
 
-<MaterialTable 
+<MaterialTable
   // ...
   options={{
     // ...
-    exportMenu: [{
-      label: 'Export PDF',
-      //// You can do whatever you wish in this function. We provide the
-      //// raw table columns and table data for you to modify, if needed.
-      // exportFunc: (cols, datas) => console.log({ cols, datas })
-      exportFunc: (cols, datas) => ExportPdf(cols, datas, 'myPdfFileName')
-    }, {
-      label: 'Export CSV',
-      exportFunc: (cols, datas) => ExportCsv(cols, datas, 'myCsvFileName')
-    }]
+    exportMenu: [
+      {
+        label: "Export PDF",
+        //// You can do whatever you wish in this function. We provide the
+        //// raw table columns and table data for you to modify, if needed.
+        // exportFunc: (cols, datas) => console.log({ cols, datas })
+        exportFunc: (cols, datas) => ExportPdf(cols, datas, "myPdfFileName"),
+      },
+      {
+        label: "Export CSV",
+        exportFunc: (cols, datas) => ExportCsv(cols, datas, "myCsvFileName"),
+      },
+    ],
   }}
-/>
+/>;
 ```
 
 ## Live Demo
@@ -42,18 +45,22 @@ import { ExportCsv, ExportPdf } from '@material-table/exporters';
 function BasicExport() {
   return (
     <MaterialTable
-      data={DEMO_DATA} 
-      columns={DEMO_COLS} 
-      icons={TABLE_ICONS} 
+      data={DEMO_DATA}
+      columns={DEMO_COLS}
       options={{
         // ...
-        exportMenu: [{
-          label: 'Export PDF',
-          exportFunc: (cols, datas) => ExportPdf(cols, datas, 'myPdfFileName')
-        }, {
-          label: 'Export CSV',
-          exportFunc: (cols, datas) => ExportCsv(cols, datas, 'myCsvFileName')
-        }]
+        exportMenu: [
+          {
+            label: "Export PDF",
+            exportFunc: (cols, datas) =>
+              ExportPdf(cols, datas, "myPdfFileName"),
+          },
+          {
+            label: "Export CSV",
+            exportFunc: (cols, datas) =>
+              ExportCsv(cols, datas, "myCsvFileName"),
+          },
+        ],
       }}
     />
   );

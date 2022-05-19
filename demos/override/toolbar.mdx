@@ -3,24 +3,24 @@ id: toolbar
 title: Toolbar
 ---
 
-import MaterialTable, { MTableToolbar } from '@material-table/core';
-import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
+import MaterialTable, { MTableToolbar } from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 
 ## Usage
 
 ```jsx
-import MaterialTable, { MTableToolbar } from '@material-table/core';
+import MaterialTable, { MTableToolbar } from "@material-table/core";
 
 <MaterialTable
-    // ...
-    components={{
-        Toolbar: props => (
-            <div style={{ backgroundColor: '#e8eaf5' }}>
-                <MTableToolbar {...props} />
-            </div>
-        )
-    }}
-/>
+  // ...
+  components={{
+    Toolbar: (props) => (
+      <div style={{ backgroundColor: "#e8eaf5" }}>
+        <MTableToolbar {...props} />
+      </div>
+    ),
+  }}
+/>;
 ```
 
 ## Live Demo
@@ -35,25 +35,28 @@ function OverrideToolbar() {
 
   return (
     <div>
-      <Button onClick={() => setBgColor(RAND_COLOR)} variant="contained" color="primary">
+      <Button
+        onClick={() => setBgColor(RAND_COLOR)}
+        variant="contained"
+        color="primary"
+      >
         Change Background Color
       </Button>
 
-      <MaterialTable 
-        data={DEMO_DATA} 
-        columns={DEMO_COLS} 
-        icons={TABLE_ICONS}
+      <MaterialTable
+        data={DEMO_DATA}
+        columns={DEMO_COLS}
         components={{
-          Toolbar: props => {
+          Toolbar: (props) => {
             return (
               <div style={{ backgroundColor: bgColor }}>
                 <MTableToolbar {...props} />
               </div>
-            )
-          }
-        }} />
-    </div> 
+            );
+          },
+        }}
+      />
+    </div>
   );
 }
 ```
-

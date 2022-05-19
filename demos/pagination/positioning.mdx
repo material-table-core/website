@@ -1,0 +1,54 @@
+---
+id: positioning
+title: Positioning Pagination Demo
+hide_title: true
+---
+
+# Pagination Positioning
+
+The pagination can be positioned using the flex alignemnt property "justifyContent".
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+## Props
+
+| Field                         | Type                                                                                | Description                                       |
+| ----------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `options.paginationAlignment` | [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) | The position of the pagination using the flex box |
+
+## Usage
+
+```jsx
+import MaterialTable from "@material-table/core";
+
+<MaterialTable
+  // ...
+  options={{ paginationAlignment: "center" }}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function PaginationDemo() {
+  const [{ paginationAlignment }, setOptions] = React.useState({
+    paginationAlignment: "flex-end",
+  });
+  return (
+    <>
+      <MaterialTable
+        data={Array(50)
+          .fill()
+          .map((_, i) => ({ id: i, name: `name ${i + 1}` }))}
+        columns={DEMO_COLS}
+        options={{
+          paginationAlignment,
+        }}
+      />
+    </>
+  );
+}
+```

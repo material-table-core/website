@@ -26,7 +26,7 @@ import MaterialTable from "@material-table/core";
     onRowAddCancelled: (rowData) => {
       return new Promise((resolve, reject) => {
         // Must return a Promise
-      }); 
+      });
     },
     onRowUpdateCancelled: (rowData) => {
       return new Promise((resolve, reject) => {
@@ -82,7 +82,6 @@ function BasicEditPanelDemo() {
     <MaterialTable
       data={data}
       columns={EDITABLE_COLUMNS}
-      icons={TABLE_ICONS}
       editable={{
         onBulkUpdate: (changes) => {
           return new Promise((resolve, reject) => {
@@ -91,7 +90,7 @@ function BasicEditPanelDemo() {
               setData(getNewDataBulkEdit(changes, copyData));
               resolve();
             }, 1000);
-          })
+          });
         },
         onRowAddCancelled: (rowData) => console.log("Row adding cancelled"),
         onRowUpdateCancelled: (rowData) => console.log("Row editing cancelled"),
@@ -109,7 +108,9 @@ function BasicEditPanelDemo() {
             setTimeout(() => {
               const dataUpdate = [...data];
               // In dataUpdate, find target
-              const target = dataUpdate.find((el) => el.id === oldData.tableData.id);
+              const target = dataUpdate.find(
+                (el) => el.id === oldData.tableData.id
+              );
               const index = dataUpdate.indexOf(target);
               dataUpdate[index] = newData;
               setData([...dataUpdate]);
@@ -121,7 +122,9 @@ function BasicEditPanelDemo() {
           return new Promise((resolve, reject) => {
             setTimeout(() => {
               const dataDelete = [...data];
-              const target = dataDelete.find((el) => el.id === oldData.tableData.id);
+              const target = dataDelete.find(
+                (el) => el.id === oldData.tableData.id
+              );
               const index = dataDelete.indexOf(target);
               dataDelete.splice(index, 1);
               setData([...dataDelete]);

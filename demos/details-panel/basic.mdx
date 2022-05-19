@@ -3,30 +3,30 @@ id: basic
 title: Basic Details Panel
 ---
 
-import MaterialTable from '@material-table/core';
-import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 
 ## Usage
 
 ```jsx
-import MaterialTable from '@material-table/core';
+import MaterialTable from "@material-table/core";
 
 <MaterialTable
   // ... other props
-  detailPanel={({rowData}) => {
+  detailPanel={({ rowData }) => {
     return (
       <div
         style={{
           fontSize: 20,
-          textAlign: 'center',
-          height: 100
+          textAlign: "center",
+          height: 100,
         }}
       >
         This is a detailed panel for {rowData.name}
       </div>
-    )
+    );
   }}
-/>
+/>;
 ```
 
 ## Live Demo
@@ -37,24 +37,22 @@ import MaterialTable from '@material-table/core';
 function BasicDetailsPanelDemo() {
   return (
     <MaterialTable
-      data={DEMO_DATA} 
-      columns={DEMO_COLS} 
-      icons={TABLE_ICONS}
-      detailPanel={({rowData}) => {
+      data={DEMO_DATA}
+      columns={DEMO_COLS}
+      detailPanel={({ rowData }) => {
         return (
           <div
             style={{
               fontSize: 20,
-              textAlign: 'center',
-              height: 100
+              textAlign: "center",
+              height: 100,
             }}
           >
             This is a detailed panel for {rowData.name}
           </div>
-        )
+        );
       }}
     />
   );
 }
 ```
-

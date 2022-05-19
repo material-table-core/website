@@ -1,22 +1,22 @@
 ---
 id: basic
-title: Basic Grouping 
+title: Basic Grouping
 ---
 
-import MaterialTable from '@material-table/core';
-import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 
 ## Usage
 
 ```jsx
-import MaterialTable from '@material-table/core';
+import MaterialTable from "@material-table/core";
 
 <MaterialTable
   // ... other props
   options={{
-    grouping: true
+    grouping: true,
   }}
-/>
+/>;
 ```
 
 ## Live Demo
@@ -27,14 +27,12 @@ import MaterialTable from '@material-table/core';
 function BasicDetailsPanelDemo() {
   return (
     <MaterialTable
-      data={DEMO_DATA} 
-      columns={DEMO_COLS} 
-      icons={TABLE_ICONS}
+      data={DEMO_DATA}
+      columns={DEMO_COLS}
       options={{
-        grouping: true
+        grouping: true,
       }}
     />
   );
 }
 ```
-

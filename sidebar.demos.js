@@ -105,7 +105,7 @@ module.exports = {
     {
       type: "category",
       label: "Pagination",
-      items: ["pagination/basic"],
+      items: ["pagination/basic", "pagination/positioning"],
     },
   ],
 };

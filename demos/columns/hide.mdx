@@ -3,37 +3,37 @@ id: hide
 title: Hiding Columns
 ---
 
-import MaterialTable from '@material-table/core';
-import { InfoBannerAboutGlobalVarsInDemos } from '../../src/components';
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 
-There are three ways in which a column can be hidden. 
+There are three ways in which a column can be hidden.
 
- - Hidden from being displayed in table
-   - using the `column.hidden` prop
- - Hidden from the [Columns Button](/docs/breaking-changes#columns-button) (per column setting)
-   - using the `column.hiddenByColumnsButton` prop
- - Hidden from the Columns Button ("global" setting for all columns)
-   - [See more here](/docs/breaking-changes#column-hidden-defaults)
+- Hidden from being displayed in table
+  - using the `column.hidden` prop
+- Hidden from the [Columns Button](/docs/breaking-changes#columns-button) (per column setting)
+  - using the `column.hiddenByColumnsButton` prop
+- Hidden from the Columns Button ("global" setting for all columns)
+  - [See more here](/docs/breaking-changes#column-hidden-defaults)
 
-`column.hidden` and `column.hiddenByColumnsButton` are not coupled whatsoever. 
+`column.hidden` and `column.hiddenByColumnsButton` are not coupled whatsoever.
 
 ## Help! I want to...
 
 ### Hide from table and columns button
 
- - Set `column.hidden` to `true` ***AND*** `column.hiddenByColumnsButton` to `true` (effects single column)
+- Set `column.hidden` to `true` **_AND_** `column.hiddenByColumnsButton` to `true` (effects single column)
 
-***OR***
+**_OR_**
 
- - Set `column.hidden` to `true` ***AND*** override the `MTableToolbar` component, setting prop [`columnsHiddenInColumnsButton`](/docs/api/components/mtabletoolbar/#columnshiddenincolumnsbutton) to `true` (which effects all columns) 
+- Set `column.hidden` to `true` **_AND_** override the `MTableToolbar` component, setting prop [`columnsHiddenInColumnsButton`](/docs/api/components/mtabletoolbar/#columnshiddenincolumnsbutton) to `true` (which effects all columns)
 
 ### Only hide from table, but show in columns button
 
- - Just set `column.hidden` to `true`
+- Just set `column.hidden` to `true`
 
 ### Show in table, but not in columns button
 
- - Just set `column.hiddenByColumnsButton` to `true` (for single column) ***OR*** override the `MTableToolbar` component, setting prop [`columnsHiddenInColumnsButton`](/docs/api/components/mtabletoolbar/#columnshiddenincolumnsbutton) to `true` (which effects all columns)
+- Just set `column.hiddenByColumnsButton` to `true` (for single column) **_OR_** override the `MTableToolbar` component, setting prop [`columnsHiddenInColumnsButton`](/docs/api/components/mtabletoolbar/#columnshiddenincolumnsbutton) to `true` (which effects all columns)
 
 ## Live Demo
 
@@ -43,36 +43,35 @@ There are three ways in which a column can be hidden.
 function HideColFrmTbleNotFrmColsBtn() {
   return (
     <MaterialTable
-      icons={TABLE_ICONS}
-      options={{ 
-        // Allow user to hide/show 
+      options={{
+        // Allow user to hide/show
         // columns from Columns Button
-        columnsButton: true
+        columnsButton: true,
       }}
       data={[
-        { 
-          name: 'Foo',
-          surname: 'Bar'
+        {
+          name: "Foo",
+          surname: "Bar",
         },
-        { 
-          name: 'Baz', 
-          surname: 'Fee', 
+        {
+          name: "Baz",
+          surname: "Fee",
         },
-      ]} 
+      ]}
       columns={[
-        { 
-          title: 'Name', 
-          field: 'name', 
+        {
+          title: "Name",
+          field: "name",
           // `name` field is hidden in table
           // but not in Columns Button
           hidden: true,
         },
-        { 
-          title: 'Surname', 
-          field: 'surname' 
-        }
-      ]}       
+        {
+          title: "Surname",
+          field: "surname",
+        },
+      ]}
     />
-  )
+  );
 }
 ```

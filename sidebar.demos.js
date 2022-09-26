@@ -81,7 +81,7 @@ module.exports = {
     {
       type: "category",
       label: "Sort",
-      items: ["sort/basic"],
+      items: ["sort/basic", "sort/multi"],
     },
     {
       type: "category",

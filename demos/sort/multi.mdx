@@ -1,0 +1,127 @@
+---
+id: multi
+title: Multi Sorting
+hide_title: true
+---
+
+# Multi Sorting
+
+## Props
+
+| Field                              | Type                                                                      | default   | Description                                      |
+| ---------------------------------- | ------------------------------------------------------------------------- | --------- | ------------------------------------------------ |
+| `options.defaultOrderByCollection` | { orderBy: number; orderDirection: 'asc' or 'desc', sortOrder: number }[] | []        | The initial sort state                           |
+| `options.maxColumnSort`            | number or 'all_columns'                                                   | 1         | Specifies the amount for of columns to be sorted |
+| `column.showColumnSortOrder`       | boolean                                                                   | false     | Display on sort order in the table header        |
+| `column.sortOrderIndicatorStyle`   | React.CSSProperties                                                       | undefined | Style of the order indicator                     |
+| `column.onOrderCollectionChange`   | (orderByCollection: OrderByCollection[]) => void;                         | undefined | The callback, once the collection changes        |
+| `column.orderByCollection`         | { orderBy: number; orderDirection: 'asc' or 'desc', sortOrder: number }[] | []        | Override the current sort state                  |
+
+## Usage
+
+```jsx
+import MaterialTable from "@material-table/core";
+
+<MaterialTable
+  // ...
+  options={{
+    selection: false,
+    maxColumnSort: 2,
+    defaultOrderByCollection: orderCollection,
+    showColumnSortOrder: true,
+  }}
+  onOrderCollectionChange={onOrderCollectionChange}
+  columns={[
+    {
+      title: "Name",
+      field: "name",
+      sorting: false,
+    },
+    {
+      title: "Surname",
+      field: "surname",
+    },
+    {
+      title: "Birth Year",
+      field: "birthYear",
+    },
+    {
+      title: "Birth Place",
+      field: "birthCity",
+      lookup: {
+        34: "İstanbul",
+        63: "Şanlıurfa",
+      },
+    },
+  ]}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function BasicSorting() {
+  const orderCollection = [
+    { orderBy: 1, orderDirection: "asc", sortOrder: 1 },
+    { orderBy: 2, orderDirection: "desc", sortOrder: 2 },
+  ];
+
+  const onOrderCollectionChange = (orderByCollection) => {
+    console.log("onOrderCollectionChange ===>", orderByCollection);
+  };
+  return (
+    <MaterialTable
+      data={[
+        {
+          name: "Mehmet",
+          surname: "Baran",
+          birthYear: 1987,
+          birthCity: 63,
+        },
+        {
+          name: "Zerya Betül",
+          surname: "Baran",
+          birthYear: 2017,
+          birthCity: 34,
+        },
+      ]}
+      options={{
+        selection: false,
+        maxColumnSort: 2,
+        defaultOrderByCollection: orderCollection,
+        showColumnSortOrder: true,
+      }}
+      onOrderCollectionChange={onOrderCollectionChange}
+      columns={[
+        {
+          title: "Name",
+          field: "name",
+          /**
+           * remove sorting on specific column
+           */
+          sorting: false,
+        },
+        {
+          title: "Surname",
+          field: "surname",
+        },
+        {
+          title: "Birth Year",
+          field: "birthYear",
+          type: "numeric",
+        },
+        {
+          title: "Birth Place",
+          field: "birthCity",
+          lookup: {
+            34: "İstanbul",
+            63: "Şanlıurfa",
+          },
+        },
+      ]}
+    />
+  );
+}
+```

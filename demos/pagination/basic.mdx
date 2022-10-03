@@ -21,6 +21,7 @@ import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 | `options.paginationPosition`  | 'bottom' /'top' / 'both'                                                                   | Adjusts the pagination position in relation to the body                               |
 | `options.numberOfPagesAround` | 1 - 10                                                                                     | In combination with the stepped pagination adjusts the pages around current page      |
 | `localization`                | [The texts](https://github.com/material-table-core/core/blob/master/types/index.d.ts#L439) | The text displayed on hover over the pagination elements                              |
+| `showFirstLastPageButtons`    | boolean or Partial<{ first: boolean; last: boolean }>                                      | Controls the first and last buttons for pagination, defaults to true                  |
 
 ## Usage
 
@@ -39,6 +40,7 @@ import MaterialTable from "@material-table/core";
 
 ```jsx live
 function PaginationDemo() {
+  const showFirstLastPageButtonsStates = {all: true; first: {last: false}, last: {first: false}, none: false }
   const [
     {
       paging,
@@ -46,6 +48,7 @@ function PaginationDemo() {
       paginationType,
       numberOfPagesAround,
       paginationPosition,
+      showFirstLastPageButtonsState,
     },
     setOptions,
   ] = React.useState({
@@ -54,7 +57,10 @@ function PaginationDemo() {
     paginationType: "normal",
     paginationPosition: "bottom",
     numberOfPagesAround: 1,
+    showFirstLastPageButtonsState: "all",
   });
+
+  const showFirstLastPageButtons = showFirstLastPageButtonsStates[showFirstLastPageButtonsState]
   return (
     <>
       <FormGroup>
@@ -127,6 +133,24 @@ function PaginationDemo() {
           </Button>
         ) : null}
       </FormGroup>
+      <FormControl>
+        <FormLabel id="demo-controlled-radio-buttons-group">
+          Show First/Last Buttons
+        </FormLabel>
+        <RadioGroup
+          name="controlled-radio-buttons-group"
+          value={showFirstLastPageButtonsState}
+          onChange={(e) =>  setOptions((prev) => ({
+                ...prev,
+                showFirstLastPageButtons: e.target.value
+              }));)}
+        >
+          <FormControlLabel value="all" control={<Radio />} label="All" />
+          <FormControlLabel value="none" control={<Radio />} label="None" />
+          <FormControlLabel value="first" control={<Radio />} label="First only" />
+          <FormControlLabel value="last" control={<Radio />} label="Last Only" />
+        </RadioGroup>
+      </FormControl>
       <MaterialTable
         data={Array(50)
           .fill()
@@ -138,6 +162,7 @@ function PaginationDemo() {
           paginationType,
           numberOfPagesAround,
           paginationPosition,
+          showFirstLastPageButtons
         }}
       />
     </>

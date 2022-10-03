@@ -12,12 +12,16 @@ import MaterialTable, {
 } from "@material-table/core";
 import { ExportPdf, ExportCsv } from "@material-table/exporters";
 import {
+  Switch,
   Button,
   FormGroup,
-  Switch,
   FormControlLabel,
+  FormControl,
+  Radio,
+  FormLabel,
+  RadioGroup,
   TextField,
-  MenuItem
+  MenuItem,
 } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";
 import GLOBAL_VARIABLES from "../../../demos/demo.global-variables"; // at the root of this project
@@ -35,8 +39,12 @@ const ReactLiveScope = {
   Button,
   FormGroup,
   TextField,
+  Radio,
   MenuItem,
   FormControlLabel,
+  FormControl,
+  FormLabel,
+  RadioGroup,
   Switch,
   SaveIcon,
   // Material Table imports

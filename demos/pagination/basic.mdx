@@ -40,7 +40,12 @@ import MaterialTable from "@material-table/core";
 
 ```jsx live
 function PaginationDemo() {
-  const showFirstLastPageButtonsStates = {all: true, first: {last: false}, last: {first: false}, none: false }
+  const showFirstLastPageButtonsStates = {
+    all: true,
+    first: { last: false },
+    last: { first: false },
+    none: false,
+  };
   const [
     {
       paging,
@@ -60,7 +65,8 @@ function PaginationDemo() {
     showFirstLastPageButtonsState: "all",
   });
 
-  const showFirstLastPageButtons = showFirstLastPageButtonsStates[showFirstLastPageButtonsState]
+  const showFirstLastPageButtons =
+    showFirstLastPageButtonsStates[showFirstLastPageButtonsState];
   return (
     <>
       <FormGroup>
@@ -138,17 +144,28 @@ function PaginationDemo() {
           Show First/Last Buttons
         </FormLabel>
         <RadioGroup
+          row={true}
           name="controlled-radio-buttons-group"
           value={showFirstLastPageButtonsState}
-          onChange={(e) =>  setOptions((prev) => ({
-                ...prev,
-                showFirstLastPageButtons: e.target.value
-              }));)}
+          onChange={(e) => {
+            setOptions((prev) => ({
+              ...prev,
+              showFirstLastPageButtonsState: e.target.value,
+            }));
+          }}
         >
           <FormControlLabel value="all" control={<Radio />} label="All" />
           <FormControlLabel value="none" control={<Radio />} label="None" />
-          <FormControlLabel value="first" control={<Radio />} label="First only" />
-          <FormControlLabel value="last" control={<Radio />} label="Last Only" />
+          <FormControlLabel
+            value="first"
+            control={<Radio />}
+            label="First only"
+          />
+          <FormControlLabel
+            value="last"
+            control={<Radio />}
+            label="Last Only"
+          />
         </RadioGroup>
       </FormControl>
       <MaterialTable
@@ -162,7 +179,7 @@ function PaginationDemo() {
           paginationType,
           numberOfPagesAround,
           paginationPosition,
-          showFirstLastPageButtons
+          showFirstLastPageButtons,
         }}
       />
     </>

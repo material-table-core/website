@@ -1810,10 +1810,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@material-table/core@0.2.42":
-  version "0.2.42"
-  resolved "https://registry.yarnpkg.com/@material-table/core/-/core-0.2.42.tgz#a7c05a64fe6f3965d828e0f224defbd6594fad60"
-  integrity sha512-5X8ZK/IDm6/RXT2nOqSr2Wnv6gzKXsCsiryQFwJ1nNagMlAOrdFj+72eWs03alUmWA+X/4qo8suTQolQlrJwaw==
+"@material-table/core@0.2.43":
+  version "0.2.43"
+  resolved "https://registry.yarnpkg.com/@material-table/core/-/core-0.2.43.tgz#2d7bad50ca87a1997d3f931d4e27ce03cd710ac4"
+  integrity sha512-q/WK7PTBftWm6SD+4DaRfiujSOmMPQKyFTwh37lJy6GhI6N+hAd+uB8Qck+BltlJBp7vo25uS3BXiiWpFlxjdA==
   dependencies:
     "@babel/runtime" "^7.19.0"
     "@date-io/core" "^2.16.0"

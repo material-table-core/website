@@ -30,7 +30,10 @@ function BasicDetailsPanelDemo() {
       data={DEMO_DATA}
       columns={DEMO_COLS}
       options={{
+        // Enabling grouping
         grouping: true,
+        // Show the child count in brackets
+        showGroupingCount: true,
       }}
     />
   );

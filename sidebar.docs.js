@@ -7,7 +7,7 @@ module.exports = {
         "getting-started/install",
         "getting-started/material-ui-v5",
         "getting-started/breaking-changes",
-        "getting-started/compatability",
+        "getting-started/compatibility",
         "getting-started/about",
       ],
     },

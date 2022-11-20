@@ -1,3 +1,10 @@
+### 0.4.0 (2022-11-20)
+
+##### Other Changes
+
+* //github.com/material-table-core/website (92130a3e)
+*  v0.3.3 (8b8aa536)
+
 #### 0.3.3 (2022-11-20)
 
 #### 0.3.3 (2022-11-02)

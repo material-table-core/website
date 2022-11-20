@@ -1,6 +1,27 @@
 ---
 id: basic
-title: Basic Search 
+title: Basic Search
 ---
 
-More on Search goes here
+The Search allows the user to filter the displayed rows by entering a search text into the toolbar input. It is enabled by default.
+
+The input is debounced to 200 ms by default, which can be adjusted via the options.
+
+To exclude a specific column from the search, override the `customFilterAndSearch` prop of the column[Link](https://github.com/material-table-core/core/issues/669).
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+## Props
+
+| Field                          | Type                                                               | Description                                                                                    |
+| ------------------------------ | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| `options.searchDebounceDelay`  | number                                                             | Sets the search debounce. Defaults to 200 ms                                                   |
+| `options.search`               | boolean                                                            | Used to disable the search bar, defaults to true                                               |
+| `options.searchText`           | 'Search'                                                           | The text to show as a hint for the empty search field                                          |
+| `options.searchFieldAlignment` | 'left' /'right'                                                    | The position of the search text, defaults to 'right'                                           |
+| `options.searchFieldStyle`     | React.CSSProperties                                                | CSS props to style the input field                                                             |
+| `options.searchFieldVariant`   | 'standard' / 'filled'/ 'outlined'                                  | The variant of the input [Link](https://mui.com/material-ui/react-text-field/#basic-textfield) |
+| `options.searchAutoFocus`      | boolean                                                            | Focuses the input on render                                                                    |
+| `column.customFilterAndSearch` | ( filter: string, rowData: RowData, columnDef: Column) => boolean; | Optional function to override the default search and filter of each column                     |
+| `options.searchable`           | boolean                                                            | Possibility to disable the search for this column                                              |

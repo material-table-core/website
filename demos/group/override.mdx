@@ -1,0 +1,50 @@
+---
+id: override
+title: Override Grouping
+---
+
+import MaterialTable from "@material-table/core";
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
+## Usage
+
+To override the grouping text within the group row, use the column.groupRender callback function.
+It returns the grouped string for each group row for the given column and expects a renderable react node.
+
+Additionally, the options.showGroupingCount (boolean) can be used to display the amount of items that are grouped under each group.
+
+```jsx
+import MaterialTable from "@material-table/core";
+
+<MaterialTable
+  // ... other props
+  columns={[field: "test", renderGroup: () => "Test"]}
+  options={{
+    showGroupingCount: true,
+  }}
+/>;
+```
+
+## Live Demo
+
+<InfoBannerAboutGlobalVarsInDemos />
+
+```jsx live
+function GroupingOverrideDemo() {
+  return (
+    <MaterialTable
+      data={DEMO_DATA}
+      columns={DEMO_COLS.map((col) => ({
+        ...col,
+        groupRender: (value) => `Test ${value}`,
+      }))}
+      options={{
+        // Enabling grouping
+        grouping: true,
+        // Show the child count in brackets
+        showGroupingCount: true,
+      }}
+    />
+  );
+}
+```

@@ -51,7 +51,7 @@ module.exports = {
     {
       type: "category",
       label: "Group",
-      items: ["group/basic"],
+      items: ["group/basic", "group/override"],
     },
     {
       type: "category",

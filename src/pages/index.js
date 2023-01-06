@@ -92,6 +92,9 @@ export default function Home() {
           </li>
           <li>
             <Link to={useBaseUrl("/demos/group/basic")}>Grouping</Link>
+            <Link to={useBaseUrl("/demos/group/override")}>
+              Override Grouping
+            </Link>
           </li>
           <li>
             <Link to={useBaseUrl("/demos/selection/basic")}>Selection</Link>

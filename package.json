@@ -22,7 +22,7 @@
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.70",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@material-table/core": "6.1.2",
+    "@material-table/core": "6.1.6",
     "@material-table/exporters": "^1.0.12",
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.11.0",

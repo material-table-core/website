@@ -40,10 +40,8 @@ jobs:
           git remote add upstream https://github.com/material-table-core/material-table-core.github.io
           yarn install
           yarn build
-          git stash yarn.lock
-          git fetch upstream
-          git checkout upstream/main
-          cd ./build
+          git filter-repo --path build/
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"
+          git fetch upstream
           git push upstream upstream/main

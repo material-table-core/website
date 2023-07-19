@@ -42,6 +42,7 @@ jobs:
           yarn deploy
           git fetch upstream
           git checkout upstream/main
+          cd ./build
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"
           git push upstream upstream/main

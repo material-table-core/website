@@ -36,7 +36,7 @@ function GroupingOverrideDemo() {
       data={DEMO_DATA}
       columns={DEMO_COLS.map((col) => ({
         ...col,
-        groupRender: (value) => `Test ${value}`,
+        renderGroup: (value) => `Test ${value}`,
       }))}
       options={{
         // Enabling grouping

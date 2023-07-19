@@ -39,7 +39,7 @@ jobs:
           git config --global user.name "material-table-core-worker"
           git remote add upstream https://github.com/material-table-core/material-table-core.github.io
           yarn install
-          yarn deploy
+          yarn build
           git fetch upstream
           git checkout upstream/main
           cd ./build

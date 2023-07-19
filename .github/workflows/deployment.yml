@@ -7,27 +7,27 @@ on:
       - master
 
 jobs:
-#  tests:
-#    if: startsWith(github.event.head_commit.message, 'deploy:')
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v1
-#      - uses: actions/setup-node@v1
-#        with:
-#          node-version: '12.x'
-#      - name: Test Build
-#        run: |
-#          yarn install
-#          yarn build
+  #  tests:
+  #    if: startsWith(github.event.head_commit.message, 'deploy:')
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - uses: actions/checkout@v1
+  #      - uses: actions/setup-node@v1
+  #        with:
+  #          node-version: '12.x'
+  #      - name: Test Build
+  #        run: |
+  #          yarn install
+  #          yarn build
   deployment:
     if: startsWith(github.event.head_commit.message, 'deploy:')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1 
+      - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-      - uses: webfactory/ssh-agent@v0.5.0 
+          node-version: "12.x"
+      - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
       - name: docusaurus deploy
@@ -37,5 +37,11 @@ jobs:
         run: |
           git config --global user.email "material.table.core@gmail.com"
           git config --global user.name "material-table-core-worker"
+          git remote add upstream https://github.com/material-table-core/material-table-core.github.io
           yarn install
           yarn deploy
+          git fetch upstream
+          git checkout upstream/main
+          git add .
+          git commit -m "deploy: ${{ github.event.head_commit.message }}"
+          git push upstream upstream/main

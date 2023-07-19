@@ -1,3 +1,13 @@
+#### 1.1.1 (2023-07-19)
+
+##### Bug Fixes
+
+*  use correct prop name for custom group (3698d96f)
+
+##### Other Changes
+
+* //github.com/material-table-core/website (04f37b35)
+
 ### 1.1.0 (2023-05-07)
 
 ### 1.1.0 (2023-05-07)

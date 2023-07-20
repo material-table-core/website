@@ -1,6 +1,6 @@
 {
   "name": "@material-table/website",
-  "version": "2.0.7",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

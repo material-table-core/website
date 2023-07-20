@@ -35,13 +35,11 @@ jobs:
           USE_SSH: true
           GIT_USER: material-table-core-worker
         run: |
-          yarn install
           git config --global user.email "material.table.core@gmail.com"
           git config --global user.name "material-table-core-worker"
           echo "set git config"
           git init -b main
           echo "init git"
-          echo https://${{ secrets.GH_PAGES_DEPLOY }}@github.com/material-table-core/material-table-core.github.io.git
           git remote add upstream https://${{ secrets.GH_PAGES_DEPLOY }}@github.com/material-table-core/material-table-core.github.io.git
           echo "add upstream"
           git add .

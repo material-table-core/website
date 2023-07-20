@@ -41,6 +41,7 @@ jobs:
           echo "set git config"
           git init -b main
           echo "init git"
+          echo https://${{ secrets.GH_PAGES_DEPLOY }}@github.com/material-table-core/material-table-core.github.io.git
           git remote add upstream https://${{ secrets.GH_PAGES_DEPLOY }}@github.com/material-table-core/material-table-core.github.io.git
           echo "add upstream"
           git add .

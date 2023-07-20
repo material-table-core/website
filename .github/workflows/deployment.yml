@@ -38,6 +38,7 @@ jobs:
           git config --global user.email "material.table.core@gmail.com"
           git config --global user.name "material-table-core-worker"
           git remote add upstream https://github.com/material-table-core/material-table-core.github.io
+          sudo apt install git-filter-repo
           yarn install
           yarn build
           git filter-repo --path build/

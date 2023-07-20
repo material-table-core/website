@@ -42,7 +42,7 @@ jobs:
           echo "set git config"
           git init -b main
           echo "init git"
-          git remote add upstream https://Domino987:${{ secrets.GH_PAGES_DEPLOY }}@github.com/material-table-core/material-table-core.github.io.git
+          git remote add upstream https://Domino987:asdasd@github.com/material-table-core/material-table-core.github.io.git
           echo "add upstream"
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"

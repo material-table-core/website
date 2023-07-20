@@ -6,6 +6,9 @@ on:
       - main
       - master
 
+env:
+  deploy_key: ${{ secrets.GH_PAGES_DEPLOY }}
+
 jobs:
   #  tests:
   #    if: startsWith(github.event.head_commit.message, 'deploy:')
@@ -34,7 +37,6 @@ jobs:
         env:
           USE_SSH: true
           GIT_USER: material-table-core-worker
-          deploy_key: ${{ secrets.GH_PAGES_DEPLOY }}
         run: |
           mkdir build
           cd build

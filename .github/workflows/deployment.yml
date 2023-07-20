@@ -39,6 +39,7 @@ jobs:
           GIT_USER: material-table-core-worker
         run: |
           yarn install
+          npx update-browserslist-db@latest
           yarn build
           cd build
           git config --global user.email "material.table.core@gmail.com"
@@ -47,7 +48,7 @@ jobs:
           git init -b main
           echo "init git"
           echo "deploy_key: $GIT_USER"
-          git remote add upstream https://Domino987:$deploy_key@github.com/material-table-core/material-table-core.github.io.git
+          git remote add upstream https:/$deploy_key@github.com/material-table-core/material-table-core.github.io.git
           echo "add upstream"
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"

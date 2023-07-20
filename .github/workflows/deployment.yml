@@ -52,4 +52,4 @@ jobs:
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"
           echo "commit"
-          git push upstream main
+          git push upstream main --force

@@ -47,7 +47,7 @@ jobs:
           git init -b main
           echo "init git"
           echo "deploy_key: $GIT_USER"
-          git remote add upstream https:/$deploy_key@github.com/material-table-core/material-table-core.github.io.git
+          git remote add upstream https://$deploy_key@github.com/material-table-core/material-table-core.github.io
           echo "add upstream"
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"

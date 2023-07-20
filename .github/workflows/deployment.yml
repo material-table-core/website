@@ -7,7 +7,7 @@ on:
       - master
 
 env:
-  deploy_key: ${{ secrets.GH_PAGES_DEPLOY }}
+  deploy_key: ${{ secrets.TEST_KEY }}
 
 jobs:
   #  tests:

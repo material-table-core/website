@@ -34,6 +34,7 @@ jobs:
         env:
           USE_SSH: true
           GIT_USER: material-table-core-worker
+          deploy_key: ${{ secrets.GH_PAGES_DEPLOY }}
         run: |
           mkdir build
           cd build
@@ -42,7 +43,8 @@ jobs:
           echo "set git config"
           git init -b main
           echo "init git"
-          git remote add upstream https://Domino987:@github.com/material-table-core/material-table-core.github.io.git
+          echo "deploy_key: $GIT_USER"
+          git remote add upstream https://Domino987:$deploy_key@github.com/material-table-core/material-table-core.github.io.git
           echo "add upstream"
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"

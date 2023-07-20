@@ -35,14 +35,13 @@ jobs:
           USE_SSH: true
           GIT_USER: material-table-core-worker
         run: |
+          yarn install
+          yarn build
+          cd build
+          git init
           git config --global user.email "material.table.core@gmail.com"
           git config --global user.name "material-table-core-worker"
           git remote add upstream https://github.com/material-table-core/material-table-core.github.io
-          sudo apt install git-filter-repo
-          yarn install
-          yarn build
-          git filter-repo --path build/ --force
-          git init
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}" --force
           git push upstream upstream/main --force

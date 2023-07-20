@@ -39,7 +39,6 @@ jobs:
           GIT_USER: material-table-core-worker
         run: |
           yarn install
-          npx update-browserslist-db@latest
           yarn build
           cd build
           git config --global user.email "material.table.core@gmail.com"

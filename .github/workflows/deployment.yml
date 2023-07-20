@@ -42,6 +42,7 @@ jobs:
           yarn install
           yarn build
           git filter-repo --path build/ --force
+          git init
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}" --force
           git push upstream upstream/main --force

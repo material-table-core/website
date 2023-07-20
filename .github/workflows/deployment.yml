@@ -38,10 +38,10 @@ jobs:
           yarn install
           yarn build
           cd build
-          git init
+          git init -b main
           git config --global user.email "material.table.core@gmail.com"
           git config --global user.name "material-table-core-worker"
           git remote add upstream https://github.com/material-table-core/material-table-core.github.io
           git add .
-          git commit -m "deploy: ${{ github.event.head_commit.message }}" --force
-          git push upstream upstream/main --force
+          git commit -m "deploy: ${{ github.event.head_commit.message }}"
+          git push upstream upstream/main

@@ -41,7 +41,7 @@ jobs:
           sudo apt install git-filter-repo
           yarn install
           yarn build
-          git filter-repo --path build/
+          git filter-repo --path build/ --force
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}" --force
           git push upstream upstream/main --force

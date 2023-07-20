@@ -5,6 +5,13 @@ on:
     branches:
       - main
       - master
+  workflow_dispatch:
+    inputs:
+      DEBUG:
+        default: false
+        description: Option to send debug to token requestor.
+        required: false
+        type: boolean
 
 jobs:
   #  tests:

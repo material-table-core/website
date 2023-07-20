@@ -44,4 +44,4 @@ jobs:
           git remote add upstream https://github.com/material-table-core/material-table-core.github.io
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"
-          git push upstream upstream/main
+          git push upstream main

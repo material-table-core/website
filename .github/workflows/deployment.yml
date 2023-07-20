@@ -14,7 +14,7 @@ jobs:
   #      - uses: actions/checkout@v1
   #      - uses: actions/setup-node@v1
   #        with:
-  #          node-version: '12.x'
+  #          node-version: '16.x'
   #      - name: Test Build
   #        run: |
   #          yarn install
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: "16.x"
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
@@ -40,8 +40,12 @@ jobs:
           cd build
           git config --global user.email "material.table.core@gmail.com"
           git config --global user.name "material-table-core-worker"
+          echo "set git config"
           git init -b main
-          git remote add upstream https://github.com/material-table-core/material-table-core.github.io
+          echo "init git"
+          git remote add upstream git@github.com:material-table-core/material-table-core.github.io
+          echo "add upstream"
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"
+          echo "commit"
           git push upstream main

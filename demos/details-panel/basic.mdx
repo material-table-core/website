@@ -13,6 +13,7 @@ import MaterialTable from "@material-table/core";
 
 <MaterialTable
   // ... other props
+  onDetailPanelChange={(row, state) => {...}}
   detailPanel={({ rowData }) => {
     return (
       <div
@@ -39,6 +40,7 @@ function BasicDetailsPanelDemo() {
     <MaterialTable
       data={DEMO_DATA}
       columns={DEMO_COLS}
+      onDetailPanelChange={console.log}
       detailPanel={({ rowData }) => {
         return (
           <div

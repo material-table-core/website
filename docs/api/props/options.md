@@ -18,6 +18,10 @@ In order to make things easier on you, we have provided the following default ex
 You will need to install `@material-table/exporters` to use the "built-in", default export methods
 :::
 
+:::info
+The exportAllData options will always export all the passed data, instead of the current shown rows.
+:::
+
 ```javascript
 // ...
 import { ExportCsv, ExportPdf } from '@material-table/exporters';
@@ -26,6 +30,7 @@ import { ExportCsv, ExportPdf } from '@material-table/exporters';
   // ...
   options={{
     // ...
+    exportAllData: true,
     exportMenu: [{
       label: 'Export PDF',
       exportFunc: (cols, datas) => ExportPdf(cols, datas, 'myPdfFileName')
@@ -36,6 +41,11 @@ import { ExportCsv, ExportPdf } from '@material-table/exporters';
   }}
 />
 ```
+### `exportAllData`
+
+:::info Export all data that is passed to the table
+
+:::
 
 ### `exportButton`
 

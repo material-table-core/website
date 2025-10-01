@@ -12,6 +12,12 @@ import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
 You may use default export methods via the package `@material-table/exporters`. You will need to install this package if you would like to use the default export methods.
 :::
 
+
+:::info
+The exportAllData options will always export all the passed data, instead of the current shown rows.
+:::
+
+
 ```javascript
 // ...
 import { ExportCsv, ExportPdf } from "@material-table/exporters";
@@ -20,6 +26,7 @@ import { ExportCsv, ExportPdf } from "@material-table/exporters";
   // ...
   options={{
     // ...
+    exportAllData: true,
     exportMenu: [
       {
         label: "Export PDF",
@@ -49,6 +56,7 @@ function BasicExport() {
       columns={DEMO_COLS}
       options={{
         // ...
+        exportAllData: true,
         exportMenu: [
           {
             label: "Export PDF",

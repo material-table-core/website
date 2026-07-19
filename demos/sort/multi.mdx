@@ -4,18 +4,20 @@ title: Multi Sorting
 hide_title: true
 ---
 
+import { InfoBannerAboutGlobalVarsInDemos } from "../../src/components";
+
 # Multi Sorting
 
 ## Props
 
 | Field                              | Type                                                                      | default   | Description                                      |
 | ---------------------------------- | ------------------------------------------------------------------------- | --------- | ------------------------------------------------ |
-| `options.defaultOrderByCollection` | { orderBy: number; orderDirection: 'asc' or 'desc', sortOrder: number }[] | []        | The initial sort state                           |
+| `options.defaultOrderByCollection` | `{ orderBy: number; orderDirection: 'asc' or 'desc', sortOrder: number }[]` | []        | The initial sort state                           |
 | `options.maxColumnSort`            | number or 'all_columns'                                                   | 1         | Specifies the amount for of columns to be sorted |
 | `column.showColumnSortOrder`       | boolean                                                                   | false     | Display on sort order in the table header        |
 | `column.sortOrderIndicatorStyle`   | React.CSSProperties                                                       | undefined | Style of the order indicator                     |
 | `column.onOrderCollectionChange`   | (orderByCollection: OrderByCollection[]) => void;                         | undefined | The callback, once the collection changes        |
-| `column.orderByCollection`         | { orderBy: number; orderDirection: 'asc' or 'desc', sortOrder: number }[] | []        | Override the current sort state                  |
+| `column.orderByCollection`         | `{ orderBy: number; orderDirection: 'asc' or 'desc', sortOrder: number }[]` | []        | Override the current sort state                  |
 
 ## Usage
 

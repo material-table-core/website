@@ -6,10 +6,26 @@
  */
 
 import React from "react";
-import MaterialTable, {
+import { useColorMode } from "@docusaurus/theme-common";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import PlainMaterialTable, {
   MTableToolbar,
   MTableBodyRow,
 } from "@material-table/core";
+
+// Follows the site's light/dark mode so live demos match the page theme
+function MaterialTable(props) {
+  const { colorMode } = useColorMode();
+  const theme = React.useMemo(
+    () => createTheme({ palette: { mode: colorMode } }),
+    [colorMode]
+  );
+  return (
+    <ThemeProvider theme={theme}>
+      <PlainMaterialTable {...props} />
+    </ThemeProvider>
+  );
+}
 import { ExportPdf, ExportCsv } from "@material-table/exporters";
 import {
   Switch,

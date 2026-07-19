@@ -17,7 +17,7 @@ material-table-core supports cell validation during edit.
 | :----------: | :-------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
 |  `boolean`   |                 rowData => boolean                  | Return a Boolean to block save and show a red bar below that field (true for valid input)                                                     |
 |   `string`   |                  rowData => string                  | Return a string to block save, to show a red bar below that field and show an appropriate error message                                       |
-|   `object`   | rowData => { isValid: boolean; helperText: string } | Return an object to optional block save and show a red bar below that field. A helper text will also be displayed, in red if isValid is false |
+|   `object`   | `rowData => { isValid: boolean; helperText: string }` | Return an object to optional block save and show a red bar below that field. A helper text will also be displayed, in red if isValid is false |
 
 :::info
 If a string is return from validate (even ""), it will be interpreted as an error and will block the submit

@@ -1,99 +1,79 @@
-/* stylelint-disable docusaurus/copyright-header */
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #3f51b5 0%, #283593 60%, #1a237e 100%);
+}
 
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+.heroTitle {
+  font-size: 3rem;
+}
 
-@media screen and (max-width: 996px) {
-  html[data-theme="light"] {
-    --ifm-color-emphasis-700: #171717;
-  }
+.heroSubTitle {
+  opacity: 0.9;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.install {
+  max-width: 26rem;
+  margin: 0 auto 1rem;
+  text-align: left;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.featureCard {
+  padding: 1.25rem;
+  color: var(--ifm-font-color-base);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.featureCard:hover {
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+  transform: translateY(-3px);
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.featureCard h3 {
+  margin-bottom: 0.25rem;
+  color: var(--ifm-color-primary);
+}
+
+.featureCard p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.demoToggles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 600px) {
-  h1.heroTitle {
+  .heroTitle {
     font-size: 1.75rem;
   }
-  .heroSubTitle > h3 {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  h1.heroTitle {
-    font-size: 1.6rem;
-  }
-  .heroSubTitle > h3 {
-    font-size: 0.98rem;
-  }
-}
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-}
-
-.featureImage {
-  height: 200px;
-  width: 200px;
-}
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-html[data-theme="dark"] {
-  --ifm-hero-background-color: var(--ifm-color-emphasis-100);
-  --ifm-background-color: var(--ifm-color-emphasis-100);
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.buttons > a {
-  margin: 20px;
-}
-
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-  flex-direction: column;
-}
-
-.featureImage {
-  height: 200px;
-  width: 200px;
-}
-
-:root {
-  --heroBannerCodeColor: black;
-}
-html[data-theme="dark"] {
-  --heroBannerCodeColor: white;
-}
-.inverseColor {
-  color: var(--heroBannerCodeColor);
 }

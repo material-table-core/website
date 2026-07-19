@@ -27,6 +27,16 @@
   --ifm-table-border-color: var(--ifm-table-stripe-background);
 }
 
+[data-theme="dark"] {
+  --ifm-color-primary: #8c9eff;
+  --ifm-color-primary-dark: #6f86ff;
+  --ifm-color-primary-darker: #6079ff;
+  --ifm-color-primary-darkest: #3d5afe;
+  --ifm-color-primary-light: #a9b6ff;
+  --ifm-color-primary-lighter: #b8c2ff;
+  --ifm-color-primary-lightest: #d6dcff;
+}
+
 code {
   margin: 0.3rem;
 }
@@ -50,7 +60,7 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 div[class^="playgroundPreview_"] {
-  background-color: lightgray;;
+  background-color: var(--ifm-background-surface-color);
 }
 
 .navbar {

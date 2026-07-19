@@ -17,21 +17,22 @@
     "git:push:tags": "git push origin && git push origin --tags"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.70",
-    "@docusaurus/preset-classic": "2.0.0-alpha.70",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.70",
-    "@emotion/react": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
-    "@material-table/core": "6.3.0",
-    "@material-table/exporters": "^1.2.17",
-    "@mdx-js/react": "^1.6.22",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.12.3",
-    "clsx": "^1.2.1",
-    "cross-env": "^7.0.3",
+    "@docusaurus/core": "3.10.2",
+    "@docusaurus/faster": "^3.10.2",
+    "@docusaurus/preset-classic": "3.10.2",
+    "@docusaurus/theme-live-codeblock": "3.10.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@material-table/core": "^8.0.1",
+    "@material-table/exporters": "^1.2.21",
+    "@mdx-js/react": "^3.0.0",
+    "@mui/icons-material": "^9.2.0",
+    "@mui/material": "^9.2.0",
+    "clsx": "^2.1.1",
     "generate-changelog": "^1.8.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "browserslist": {
     "production": [
@@ -44,8 +45,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "babel-plugin-module-resolver": "^4.1.0"
   }
 }

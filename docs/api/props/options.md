@@ -43,30 +43,30 @@ import { ExportCsv, ExportPdf } from '@material-table/exporters';
 ```
 ### `exportAllData`
 
-:::info Export all data that is passed to the table
+:::info[Export all data that is passed to the table]
 
 :::
 
 ### `exportButton`
 
-:::caution This property has been deprecated
+:::caution[This property has been deprecated]
 
 :::
 
 ### `exportCsv`
 
-:::caution This property has been deprecated
+:::caution[This property has been deprecated]
 
 :::
 
 ### `exportPdf`
 
-:::caution This property has been deprecated
+:::caution[This property has been deprecated]
 
 :::
 
 ### `exportDelimiter`
 
-:::caution This property has been deprecated
+:::caution[This property has been deprecated]
 
 :::

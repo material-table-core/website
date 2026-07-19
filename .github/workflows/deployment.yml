@@ -6,9 +6,6 @@ on:
       - main
       - master
 
-env:
-  deploy_key: ${{ secrets.TEST_KEY }}
-
 jobs:
   #  tests:
   #    if: startsWith(github.event.head_commit.message, 'deploy:')
@@ -47,8 +44,7 @@ jobs:
           echo "set git config"
           git init -b main
           echo "init git"
-          echo "deploy_key: $GIT_USER"
-          git remote add upstream https://$deploy_key@github.com/material-table-core/material-table-core.github.io
+          git remote add upstream git@github.com:material-table-core/material-table-core.github.io.git
           echo "add upstream"
           git add .
           git commit -m "deploy: ${{ github.event.head_commit.message }}"

@@ -7,11 +7,13 @@
         >
 </a>
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
+
+Requires **Node.js >= 20**.
 
 ## Contributing 
 
-### this package uses `yarn` not `npm`! 
+### this package uses `npm` not `yarn`! 
 
 ## [How to add your own demo to this website](https://material-table-core.github.io/demos#how-to-add-demo)
 
@@ -19,20 +21,20 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 
 ## Publishing
 
-- yarn release:major // for major release
-- yarn release:minor // for minor release
-- yarn release:patch // for patch release
+- npm run release:major // for major release
+- npm run release:minor // for minor release
+- npm run release:patch // for patch release
 
 ## Installation
 
 ```console
-yarn install
+npm install
 ```
 
 ## Local Development
 
 ```console
-yarn start
+npm start
 ```
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
@@ -40,7 +42,7 @@ This command starts a local development server and open up a browser window. Mos
 ## Build
 
 ```console
-yarn build
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.

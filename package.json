@@ -2,6 +2,9 @@
   "name": "@material-table/website",
   "version": "4.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -10,7 +13,7 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "update:material:table:core": "yarn add @material-table/core",
+    "update:material:table:core": "npm install @material-table/core@latest",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major -m 'deploy: v%s' && npm run git:push:tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor -m 'deploy: v%s' && npm run git:push:tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch -m 'deploy: v%s' && npm run git:push:tags",
